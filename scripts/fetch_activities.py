@@ -14,6 +14,7 @@ Env required (loaded from .env in same dir, or runtime env in CI):
     TDX_CLIENT_SECRET
 """
 
+import html
 import json
 import os
 import re
@@ -86,13 +87,14 @@ def clean_description(raw):
     s = raw.strip()
     if s in DESCRIPTION_BLOCKLIST:
         return None
-    s = (s.replace("&amp;",  "&")
-          .replace("&nbsp;", " ")
-          .replace("&quot;", '"')
-          .replace("&lt;",   "<")
-          .replace("&gt;",   ">"))
+    # Strip HTML before unescaping, so any entities embedded in tag
+    # attributes don't leak. Decode <br> to newlines first so the
+    # paragraph structure survives the tag stripping.
     s = re.sub(r"<br\s*/?>", "\n", s, flags=re.IGNORECASE)
     s = re.sub(r"<[^>]+>", "", s)
+    # html.unescape handles every named entity (&bull; &middot; &hellip;
+    # &ldquo; &rdquo; etc.) plus numeric forms (&#8226; &#x2022;).
+    s = html.unescape(s)
     s = re.sub(r"[ \t]+", " ", s).strip()
     s = re.sub(r"\n{3,}", "\n\n", s)
     if len(s) < MIN_DESCRIPTION_LENGTH:
