@@ -356,19 +356,29 @@ def filter_window(items: list[dict]) -> list[dict]:
     return out
 
 
-def _preserved_from_previous(source: str) -> list[dict]:
-    """Read the previously-written activities.json (if any) and return
-    the records tagged with the given `source`. Used so a CI run that
-    can't reach travel.taipei (Cloudflare IP block) doesn't wipe out
-    Taipei data that a local run had written."""
+def _previous_payload() -> dict:
+    """Read the previously-written activities.json once, cache for
+    re-use. Returns {} if missing/malformed."""
     if not OUT_PATH.exists():
-        return []
+        return {}
     try:
-        previous = json.loads(OUT_PATH.read_text(encoding="utf-8"))
+        return json.loads(OUT_PATH.read_text(encoding="utf-8"))
     except Exception:
-        return []
-    return [a for a in previous.get("activities", [])
+        return {}
+
+
+def _preserved_from_previous(source: str) -> list[dict]:
+    """Records tagged with `source` from the prior JSON. Used so a CI
+    run that can't reach travel.taipei doesn't wipe Taipei data the
+    local Mac had populated."""
+    return [a for a in _previous_payload().get("activities", [])
             if a.get("source") == source]
+
+
+def _previous_freshness() -> dict[str, str]:
+    """Per-source last-successfully-fetched timestamps from the prior
+    JSON. Used to carry timestamps across preserve fallbacks."""
+    return _previous_payload().get("sourcesFreshness") or {}
 
 
 def print_summary(items: list[dict]) -> None:
@@ -401,11 +411,17 @@ def main():
     load_dotenv(SCRIPT_DIR / ".env")
     print("=== DriveGO Activities ETL ===\n")
 
+    now_iso = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    prev_freshness = _previous_freshness()
+    freshness: dict[str, str] = {}
+
     # --- TDX ---------------------------------------------------------
     print("[1/6] Fetch TDX (token + paginated)...")
     token = tdx_get_token()
     tdx_raw = tdx_fetch_all(token)
     print(f"      retrieved: {len(tdx_raw)}\n")
+    freshness["tdx"] = (now_iso if tdx_raw
+                        else prev_freshness.get("tdx", "unknown"))
 
     print("[2/6] Normalize TDX...")
     tdx_norm = [n for n in (tdx_normalize(a) for a in tdx_raw) if n is not None]
@@ -417,8 +433,11 @@ def main():
     tt_activity_norm = [n for n in (tt_activity_normalize(a)
                                     for a in tt_activity_raw) if n is not None]
     print(f"      retrieved: {len(tt_activity_raw)}  kept: {len(tt_activity_norm)}")
-    # Preserve from previous run if CI gets Cloudflare-blocked.
-    if not tt_activity_norm:
+    if tt_activity_raw:
+        freshness["travel.taipei"] = now_iso
+    else:
+        freshness["travel.taipei"] = prev_freshness.get(
+            "travel.taipei", "unknown")
         preserved = _preserved_from_previous("travel.taipei")
         if preserved:
             tt_activity_norm = preserved
@@ -431,7 +450,11 @@ def main():
     tt_event_norm = [n for n in (tt_calendar_normalize(a)
                                   for a in tt_event_raw) if n is not None]
     print(f"      retrieved: {len(tt_event_raw)}  kept: {len(tt_event_norm)}")
-    if not tt_event_norm:
+    if tt_event_raw:
+        freshness["travel.taipei.event"] = now_iso
+    else:
+        freshness["travel.taipei.event"] = prev_freshness.get(
+            "travel.taipei.event", "unknown")
         preserved = _preserved_from_previous("travel.taipei.event")
         if preserved:
             tt_event_norm = preserved
@@ -446,16 +469,17 @@ def main():
 
     print(f"[6/6] Write {OUT_PATH}")
     payload = {
-        "version":     2,
-        "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "windowDays":  WINDOW_DAYS,
-        "count":       len(merged),
-        "sources":     [
+        "version":           2,
+        "generatedAt":       now_iso,
+        "windowDays":        WINDOW_DAYS,
+        "count":             len(merged),
+        "sources":           [
             "TDX Tourism Activity",
             "travel.taipei Open API (Events/Activity)",
             "travel.taipei Open API (Events/Calendar)",
         ],
-        "activities":  merged,
+        "sourcesFreshness":  freshness,
+        "activities":        merged,
     }
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with OUT_PATH.open("w", encoding="utf-8") as f:
