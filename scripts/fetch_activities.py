@@ -291,15 +291,27 @@ def tt_event_normalize(raw: dict):
 
 def clean_description(raw):
     """Strip HTML, decode entities, drop placeholder filler, enforce
-    a minimum length. Returns cleaned string or None."""
+    a minimum length. Returns cleaned string or None.
+
+    Order matters: <style> and <script> blocks must be removed AS A
+    WHOLE before the generic tag-stripping pass, otherwise their text
+    content (CSS rules / JS code) leaks into the final output. Some
+    travel.taipei records embed a full webview <style> block."""
     if not raw:
         return None
     s = raw.strip()
     if s in DESCRIPTION_BLOCKLIST:
         return None
+    # 1. Drop <style>…</style> and <script>…</script> entirely.
+    s = re.sub(r"<style\b[^>]*>.*?</style\s*>",  "", s, flags=re.IGNORECASE | re.DOTALL)
+    s = re.sub(r"<script\b[^>]*>.*?</script\s*>", "", s, flags=re.IGNORECASE | re.DOTALL)
+    # 2. <br> → newline so the paragraph structure survives.
     s = re.sub(r"<br\s*/?>", "\n", s, flags=re.IGNORECASE)
+    # 3. Strip everything else that looks like a tag.
     s = re.sub(r"<[^>]+>", "", s)
+    # 4. Decode HTML entities.
     s = html.unescape(s)
+    # 5. Collapse whitespace.
     s = re.sub(r"[ \t]+", " ", s).strip()
     s = re.sub(r"\n{3,}", "\n\n", s)
     if len(s) < MIN_DESCRIPTION_LENGTH:
