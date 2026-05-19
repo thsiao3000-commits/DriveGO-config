@@ -1,17 +1,18 @@
 {
   "version": 2,
-  "generatedAt": "2026-05-19T13:01:55+00:00",
+  "generatedAt": "2026-05-19T14:06:46+00:00",
   "windowDays": 240,
   "count": 337,
+  "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
     "travel.taipei Open API (Events/Activity)",
     "travel.taipei Open API (Events/Calendar)"
   ],
   "sourcesFreshness": {
-    "tdx": "2026-05-19T13:01:55+00:00",
-    "travel.taipei": "2026-05-19T13:01:55+00:00",
-    "travel.taipei.event": "2026-05-19T13:01:55+00:00"
+    "tdx": "2026-05-19T14:06:46+00:00",
+    "travel.taipei": "2026-05-19T14:06:46+00:00",
+    "travel.taipei.event": "2026-05-19T14:06:46+00:00"
   },
   "activities": [
     {

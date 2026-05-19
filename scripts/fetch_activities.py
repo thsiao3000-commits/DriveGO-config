@@ -473,6 +473,12 @@ def main():
         "generatedAt":       now_iso,
         "windowDays":        WINDOW_DAYS,
         "count":             len(merged),
+        # `source` is the legacy v1 top-level field. The v1.0.5 binary
+        # shipped before we made it Optional in ActivitiesPayload, so
+        # without this string the bundle JSON refuses to decode and
+        # the live App Store version 看不到任何活動. KEEP IT until
+        # v1.0.6 has been out long enough that no one runs v1.0.5.
+        "source":            "TDX + travel.taipei",
         "sources":           [
             "TDX Tourism Activity",
             "travel.taipei Open API (Events/Activity)",
