@@ -306,7 +306,24 @@ def main():
 
     print("[4/5] Normalize travel.taipei...")
     tt_norm = [n for n in (tt_normalize(a) for a in tt_raw) if n is not None]
-    print(f"      kept: {len(tt_norm)} (dropped {len(tt_raw) - len(tt_norm)})\n")
+    print(f"      kept: {len(tt_norm)} (dropped {len(tt_raw) - len(tt_norm)})")
+
+    # If the fetch came back empty (almost always because Cloudflare
+    # blocked the data-center IP on a CI runner), preserve the Taipei
+    # records that the previous run wrote. Their window filter still
+    # applies, so anything past its endDate falls off naturally.
+    if not tt_norm and OUT_PATH.exists():
+        try:
+            previous = json.loads(OUT_PATH.read_text(encoding="utf-8"))
+            preserved = [a for a in previous.get("activities", [])
+                         if a.get("source") == "travel.taipei"]
+            if preserved:
+                tt_norm = preserved
+                print(f"      (preserved {len(preserved)} Taipei records "
+                      f"from previous run)")
+        except Exception as e:
+            print(f"      (could not read previous JSON: {e})")
+    print()
 
     # --- Merge + window filter + write -------------------------------
     print(f"[5/5] Merge & filter (next {WINDOW_DAYS} days, drop placeholders)...")
