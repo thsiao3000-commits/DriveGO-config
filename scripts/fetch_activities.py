@@ -13,12 +13,15 @@ Sources
     - Requires Chrome TLS impersonation via curl_cffi to bypass the
       Cloudflare bot filter, AND is blocked from data-center IPs even
       after impersonation. Falls back to "preserve previous" on CI.
-* travel.taipei internal API (/api/zh-tw/event)
-    - Taipei-only, festival/seasonal events, INCLUDING future ones
-      (跨年, 馬拉松, 藝術節 …). 100% have descriptions, addresses, and
-      images. Empirically reachable from GitHub Actions runners.
-    - Internal API, not officially documented — could change without
-      notice. Wrapped in defensive preserve fallback just in case.
+* travel.taipei Open API (Events/Calendar)
+    - Taipei-only, festival/seasonal events INCLUDING future-starting
+      ones (跨年, 馬拉松, 藝術節 …). Officially documented in Swagger,
+      same DB as the internal /api/zh-tw/event endpoint but stable.
+    - Returns the full small set (~33 entries) without paging tricks;
+      the begin/end query params filter by posted date which is the
+      opposite of what we want, so we don't pass them.
+    - Also Cloudflare-blocked from CI runners; same preserve fallback
+      as the Activity endpoint.
 
 Output : ../data/activities.json (relative to this script's directory)
 
@@ -61,9 +64,9 @@ TDX_PAGE_SIZE = 500
 
 # ---- travel.taipei ---------------------------------------------------
 TT_ACTIVITY_URL = "https://www.travel.taipei/open-api/zh-tw/Events/Activity"
-TT_EVENT_URL    = "https://www.travel.taipei/api/zh-tw/event"
+TT_CALENDAR_URL = "https://www.travel.taipei/open-api/zh-tw/Events/Calendar"
 TT_IMPERSONATE  = "chrome120"
-TT_PAGE_SIZE    = 30   # /open-api/.../Events/Activity page size, not configurable
+TT_PAGE_SIZE    = 30   # both /Events/* endpoints paginate at 30/page
 
 # ---- Shared ----------------------------------------------------------
 WINDOW_DAYS          = 240   # ~8 months — captures full year of Taipei festivals
@@ -190,26 +193,41 @@ def tt_activity_fetch_all() -> list[dict]:
     return out
 
 
-def tt_event_fetch_all() -> list[dict]:
-    """Hit travel.taipei /api/zh-tw/event (節慶). Internal API, single
-    request, no pagination. Empirically reachable from CI runners."""
+def tt_calendar_fetch_all() -> list[dict]:
+    """Paginate travel.taipei /open-api/.../Events/Calendar (節慶年曆).
+    Official endpoint. We don't pass begin/end because the API
+    semantics filter by `posted` date, not the activity date — passing
+    a future window returns nothing useful. Just grab all pages and
+    let the post-merge filter_window do its job."""
     if not _HAS_CURL_CFFI:
         print("      (curl_cffi unavailable — skipping)")
         return []
-    try:
-        r = curl_requests.get(
-            TT_EVENT_URL,
-            impersonate=TT_IMPERSONATE,
-            headers={"Accept": "application/json"},
-            timeout=30,
-        )
-    except Exception as e:
-        print(f"      request failed: {e}")
-        return []
-    if r.status_code != 200:
-        print(f"      HTTP {r.status_code}, stop")
-        return []
-    return r.json().get("data") or []
+    out, page = [], 1
+    while True:
+        try:
+            r = curl_requests.get(
+                TT_CALENDAR_URL,
+                params={"page": page},
+                impersonate=TT_IMPERSONATE,
+                headers={"Accept": "application/json"},
+                timeout=30,
+            )
+        except Exception as e:
+            print(f"      page {page} request failed: {e}")
+            break
+        if r.status_code != 200:
+            print(f"      page {page}: HTTP {r.status_code}, stop")
+            break
+        payload = r.json()
+        batch = payload.get("data") or []
+        total = payload.get("total") or 0
+        if not batch:
+            break
+        out.extend(batch)
+        if len(out) >= total or len(batch) < TT_PAGE_SIZE:
+            break
+        page += 1
+    return out
 
 
 def _tt_parse_date(s: str) -> str | None:
@@ -252,24 +270,28 @@ def tt_activity_normalize(raw: dict):
     }
 
 
-def tt_event_normalize(raw: dict):
-    """Schema for /api/zh-tw/event records — different field names from
-    the Open API version: article_id, date_begin, coordinate_nlat …"""
-    if not raw.get("article_id") or not raw.get("title"):
+def tt_calendar_normalize(raw: dict):
+    """Schema for /open-api/.../Events/Calendar records. Same shape as
+    Events/Activity (id, title, begin/end with +08:00, nlat/elong as
+    string floats, url as the detail-page link)."""
+    if not raw.get("id") or not raw.get("title"):
         return None
-    s_date = _tt_parse_date(raw.get("date_begin") or "")
-    e_date = _tt_parse_date(raw.get("date_end") or "")
+    s_date = _tt_parse_date(raw.get("begin") or "")
+    e_date = _tt_parse_date(raw.get("end") or "")
     if not s_date or not e_date:
         return None
     try:
-        lat = float(raw.get("coordinate_nlat") or 0)
-        lng = float(raw.get("coordinate_elong") or 0)
+        lat = float(raw.get("nlat") or 0)
+        lng = float(raw.get("elong") or 0)
     except (TypeError, ValueError):
         return None
     if lat == 0 or lng == 0:
         return None
     return {
-        "id":          f"tt-event-{raw['article_id']}",
+        # Keep the tt-event-* prefix and travel.taipei.event source so
+        # the preserve-from-previous fallback continues to match
+        # records written by the prior /api/event integration.
+        "id":          f"tt-event-{raw['id']}",
         "source":      "travel.taipei.event",
         "name":        raw["title"].strip(),
         "city":        "臺北市",
@@ -278,10 +300,10 @@ def tt_event_normalize(raw: dict):
         "lat":         lat,
         "lng":         lng,
         "description": clean_description(raw.get("description")),
-        "organizer":   (raw.get("organizer") or "").strip() or None,
+        "organizer":   None,   # Calendar doesn't carry organizer
         "phone":       (raw.get("tel") or "").strip() or None,
-        "category":    "節慶活動",   # this endpoint is festivals/seasonal events
-        "detailUrl":   (raw.get("source_url") or "").strip() or None,
+        "category":    "節慶活動",
+        "detailUrl":   (raw.get("url") or "").strip() or None,
     }
 
 
@@ -403,10 +425,10 @@ def main():
             print(f"      (preserved {len(preserved)} from previous run)")
     print()
 
-    # --- travel.taipei /api/zh-tw/event (節慶) ------------------------
-    print("[4/6] Fetch travel.taipei internal /api/event (curl_cffi)...")
-    tt_event_raw = tt_event_fetch_all()
-    tt_event_norm = [n for n in (tt_event_normalize(a)
+    # --- travel.taipei /open-api/.../Events/Calendar (節慶) -----------
+    print("[4/6] Fetch travel.taipei Events/Calendar (curl_cffi)...")
+    tt_event_raw = tt_calendar_fetch_all()
+    tt_event_norm = [n for n in (tt_calendar_normalize(a)
                                   for a in tt_event_raw) if n is not None]
     print(f"      retrieved: {len(tt_event_raw)}  kept: {len(tt_event_norm)}")
     if not tt_event_norm:
@@ -431,7 +453,7 @@ def main():
         "sources":     [
             "TDX Tourism Activity",
             "travel.taipei Open API (Events/Activity)",
-            "travel.taipei internal API (/api/event)",
+            "travel.taipei Open API (Events/Calendar)",
         ],
         "activities":  merged,
     }
