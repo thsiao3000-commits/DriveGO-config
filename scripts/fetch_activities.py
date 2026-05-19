@@ -11,7 +11,14 @@ Sources
 * travel.taipei Open API (Events/Activity)
     - Taipei-only, exhibition-focused. Very high description quality.
     - Requires Chrome TLS impersonation via curl_cffi to bypass the
-      Cloudflare bot filter sitting in front of the API.
+      Cloudflare bot filter, AND is blocked from data-center IPs even
+      after impersonation. Falls back to "preserve previous" on CI.
+* travel.taipei internal API (/api/zh-tw/event)
+    - Taipei-only, festival/seasonal events, INCLUDING future ones
+      (跨年, 馬拉松, 藝術節 …). 100% have descriptions, addresses, and
+      images. Empirically reachable from GitHub Actions runners.
+    - Internal API, not officially documented — could change without
+      notice. Wrapped in defensive preserve fallback just in case.
 
 Output : ../data/activities.json (relative to this script's directory)
 
@@ -53,12 +60,13 @@ TDX_API_URL   = "https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity"
 TDX_PAGE_SIZE = 500
 
 # ---- travel.taipei ---------------------------------------------------
-TT_API_URL     = "https://www.travel.taipei/open-api/zh-tw/Events/Activity"
-TT_IMPERSONATE = "chrome120"
-TT_PAGE_SIZE   = 30   # API-defined, not configurable
+TT_ACTIVITY_URL = "https://www.travel.taipei/open-api/zh-tw/Events/Activity"
+TT_EVENT_URL    = "https://www.travel.taipei/api/zh-tw/event"
+TT_IMPERSONATE  = "chrome120"
+TT_PAGE_SIZE    = 30   # /open-api/.../Events/Activity page size, not configurable
 
 # ---- Shared ----------------------------------------------------------
-WINDOW_DAYS          = 180
+WINDOW_DAYS          = 240   # ~8 months — captures full year of Taipei festivals
 PLACEHOLDER_END_YEAR = 2030
 TAIPEI_TZ            = timezone(timedelta(hours=8))
 
@@ -143,11 +151,11 @@ def tdx_normalize(raw: dict):
 # travel.taipei fetch + normalize
 # ======================================================================
 
-def tt_fetch_all() -> list[dict]:
-    """Paginate travel.taipei Events/Activity. Window is sent to the API
-    directly via begin/end params so we don't waste bandwidth."""
+def tt_activity_fetch_all() -> list[dict]:
+    """Paginate travel.taipei /open-api/.../Events/Activity (展演).
+    Blocked from data-center IPs — caller falls back to preserve."""
     if not _HAS_CURL_CFFI:
-        print("      (curl_cffi unavailable — skipping travel.taipei)")
+        print("      (curl_cffi unavailable — skipping)")
         return []
     today      = datetime.now(TAIPEI_TZ).date()
     window_end = today + timedelta(days=WINDOW_DAYS)
@@ -160,7 +168,7 @@ def tt_fetch_all() -> list[dict]:
         }
         try:
             r = curl_requests.get(
-                TT_API_URL,
+                TT_ACTIVITY_URL,
                 params=params,
                 impersonate=TT_IMPERSONATE,
                 headers={"Accept": "application/json"},
@@ -182,22 +190,44 @@ def tt_fetch_all() -> list[dict]:
     return out
 
 
+def tt_event_fetch_all() -> list[dict]:
+    """Hit travel.taipei /api/zh-tw/event (節慶). Internal API, single
+    request, no pagination. Empirically reachable from CI runners."""
+    if not _HAS_CURL_CFFI:
+        print("      (curl_cffi unavailable — skipping)")
+        return []
+    try:
+        r = curl_requests.get(
+            TT_EVENT_URL,
+            impersonate=TT_IMPERSONATE,
+            headers={"Accept": "application/json"},
+            timeout=30,
+        )
+    except Exception as e:
+        print(f"      request failed: {e}")
+        return []
+    if r.status_code != 200:
+        print(f"      HTTP {r.status_code}, stop")
+        return []
+    return r.json().get("data") or []
+
+
 def _tt_parse_date(s: str) -> str | None:
-    """travel.taipei dates look like '2026-04-21 00:00:00 +08:00'. We
-    only need the date portion. Returns 'YYYY-MM-DD' or None."""
+    """travel.taipei date fields. /open-api gives '2026-04-21 00:00:00
+    +08:00'; /api/event gives '2026-04-21'. Both safe to slice."""
     if not s or len(s) < 10:
         return None
     return s[:10]
 
 
-def tt_normalize(raw: dict):
+def tt_activity_normalize(raw: dict):
+    """Schema for /open-api/.../Events/Activity records."""
     if not raw.get("id") or not raw.get("title"):
         return None
     s_date = _tt_parse_date(raw.get("begin") or "")
     e_date = _tt_parse_date(raw.get("end") or "")
     if not s_date or not e_date:
         return None
-    # Coordinates are strings ("25.1024"). 0/empty are non-locatable.
     try:
         lat = float(raw.get("nlat") or 0)
         lng = float(raw.get("elong") or 0)
@@ -217,8 +247,41 @@ def tt_normalize(raw: dict):
         "description": clean_description(raw.get("description")),
         "organizer":   (raw.get("organizer") or "").strip() or None,
         "phone":       (raw.get("tel") or "").strip() or None,
-        "category":    None,   # travel.taipei has no analogue to Class1
+        "category":    None,
         "detailUrl":   (raw.get("url") or "").strip() or None,
+    }
+
+
+def tt_event_normalize(raw: dict):
+    """Schema for /api/zh-tw/event records — different field names from
+    the Open API version: article_id, date_begin, coordinate_nlat …"""
+    if not raw.get("article_id") or not raw.get("title"):
+        return None
+    s_date = _tt_parse_date(raw.get("date_begin") or "")
+    e_date = _tt_parse_date(raw.get("date_end") or "")
+    if not s_date or not e_date:
+        return None
+    try:
+        lat = float(raw.get("coordinate_nlat") or 0)
+        lng = float(raw.get("coordinate_elong") or 0)
+    except (TypeError, ValueError):
+        return None
+    if lat == 0 or lng == 0:
+        return None
+    return {
+        "id":          f"tt-event-{raw['article_id']}",
+        "source":      "travel.taipei.event",
+        "name":        raw["title"].strip(),
+        "city":        "臺北市",
+        "startDate":   s_date,
+        "endDate":     e_date,
+        "lat":         lat,
+        "lng":         lng,
+        "description": clean_description(raw.get("description")),
+        "organizer":   (raw.get("organizer") or "").strip() or None,
+        "phone":       (raw.get("tel") or "").strip() or None,
+        "category":    "節慶活動",   # this endpoint is festivals/seasonal events
+        "detailUrl":   (raw.get("source_url") or "").strip() or None,
     }
 
 
@@ -259,6 +322,21 @@ def filter_window(items: list[dict]) -> list[dict]:
     return out
 
 
+def _preserved_from_previous(source: str) -> list[dict]:
+    """Read the previously-written activities.json (if any) and return
+    the records tagged with the given `source`. Used so a CI run that
+    can't reach travel.taipei (Cloudflare IP block) doesn't wipe out
+    Taipei data that a local run had written."""
+    if not OUT_PATH.exists():
+        return []
+    try:
+        previous = json.loads(OUT_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return []
+    return [a for a in previous.get("activities", [])
+            if a.get("source") == source]
+
+
 def print_summary(items: list[dict]) -> None:
     total = len(items)
     if total == 0:
@@ -290,60 +368,66 @@ def main():
     print("=== DriveGO Activities ETL ===\n")
 
     # --- TDX ---------------------------------------------------------
-    print("[1/5] Fetch TDX (token + paginated)...")
+    print("[1/6] Fetch TDX (token + paginated)...")
     token = tdx_get_token()
     tdx_raw = tdx_fetch_all(token)
     print(f"      retrieved: {len(tdx_raw)}\n")
 
-    print("[2/5] Normalize TDX...")
+    print("[2/6] Normalize TDX...")
     tdx_norm = [n for n in (tdx_normalize(a) for a in tdx_raw) if n is not None]
     print(f"      kept: {len(tdx_norm)} (dropped {len(tdx_raw) - len(tdx_norm)})\n")
 
-    # --- travel.taipei -----------------------------------------------
-    print("[3/5] Fetch travel.taipei (curl_cffi → bypass Cloudflare)...")
-    tt_raw = tt_fetch_all()
-    print(f"      retrieved: {len(tt_raw)}\n")
+    # --- travel.taipei /open-api/.../Events/Activity (展演) -----------
+    print("[3/6] Fetch travel.taipei Events/Activity (curl_cffi)...")
+    tt_activity_raw = tt_activity_fetch_all()
+    tt_activity_norm = [n for n in (tt_activity_normalize(a)
+                                    for a in tt_activity_raw) if n is not None]
+    print(f"      retrieved: {len(tt_activity_raw)}  kept: {len(tt_activity_norm)}")
+    # Preserve from previous run if CI gets Cloudflare-blocked.
+    if not tt_activity_norm:
+        preserved = _preserved_from_previous("travel.taipei")
+        if preserved:
+            tt_activity_norm = preserved
+            print(f"      (preserved {len(preserved)} from previous run)")
+    print()
 
-    print("[4/5] Normalize travel.taipei...")
-    tt_norm = [n for n in (tt_normalize(a) for a in tt_raw) if n is not None]
-    print(f"      kept: {len(tt_norm)} (dropped {len(tt_raw) - len(tt_norm)})")
-
-    # If the fetch came back empty (almost always because Cloudflare
-    # blocked the data-center IP on a CI runner), preserve the Taipei
-    # records that the previous run wrote. Their window filter still
-    # applies, so anything past its endDate falls off naturally.
-    if not tt_norm and OUT_PATH.exists():
-        try:
-            previous = json.loads(OUT_PATH.read_text(encoding="utf-8"))
-            preserved = [a for a in previous.get("activities", [])
-                         if a.get("source") == "travel.taipei"]
-            if preserved:
-                tt_norm = preserved
-                print(f"      (preserved {len(preserved)} Taipei records "
-                      f"from previous run)")
-        except Exception as e:
-            print(f"      (could not read previous JSON: {e})")
+    # --- travel.taipei /api/zh-tw/event (節慶) ------------------------
+    print("[4/6] Fetch travel.taipei internal /api/event (curl_cffi)...")
+    tt_event_raw = tt_event_fetch_all()
+    tt_event_norm = [n for n in (tt_event_normalize(a)
+                                  for a in tt_event_raw) if n is not None]
+    print(f"      retrieved: {len(tt_event_raw)}  kept: {len(tt_event_norm)}")
+    if not tt_event_norm:
+        preserved = _preserved_from_previous("travel.taipei.event")
+        if preserved:
+            tt_event_norm = preserved
+            print(f"      (preserved {len(preserved)} from previous run)")
     print()
 
     # --- Merge + window filter + write -------------------------------
-    print(f"[5/5] Merge & filter (next {WINDOW_DAYS} days, drop placeholders)...")
-    merged = filter_window(tdx_norm + tt_norm)
+    print(f"[5/6] Merge & filter (next {WINDOW_DAYS} days, drop placeholders)...")
+    merged = filter_window(tdx_norm + tt_activity_norm + tt_event_norm)
     merged.sort(key=lambda a: (a["startDate"], a.get("city") or "", a["name"]))
     print(f"      final: {len(merged)}\n")
 
+    print(f"[6/6] Write {OUT_PATH}")
     payload = {
         "version":     2,
         "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "windowDays":  WINDOW_DAYS,
         "count":       len(merged),
-        "sources":     ["TDX Tourism Activity", "travel.taipei Open API"],
+        "sources":     [
+            "TDX Tourism Activity",
+            "travel.taipei Open API (Events/Activity)",
+            "travel.taipei internal API (/api/event)",
+        ],
         "activities":  merged,
     }
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with OUT_PATH.open("w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
     size_kb = OUT_PATH.stat().st_size / 1024
-    print(f"      wrote {OUT_PATH} ({size_kb:.1f} KB)\n")
+    print(f"      wrote {size_kb:.1f} KB\n")
 
     print("=== Summary ===")
     print_summary(merged)
