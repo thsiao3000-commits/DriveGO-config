@@ -17,6 +17,8 @@ except ImportError:
 PROBES = [
     ("open-api / Events/Activity",
      "https://www.travel.taipei/open-api/zh-tw/Events/Activity?begin=2026-05-19&end=2026-11-15&page=1"),
+    ("open-api / Events/Calendar",
+     "https://www.travel.taipei/open-api/zh-tw/Events/Calendar?page=1"),
     ("internal /api/zh-tw/event",
      "https://www.travel.taipei/api/zh-tw/event"),
     ("internal /api/zh-tw/activity",
