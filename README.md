@@ -164,3 +164,131 @@ Each activity record carries `source` = `"tdx"` / `"travel.taipei"` /
 This repo contains derived public data only. It does not contain
 DriveGO source code or any credentials. API secrets used by the ETL
 live in GitHub Actions Secrets and never appear in the repo.
+
+---
+
+# 中文說明
+
+DriveGO iOS App 使用的公開設定與資料檔。
+
+## 內容
+
+- `data/activities.json` — 未來 240 天的台灣觀光活動。
+- `scripts/fetch_activities.py` — 產生 JSON 的 ETL 腳本。
+- `scripts/update-activities.sh` — 手動一鍵更新的輔助腳本。
+- `.github/workflows/update-activities.yml` — 每日跑 ETL 的排程。
+- `.github/workflows/probe.yml` — 臨時連線探針（僅除錯用）。
+
+## 資料來源
+
+| 來源 | 涵蓋範圍 | 存取方式 |
+|---|---|---|
+| [TDX 觀光活動](https://tdx.transportdata.tw/) | 全台 12 縣市、所有活動類型。臺北市近乎 0 筆。 | OAuth client credentials，僅伺服器端 |
+| travel.taipei `/open-api/{lang}/Events/Activity` | 臺北市展演 | 公開、Cloudflare 防護 |
+| travel.taipei `/open-api/{lang}/Events/Calendar` | 臺北市節慶（含未來日期） | 公開、Cloudflare 防護 |
+
+兩者皆為政府開放資料。TDX 採用「政府資料開放授權條款」；臺北旅遊網的「資料開放宣告」要求利用時註明出處，App 已在「設定 → 資料來源」與 App Store 說明中標示。
+
+---
+
+## travel.taipei 整合 — 技術筆記
+
+這個專案的難點不是資料本身，而是「**怎麼拿到**」資料。travel.taipei 在 Cloudflare 後面，由 Cloudflare 決定誰能通過。以下全是試錯換來的經驗 —— 改動 pipeline 前請先讀。
+
+### 核心障礙：Cloudflare bot 管理
+
+travel.taipei 是**開放** API（不需 API key），但**並非不設防**。前面的 Cloudflare 做 DDoS 緩解、per-IP 速率限制、邊緣快取，還有讓我們踩雷的 —— **bot 偵測**。
+
+bot 偵測主要靠 **TLS 指紋（JA3/JA4）**。client 送出的 TLS `ClientHello` —— 它的加密套件清單、擴充功能、以及排列順序 —— 由 TLS 函式庫決定，**不是任何 header 設得了的**。Cloudflare 把指紋對應到已知的 client。
+
+實測行為：
+
+| 呼叫端 | TLS 指紋 | IP 類型 | 結果 |
+|---|---|---|---|
+| `curl` | curl/OpenSSL | 任何 | 403 — 「CLI 工具」 |
+| `curl_cffi`（impersonate=chrome120） | Chrome | 住宅 | 200 |
+| `curl_cffi`（impersonate=chrome120） | 機房（GitHub Actions） | — | 403 — IP 信譽 |
+| iOS `URLSession` | Apple Network framework | 住宅 / 電信 | 200 |
+
+兩個結論：
+
+1. **真實使用者裝置可乾淨通過。** iOS `URLSession` 從消費級 ISP / 電信 IP 發出 Apple 的 TLS 指紋 —— 正是 Cloudflare 放行的「真實使用者」輪廓。這是 Open API 的*預期*使用方式。
+2. **伺服器不行。** 即使用 Chrome TLS 偽裝，機房 IP 仍被拒。沒有免費的繞法，這是刻意設計。
+
+### 兩條存取路徑，以及為何兩條都要
+
+```
+┌─ TDX ────────────────────────────────────────────────┐
+│  需要 OAuth client_id / client_secret → 僅伺服器端。   │
+│  在 GitHub Actions cron 內執行。                       │
+└───────────────────────────────────────────────────────┘
+
+┌─ travel.taipei，路徑 A：ETL（此 repo）────────────────┐
+│  scripts/fetch_activities.py 用 curl_cffi 偽裝 Chrome。│
+│  從開發者 Mac（住宅 IP）可行；從 GitHub Actions 被擋。  │
+│  → CI 上 fetch 失敗時，沿用前一次的 Taipei 紀錄         │
+│    （見「preserve fallback」）。                       │
+└───────────────────────────────────────────────────────┘
+
+┌─ travel.taipei，路徑 B：App（DriveGO repo）───────────┐
+│  TaipeiLiveService.swift 每次 App 啟動時用 URLSession  │
+│  直接打 Open API。每位使用者裝置都是自己的住宅/電信     │
+│  IP → 通過。這是執行時臺北市的「主要」資料來源。        │
+└───────────────────────────────────────────────────────┘
+```
+
+執行時 App 把兩者合併：TDX（及所有非臺北資料）來自此 repo 的 JSON；臺北市則在 live `URLSession` fetch 成功時用它取代，失敗時 fallback 到 JSON 內的臺北紀錄（再不行則用內建快照）。
+
+### 「preserve fallback」
+
+因為 ETL 的 travel.taipei fetch 在 CI 上會失敗，天真的 cron 每晚會把 `activities.json` 的台北紀錄洗成 **0 筆**。為了避免這件事，`fetch_activities.py`：
+
+1. 寫入前先讀取前一份 `activities.json`。
+2. 若某個 travel.taipei 來源回傳空的，就「保留（preserve）」前一份檔案裡該來源的紀錄。
+3. 時間窗口過濾仍會套用，所以真正過期的紀錄會自然消失。
+
+淨效果：每日 CI cron 保持 TDX 新鮮、台北那段原封不動。台北那段只有在開發者本機跑 `update-activities.sh`（住宅 IP）時才**真正**更新。
+
+### 為何 App 仍需要此 repo 的台北資料
+
+路徑 B（live `URLSession`）是主要來源，但 JSON 內的台北紀錄仍是以下情況的 fallback：
+
+- live fetch 完成前的首次啟動。
+- 沒網路 / travel.taipei 或 Cloudflare 中斷。
+- Cloudflare 較嚴格的網路（部分海外 / VPN IP）。
+
+所以 `update-activities.sh` 仍值得大約每月跑一次，且每次要做 App Store build 之前一定要跑，讓 fallback —— 以及 App 內建的快照 —— 維持夠新。
+
+### Endpoint 陷阱
+
+- **`Events/Activity`** — `begin`/`end` query 參數依活動日期過濾；我們送「今天→+240 天」的窗口。
+- **`Events/Calendar`** — `begin`/`end` 依 **posted（上架）日期**過濾，**不是**活動日期。送未來窗口會回空。我們不送這兩個參數，改由 client 端過濾。
+- 兩者每頁 30 筆。
+- 座標以**字串**形式回傳（`"25.1024"`）。
+- 欄位含上游的拼字錯誤，照原樣保留：`distric`、`co_rganizer`。
+- 描述是 HTML，有時嵌入整段 `<style>` —— 在通用 tag 移除前要先把 `<style>`/`<script>` **連同內容**整段移除，再解 entity。
+
+### Schema / payload
+
+`activities.json` 頂層：
+
+```jsonc
+{
+  "version": 2,
+  "generatedAt": "ISO-8601",
+  "windowDays": 240,
+  "count": 339,
+  "source": "TDX + travel.taipei",          // legacy 字串 — 保留
+  "sources": ["...", "...", "..."],           // 人類可讀清單
+  "sourcesFreshness": { "tdx": "ISO", ... },  // 上次成功 fetch 時間
+  "activities": [ /* Activity 紀錄 */ ]
+}
+```
+
+> **不要移除頂層的 `source` 字串。** App Store 上的 v1.0.5 build 早於 Optional-`source` 修正，缺這個字串就無法 decode payload。在 v1.0.5 還有人用之前都要保留。
+
+每筆 activity 紀錄帶 `source` = `"tdx"` / `"travel.taipei"` / `"travel.taipei.event"`，外加選填的 `detailUrl`。
+
+## 備註
+
+此 repo 只含衍生的公開資料，不含 DriveGO 原始碼或任何憑證。ETL 用的 API secrets 存在 GitHub Actions Secrets，永不出現在 repo 內。
