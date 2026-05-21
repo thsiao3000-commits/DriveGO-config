@@ -126,6 +126,7 @@ app repo at `DriveGO/Scripts/update-activities.sh` (it needs to write to
 both repos). It has two modes:
 
 ```bash
+cd /path/to/DriveGO                      # run from the DriveGO app repo root
 ./Scripts/update-activities.sh           # refresh the published JSON only
                                          # — routine, run roughly monthly
 ./Scripts/update-activities.sh --bundle  # ALSO refresh the app's bundled
@@ -294,6 +295,7 @@ bot 偵測主要靠 **TLS 指紋（JA3/JA4）**。client 送出的 TLS `ClientHe
 `DriveGO/Scripts/update-activities.sh`（因為它需要同時寫入兩個 repo）。它有兩種模式：
 
 ```bash
+cd /path/to/DriveGO                      # 在 DriveGO App repo 根目錄執行
 ./Scripts/update-activities.sh           # 只更新已發佈的 JSON
                                          # —— 例行作業，大約每月跑一次
 ./Scripts/update-activities.sh --bundle  # 連同 App 內建快照一起更新
