@@ -90,6 +90,25 @@ from this repo's JSON; Taipei is replaced by the live `URLSession`
 fetch whenever it succeeds, and falls back to the JSON's Taipei
 records (then the bundled snapshot) when it doesn't.
 
+### How the merge avoids duplicates
+
+The swap above is by **`source` prefix**, not by record identity.
+`ActivityService.rebuildActivities()` in the app: on a successful live
+fetch it drops *every* JSON record whose `source` starts with
+`travel.taipei` and appends the live set instead; on an empty live fetch
+it uses the JSON untouched. So the JSON's travel.taipei records (the
+backup this repo exists to provide) and the live ones are **mutually
+exclusive — never both**. There is no double-counting between them.
+
+**One known, currently-dormant gap.** The filter keeps every `tdx`
+record, and TDX is nationwide. A Taipei activity that appears in *both*
+TDX and travel.taipei would therefore show twice — once as `tdx-…`, once
+as `tt-…` — and the differing IDs defeat any ID-based dedup. As of
+2026-05-21 the ETL's `by city` summary shows **zero** TDX records for
+臺北市, so this never fires in practice. If a future run ever does show
+TDX-sourced Taipei activities, fix it by dropping `city == "臺北市"`
+records from the TDX slice in `fetch_activities.py`.
+
 ### The "preserve fallback"
 
 Because the ETL's travel.taipei fetch fails on CI, a naive cron run
@@ -307,6 +326,21 @@ bot 偵測主要靠 **TLS 指紋（JA3/JA4）**。client 送出的 TLS `ClientHe
 ```
 
 執行時 App 把兩者合併：TDX（及所有非臺北資料）來自此 repo 的 JSON；臺北市則在 live `URLSession` fetch 成功時用它取代，失敗時 fallback 到 JSON 內的臺北紀錄（再不行則用內建快照）。
+
+### 合併時如何避免重複
+
+上述的抽換是以 **`source` 前綴**為準，不是以紀錄身分為準。App 的
+`ActivityService.rebuildActivities()`：live fetch 成功時，丟掉 JSON 中所有
+`source` 開頭為 `travel.taipei` 的紀錄、改附加 live 那份；live fetch 為空時，
+直接原封不動用 JSON。所以 JSON 內的 travel.taipei 紀錄（此 repo 存在的目的就是
+提供這份備份）與 live 那份**互斥 —— 不會兩份並存**，兩者之間不會重複計算。
+
+**一個已知、目前沉睡的缺口。** 那個過濾條件會保留所有 `tdx` 紀錄，而 TDX 是全台
+資料。一筆同時出現在 TDX 與 travel.taipei 的臺北活動會因此顯示兩次 —— 一次是
+`tdx-…`、一次是 `tt-…` —— 兩者 ID 不同，任何以 ID 為基礎的去重都抓不到。截至
+2026-05-21，ETL 的 `by city` 摘要顯示臺北市的 TDX 紀錄為 **0 筆**，所以實務上
+從未發生。若日後某次執行的摘要真的出現 TDX 來源的臺北活動，就在
+`fetch_activities.py` 把 TDX 那段中 `city == "臺北市"` 的紀錄丟掉即可。
 
 ### 「preserve fallback」
 
