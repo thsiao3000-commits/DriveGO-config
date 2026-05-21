@@ -8,6 +8,10 @@ Sources
 * TDX Tourism Activity API
     - National coverage (12 cities with real data), all event categories
       (festivals, marathons, expos, ...). Taipei has near-zero data.
+    - Server-side OAuth. On a fetch failure (expired credentials, API
+      outage) the previous TDX records are preserved so the CI run
+      stays green; the stale sourcesFreshness.tdx timestamp is the
+      signal that the credentials need renewing.
 * travel.taipei Open API (Events/Activity)
     - Taipei-only, exhibition-focused. Very high description quality.
     - Requires Chrome TLS impersonation via curl_cffi to bypass the
@@ -89,8 +93,9 @@ def tdx_get_token() -> str:
     cid  = os.environ.get("TDX_CLIENT_ID")
     csec = os.environ.get("TDX_CLIENT_SECRET")
     if not cid or not csec:
-        print("ERROR: TDX_CLIENT_ID / TDX_CLIENT_SECRET missing", file=sys.stderr)
-        sys.exit(1)
+        # Raise (not sys.exit) so the caller's preserve fallback can
+        # catch it and keep the run green — see the TDX block in main().
+        raise RuntimeError("TDX_CLIENT_ID / TDX_CLIENT_SECRET missing")
     resp = requests.post(TDX_TOKEN_URL, data={
         "grant_type":    "client_credentials",
         "client_id":     cid,
@@ -416,16 +421,32 @@ def main():
     freshness: dict[str, str] = {}
 
     # --- TDX ---------------------------------------------------------
+    # TDX has no public CI block (unlike travel.taipei), but its OAuth
+    # credentials can expire and the API can have outages. Treat any
+    # failure the same way as the travel.taipei block: preserve the
+    # previous TDX slice and keep the run green, rather than wiping the
+    # nationwide activities or e-mailing a red run every day. The stale
+    # `sourcesFreshness.tdx` timestamp is the durable signal that a fix
+    # is needed — see the README "Operations" section.
     print("[1/6] Fetch TDX (token + paginated)...")
-    token = tdx_get_token()
-    tdx_raw = tdx_fetch_all(token)
-    print(f"      retrieved: {len(tdx_raw)}\n")
-    freshness["tdx"] = (now_iso if tdx_raw
-                        else prev_freshness.get("tdx", "unknown"))
+    try:
+        token = tdx_get_token()
+        tdx_raw = tdx_fetch_all(token)
+        print(f"      retrieved: {len(tdx_raw)}\n")
+    except Exception as e:
+        print(f"      ⚠️  TDX fetch FAILED: {e}", file=sys.stderr)
+        print( "      → preserving previous TDX records; run stays green\n")
+        tdx_raw = []
 
     print("[2/6] Normalize TDX...")
-    tdx_norm = [n for n in (tdx_normalize(a) for a in tdx_raw) if n is not None]
-    print(f"      kept: {len(tdx_norm)} (dropped {len(tdx_raw) - len(tdx_norm)})\n")
+    if tdx_raw:
+        tdx_norm = [n for n in (tdx_normalize(a) for a in tdx_raw) if n is not None]
+        freshness["tdx"] = now_iso
+        print(f"      kept: {len(tdx_norm)} (dropped {len(tdx_raw) - len(tdx_norm)})\n")
+    else:
+        tdx_norm = _preserved_from_previous("tdx")
+        freshness["tdx"] = prev_freshness.get("tdx", "unknown")
+        print(f"      (preserved {len(tdx_norm)} from previous run)\n")
 
     # --- travel.taipei /open-api/.../Events/Activity (展演) -----------
     print("[3/6] Fetch travel.taipei Events/Activity (curl_cffi)...")

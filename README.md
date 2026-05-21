@@ -190,6 +190,45 @@ release; the script does not commit the snapshot for you.
 Each activity record carries `source` = `"tdx"` / `"travel.taipei"` /
 `"travel.taipei.event"`, plus optional `detailUrl`.
 
+## Operations
+
+Two things can quietly stop the daily refresh. **Neither corrupts data or
+breaks the app** — the runtime fallback chain keeps it working — but both
+let the published `activities.json` slowly go stale, and both fail
+*silently* rather than loudly, so they are worth knowing about.
+
+### 1. GitHub auto-disables the cron after 60 days of no human commits
+
+GitHub disables a scheduled workflow after **60 days with no repository
+activity**, and commits pushed by `github-actions[bot]` — i.e. this
+workflow's own daily `data: update activities` commits — **do not count**.
+Only a commit from a real user resets the 60-day timer.
+
+In practice the roughly-monthly `update-activities.sh` run keeps the cron
+alive: it commits under the developer's git identity, which counts. But if
+this repo goes ~2 months untouched by a human, GitHub silently disables
+`update-activities.yml` and e-mails the repo owner.
+
+**To revive it:** Actions tab → "Update activities" workflow → *Enable
+workflow*. Or just push any human commit and it re-arms.
+
+### 2. TDX credential expiry or outage
+
+The ETL's TDX fetch uses OAuth credentials stored in GitHub Actions
+Secrets (`TDX_CLIENT_ID` / `TDX_CLIENT_SECRET`). If they expire, or TDX has
+an outage, the fetch fails.
+
+`fetch_activities.py` handles this the same way as the travel.taipei CI
+block: it **preserves the previous TDX records and the run stays green**.
+A failed TDX fetch therefore does *not* send a red-run e-mail — which is
+convenient, but means the failure is silent.
+
+The signal that TDX is failing is **not** a red run; it is a **stale
+`sourcesFreshness.tdx` timestamp** in `data/activities.json`. If that
+timestamp stops advancing day to day, open the latest Actions run log and
+look for a `⚠️  TDX fetch FAILED` line, then renew the credentials in
+Settings → Secrets and variables → Actions.
+
 ## Notes
 
 This repo contains derived public data only. It does not contain
@@ -343,6 +382,41 @@ CI cron 永遠不會更新臺北那段 —— Cloudflare 擋掉機房 IP —— 
 > **不要移除頂層的 `source` 字串。** App Store 上的 v1.0.5 build 早於 Optional-`source` 修正，缺這個字串就無法 decode payload。在 v1.0.5 還有人用之前都要保留。
 
 每筆 activity 紀錄帶 `source` = `"tdx"` / `"travel.taipei"` / `"travel.taipei.event"`，外加選填的 `detailUrl`。
+
+## 維運注意事項
+
+有兩件事會悄悄讓每日更新停擺。**兩者都不會毀損資料或弄壞 App**（執行時的
+fallback 鏈會撐住），但都會讓已發佈的 `activities.json` 慢慢變舊，而且都是
+*靜默*失敗、不會大聲報錯，所以值得先知道。
+
+### 1. GitHub 在 60 天無「人」commit 後自動停用 cron
+
+GitHub 會在 repo **連續 60 天沒有活動**後停用排程工作流程，而且
+`github-actions[bot]` 推的 commit —— 也就是這個 workflow 自己每天的
+`data: update activities` commit —— **不算數**。只有真實使用者的 commit 才會
+重置那個 60 天計時器。
+
+實務上，大約每月一次的 `update-activities.sh` 就能讓 cron 活著：它是用開發者的
+git 身分 commit，這算數。但如果這個 repo 連續約 2 個月沒有「人」碰過，GitHub 會
+靜默停用 `update-activities.yml`，並寄信給 repo owner。
+
+**要重新啟用：** Actions 分頁 → 「Update activities」workflow → *Enable
+workflow*。或直接推任何一個人為 commit，它就會重新啟動。
+
+### 2. TDX 憑證過期或服務中斷
+
+ETL 的 TDX 抓取使用存在 GitHub Actions Secrets 裡的 OAuth 憑證
+（`TDX_CLIENT_ID` / `TDX_CLIENT_SECRET`）。一旦憑證過期，或 TDX 服務中斷，
+抓取就會失敗。
+
+`fetch_activities.py` 處理這件事的方式跟 travel.taipei 的 CI 封鎖一樣：
+**沿用前一份的 TDX 紀錄，run 保持綠色**。所以 TDX 抓取失敗*不會*寄紅色失敗
+通知信 —— 這很方便，但也代表這個失敗是靜默的。
+
+判斷 TDX 是否失敗的訊號**不是**紅色 run，而是 `data/activities.json` 裡那個
+**沒有前進的 `sourcesFreshness.tdx` 時間戳**。如果那個時間戳一天天不再更新，
+就打開最新一次的 Actions run log，找 `⚠️  TDX fetch FAILED` 那一行，然後到
+Settings → Secrets and variables → Actions 更新憑證。
 
 ## 備註
 
