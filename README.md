@@ -6,7 +6,6 @@ Public configuration and data files consumed by the DriveGO iOS app.
 
 - `data/activities.json` — Taiwan tourism activities for the next 240 days.
 - `scripts/fetch_activities.py` — the ETL that produces the JSON.
-- `scripts/update-activities.sh` — manual one-shot refresh helper.
 - `.github/workflows/update-activities.yml` — daily cron that runs the ETL.
 - `.github/workflows/probe.yml` — ad-hoc reachability probe (debugging only).
 
@@ -120,6 +119,37 @@ So `update-activities.sh` is still worth running roughly monthly, and
 always before cutting an App Store build, to keep that fallback — and
 the bundled snapshot in the app — reasonably current.
 
+### Refreshing before a release
+
+`update-activities.sh` is **not** in this repo — it lives in the DriveGO
+app repo at `DriveGO/Scripts/update-activities.sh` (it needs to write to
+both repos). It has two modes:
+
+```bash
+./Scripts/update-activities.sh           # refresh the published JSON only
+                                         # — routine, run roughly monthly
+./Scripts/update-activities.sh --bundle  # ALSO refresh the app's bundled
+                                         # snapshot — REQUIRED before every
+                                         # App Store release
+```
+
+Both modes run the ETL locally (a developer's residential IP gets past
+Cloudflare), `git pull` this repo, then commit and push the new
+`data/activities.json`. The `--bundle` flag additionally overwrites
+`DriveGO/Resources/activities.json` — the snapshot compiled into the app
+binary.
+
+**Always run the `--bundle` form before cutting a new App Store build.**
+The bundled snapshot is the runtime fallback of last resort; if it is
+stale, a fresh install shows out-of-date Taipei activities until its first
+live `URLSession` fetch lands (and shows *only* stale data while offline).
+The daily CI cron never refreshes the Taipei slice — Cloudflare blocks the
+data-center IP — so the *only* thing that moves Taipei data, in both the
+published JSON and the bundled snapshot, is a developer running this
+script from a residential IP. After it finishes, commit the refreshed
+`DriveGO/Resources/activities.json` in the DriveGO repo as part of the
+release; the script does not commit the snapshot for you.
+
 ### Endpoint quirks
 
 - **`Events/Activity`** — `begin`/`end` query params filter by the
@@ -175,7 +205,6 @@ DriveGO iOS App 使用的公開設定與資料檔。
 
 - `data/activities.json` — 未來 240 天的台灣觀光活動。
 - `scripts/fetch_activities.py` — 產生 JSON 的 ETL 腳本。
-- `scripts/update-activities.sh` — 手動一鍵更新的輔助腳本。
 - `.github/workflows/update-activities.yml` — 每日跑 ETL 的排程。
 - `.github/workflows/probe.yml` — 臨時連線探針（僅除錯用）。
 
@@ -258,6 +287,30 @@ bot 偵測主要靠 **TLS 指紋（JA3/JA4）**。client 送出的 TLS `ClientHe
 - Cloudflare 較嚴格的網路（部分海外 / VPN IP）。
 
 所以 `update-activities.sh` 仍值得大約每月跑一次，且每次要做 App Store build 之前一定要跑，讓 fallback —— 以及 App 內建的快照 —— 維持夠新。
+
+### 發版前更新
+
+`update-activities.sh` **不在**此 repo —— 它放在 DriveGO App repo 的
+`DriveGO/Scripts/update-activities.sh`（因為它需要同時寫入兩個 repo）。它有兩種模式：
+
+```bash
+./Scripts/update-activities.sh           # 只更新已發佈的 JSON
+                                         # —— 例行作業，大約每月跑一次
+./Scripts/update-activities.sh --bundle  # 連同 App 內建快照一起更新
+                                         # —— 每次 App Store 發版前必跑
+```
+
+兩種模式都會在本機跑 ETL（開發者的住宅 IP 能通過 Cloudflare）、`git pull` 此 repo，
+再 commit 並 push 新的 `data/activities.json`。`--bundle` 旗標還會額外覆寫
+`DriveGO/Resources/activities.json` —— 也就是編譯進 App 二進位檔的快照。
+
+**每次要做新的 App Store build 之前，一定要跑 `--bundle` 形式。**
+內建快照是執行時最後一道 fallback；如果它過舊，全新安裝的 App 在第一次 live
+`URLSession` 抓取成功前都會顯示過時的臺北活動（離線時更是只剩這份舊資料）。每日的
+CI cron 永遠不會更新臺北那段 —— Cloudflare 擋掉機房 IP —— 所以**唯一**能讓臺北資料
+（不論是已發佈的 JSON 還是內建快照）更新的，就是開發者用住宅 IP 跑這個腳本。腳本跑完
+後，請在 DriveGO repo 把更新後的 `DriveGO/Resources/activities.json` commit 起來
+作為發版的一部分；腳本不會幫你 commit 快照。
 
 ### Endpoint 陷阱
 
