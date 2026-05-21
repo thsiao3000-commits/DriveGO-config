@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-05-21T04:05:46+00:00",
+  "generatedAt": "2026-05-21T20:50:05+00:00",
   "windowDays": 240,
-  "count": 342,
+  "count": 345,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -10,7 +10,7 @@
     "travel.taipei Open API (Events/Calendar)"
   ],
   "sourcesFreshness": {
-    "tdx": "2026-05-21T04:05:46+00:00",
+    "tdx": "2026-05-21T20:50:05+00:00",
     "travel.taipei": "2026-05-21T04:05:46+00:00",
     "travel.taipei.event": "2026-05-21T04:05:46+00:00"
   },
@@ -2161,6 +2161,21 @@
       "detailUrl": null
     },
     {
+      "id": "tdx-C2_382000000A_003858",
+      "source": "tdx",
+      "name": "2026藝術0距離Ｘ微光製造「到處跳舞在樹林」",
+      "city": "新北市",
+      "startDate": "2026-06-02",
+      "endDate": "2026-06-14",
+      "lat": 24.99618911743164,
+      "lng": 121.42875671386719,
+      "description": null,
+      "organizer": "新北市政府",
+      "phone": "886-2-29603456",
+      "category": "年度活動",
+      "detailUrl": null
+    },
+    {
       "id": "tdx-C2_376430000A_006672",
       "source": "tdx",
       "name": "2026桃園閩南文化節",
@@ -2187,6 +2202,21 @@
       "description": null,
       "organizer": "臺中市政府",
       "phone": "886-4-22289111",
+      "category": "年度活動",
+      "detailUrl": null
+    },
+    {
+      "id": "tdx-C2_382000000A_003857",
+      "source": "tdx",
+      "name": "115新北市巷弄藝起來巡演活動",
+      "city": "新北市",
+      "startDate": "2026-06-06",
+      "endDate": "2026-09-26",
+      "lat": 25.01231575012207,
+      "lng": 121.46562957763672,
+      "description": null,
+      "organizer": "新北市政府",
+      "phone": "886-2-29603456",
       "category": "年度活動",
       "detailUrl": null
     },
@@ -3312,6 +3342,21 @@
       "description": "1. 武陵村觀光景點及產業2. 推銷Pasibutbut音樂會系列活動 -------活動日期及地點暫訂，詳細內容待公布-------",
       "organizer": "延平鄉公所",
       "phone": "886-8-9561285",
+      "category": "年度活動",
+      "detailUrl": null
+    },
+    {
+      "id": "tdx-C2_397000000A_007655",
+      "source": "tdx",
+      "name": "2026大港閱冰",
+      "city": "高雄市",
+      "startDate": "2026-07-18",
+      "endDate": "2026-07-19",
+      "lat": 22.621320724487305,
+      "lng": 120.27538299560547,
+      "description": null,
+      "organizer": "高雄市政府觀光局",
+      "phone": "886-7-7995678",
       "category": "年度活動",
       "detailUrl": null
     },
