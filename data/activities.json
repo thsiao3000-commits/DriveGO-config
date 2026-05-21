@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-05-20T20:58:45+00:00",
+  "generatedAt": "2026-05-21T04:04:43+00:00",
   "windowDays": 240,
-  "count": 340,
+  "count": 342,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -10,9 +10,9 @@
     "travel.taipei Open API (Events/Calendar)"
   ],
   "sourcesFreshness": {
-    "tdx": "2026-05-20T20:58:45+00:00",
-    "travel.taipei": "2026-05-20T09:35:19+00:00",
-    "travel.taipei.event": "2026-05-20T09:35:19+00:00"
+    "tdx": "2026-05-21T04:04:43+00:00",
+    "travel.taipei": "2026-05-21T04:04:43+00:00",
+    "travel.taipei.event": "2026-05-21T04:04:43+00:00"
   },
   "activities": [
     {
@@ -1709,6 +1709,36 @@
       "phone": "886-7-7995678",
       "category": "年度活動",
       "detailUrl": null
+    },
+    {
+      "id": "tt-67276",
+      "source": "travel.taipei",
+      "name": "陳雲：時雨隙光",
+      "city": "臺北市",
+      "startDate": "2026-05-21",
+      "endDate": "2026-07-04",
+      "lat": 25.06,
+      "lng": 121.59,
+      "description": "伊日藝術計劃將於 2026 年 5 月 21 日推出陳雲個展《時雨隙光》。\n\r\n\n\r\n陳雲（b. 1988, Yilan）以組件式繪畫與近似蒙太奇的敘事結構，召喚潛沉於記憶深處的片段經驗。定焦場景、手部特寫、女性背影與微觀物件反覆出現，使觀看在拼接與重組之中生成多重意義。\n\r\n\n\r\n在當代藝術強調流動與不穩定的語境中，本次展覽將試圖於變動的記憶與感知之間建立一個觀看的座標。併組作品如同記憶的切片，將於牆面上構築出一種近乎微型劇場的觀看結構，延展出超越單一畫面的時間感。\n\r\n\n\r\n其視覺語言游移於人物光影、日常物件與抽象肌理之間。透過平塗層次的堆疊與畫面縫隙的保留，使觀看在連續與中斷之間往返，進一步開啟對情感與感知的細微辨識。\n\r\n本次展覽亦將回應對當代繪畫的持續提問：在不斷變動的條件之中，如何維持觀看的核心，並使變化成為形式與經驗的延伸。",
+      "organizer": "YIRI ARTS 伊日藝術計劃",
+      "phone": null,
+      "category": null,
+      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67276"
+    },
+    {
+      "id": "tt-67278",
+      "source": "travel.taipei",
+      "name": "黃姿瑜 : 馬鈴薯種在地下一樓",
+      "city": "臺北市",
+      "startDate": "2026-05-21",
+      "endDate": "2026-07-04",
+      "lat": 25.06,
+      "lng": 121.59,
+      "description": "伊日藝術計劃將於 2026 年 5 月 21 日推出黃姿瑜個展《馬鈴薯種在地下一樓》，為其首次於台北空間之個展。\n\r\n\n\r\n黃姿瑜（b. 1994, Taichung）以壓克力於木板創作，近年透過水分介入，使顏料在畫面中產生流動，發展出帶有時間感的繪畫語言。其作品從早期的長幅敘事，轉向小尺幅作品的並置，建立出更具節奏感與可閱讀性的視覺結構。\n\r\n \n\r\n畫面中反覆出現的「小人物」作為其標誌性元素，延伸出一種持續前行、指向未知的敘事軸線，也使作品在敘事性與形式之間取得平衡。\n\r\n\n\r\n本次展覽以「馬鈴薯」作為隱喻，回應藝術家在勞動與創作之間的轉換狀態，呈現其近年創作脈絡的重要轉折與發展。",
+      "organizer": "YIRI ARTS 伊日藝術計劃",
+      "phone": null,
+      "category": null,
+      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67278"
     },
     {
       "id": "tdx-C2_382000000A_003848",
