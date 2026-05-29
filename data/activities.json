@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-05-29T02:51:12+00:00",
+  "generatedAt": "2026-05-29T21:06:20+00:00",
   "windowDays": 240,
-  "count": 347,
+  "count": 349,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -10,9 +10,9 @@
     "travel.taipei Open API (Events/Calendar)"
   ],
   "sourcesFreshness": {
-    "tdx": "2026-05-29T02:51:12+00:00",
+    "tdx": "2026-05-29T21:06:20+00:00",
     "travel.taipei": "2026-05-29T02:51:12+00:00",
-    "travel.taipei.event": "2026-05-29T02:51:12+00:00"
+    "travel.taipei.event": "2026-05-29T21:06:20+00:00"
   },
   "activities": [
     {
@@ -423,7 +423,7 @@
     {
       "id": "tdx-C2_A15010200H_000005",
       "source": "tdx",
-      "name": "2026澎湖跳島車嘉年春季自行車領騎服務",
+      "name": "澎湖自行車春季領騎服務",
       "city": "澎湖縣",
       "startDate": "2026-03-01",
       "endDate": "2026-06-30",
@@ -1196,6 +1196,21 @@
       "lng": 121.51109313964844,
       "description": null,
       "organizer": "新北市政府、新北市政府文化局",
+      "phone": "886-2-29603456",
+      "category": "年度活動",
+      "detailUrl": null
+    },
+    {
+      "id": "tdx-C2_382000000A_003868",
+      "source": "tdx",
+      "name": "新美花嘿噴？",
+      "city": "新北市",
+      "startDate": "2026-04-25",
+      "endDate": "2026-08-16",
+      "lat": 24.952619552612305,
+      "lng": 121.35767364501953,
+      "description": null,
+      "organizer": "新北市政府文化局",
       "phone": "886-2-29603456",
       "category": "年度活動",
       "detailUrl": null
@@ -2401,6 +2416,21 @@
       "detailUrl": null
     },
     {
+      "id": "tdx-C2_397000000A_007676",
+      "source": "tdx",
+      "name": "2026乘風而騎｜三民城市客家文化單車遊",
+      "city": "高雄市",
+      "startDate": "2026-06-13",
+      "endDate": "2026-06-13",
+      "lat": 22.651540756225586,
+      "lng": 120.29633331298828,
+      "description": null,
+      "organizer": "高雄市政府觀光局",
+      "phone": "886-7-7995678",
+      "category": "年度活動",
+      "detailUrl": null
+    },
+    {
       "id": "tdx-C2_397000000A_007453",
       "source": "tdx",
       "name": "CNBLUE「3LOGY」2026 LIVE WORLD TOUR IN KAOHSIUNG",
@@ -2506,6 +2536,21 @@
       "detailUrl": null
     },
     {
+      "id": "tdx-C2_382000000A_003867",
+      "source": "tdx",
+      "name": "115年蘆洲區端午親子FUN粽樂",
+      "city": "新北市",
+      "startDate": "2026-06-19",
+      "endDate": "2026-06-19",
+      "lat": 25.085359573364258,
+      "lng": 121.46666717529297,
+      "description": null,
+      "organizer": "新北市蘆洲區公所",
+      "phone": "886-2-29603456",
+      "category": "年度活動",
+      "detailUrl": null
+    },
+    {
       "id": "tdx-C2_376430000A_006848",
       "source": "tdx",
       "name": "2026龍潭歸鄉文化節-桃園市市長盃龍舟賽系列活動",
@@ -2547,6 +2592,21 @@
       "description": "2026金門縣第18屆端午節龍舟競賽將於6月19日(五)端午節當天在金寧鄉古寧村雙鯉湖熱鬧登場。活動結合龍舟競賽、關聖帝君祭禮、龍舟開光點睛、民俗才藝表演、美食園遊會及學生寫生比賽，是金門年度重要的端午節慶盛事。每年活動皆吸引眾多隊伍參賽及大批民眾、遊客到場共襄盛舉。現場除了可欣賞精彩刺激的龍舟賽事，也能品嚐各式在地美食、感受傳統節慶氛圍，並結合親子與藝文元素，適合闔家同遊。龍舟競賽即日起開放報名至5月22日 17:30止，一律採網路報名；學生寫生比賽報名至6月12日 17:00止。歡迎大家端午連假走訪雙鯉湖，一同感受金門獨特的文化魅力與節慶活力。活動時間：8:00-17:00主辦單位：金門縣立體育場活動地點：古寧頭雙鯉湖連絡電話：鄭小姐 082-372361#31各活動時間及地點以主辦單位最新公告為主",
       "organizer": "金門縣政府",
       "phone": "886-8-2318823",
+      "category": "年度活動",
+      "detailUrl": null
+    },
+    {
+      "id": "tdx-C2_382000000A_003866",
+      "source": "tdx",
+      "name": "2026新北夏至音樂節",
+      "city": "新北市",
+      "startDate": "2026-06-20",
+      "endDate": "2026-06-21",
+      "lat": 24.952619552612305,
+      "lng": 121.35767364501953,
+      "description": null,
+      "organizer": "新北市文化局﻿",
+      "phone": "886-2-29603456",
       "category": "年度活動",
       "detailUrl": null
     },
@@ -3061,6 +3121,21 @@
       "detailUrl": null
     },
     {
+      "id": "tdx-C2_376430000A_006678",
+      "source": "tdx",
+      "name": "2026桃園國際動漫大展",
+      "city": "桃園市",
+      "startDate": "2026-07-04",
+      "endDate": "2026-07-19",
+      "lat": 24.99308967590332,
+      "lng": 121.29994201660156,
+      "description": null,
+      "organizer": "桃園市政府",
+      "phone": "886-3-3322101",
+      "category": "年度活動",
+      "detailUrl": null
+    },
+    {
       "id": "tdx-C2_376430000A_006852",
       "source": "tdx",
       "name": "2026桃園蓮花季",
@@ -3192,21 +3267,6 @@
       "description": null,
       "organizer": "高雄市政府",
       "phone": "886-7-7995678",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_376430000A_006678",
-      "source": "tdx",
-      "name": "2026桃園國際動漫大展",
-      "city": "桃園市",
-      "startDate": "2026-07-05",
-      "endDate": "2026-07-20",
-      "lat": 24.99308967590332,
-      "lng": 121.29994201660156,
-      "description": null,
-      "organizer": "桃園市政府",
-      "phone": "886-3-3322101",
       "category": "年度活動",
       "detailUrl": null
     },
@@ -5041,21 +5101,6 @@
       "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66401"
     },
     {
-      "id": "tt-event-66403",
-      "source": "travel.taipei.event",
-      "name": "臺北最High新年城-2027跨年活動",
-      "city": "臺北市",
-      "startDate": "2026-12-01",
-      "endDate": "2027-01-01",
-      "lat": 25.0375,
-      "lng": 121.564,
-      "description": "「一生必去、亞洲必遊」的臺北跨年活動，每年12月起舉辦前期活動，將臺北塑造為「臺北最High新年城」，讓國內外民眾感受臺北多元之城市風貌。12月31日晚間7時至隔日凌晨1時在市政府前市民廣場舉行跨年晚會，除邀請知名藝人接力演唱，並於主舞台周邊打造多元舞台活動，提供不同族群多種跨年體驗，最後在倒數時刻結合台北101新年大秀，與民眾一同倒數迎接新年到來。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66403"
-    },
-    {
       "id": "tdx-C2_376540000A_006232",
       "source": "tdx",
       "name": "115年收冬大戲",
@@ -5159,21 +5204,6 @@
       "phone": "886-8-2318823",
       "category": "年度活動",
       "detailUrl": null
-    },
-    {
-      "id": "tt-event-66404",
-      "source": "travel.taipei.event",
-      "name": "2026臺北馬拉松",
-      "city": "臺北市",
-      "startDate": "2026-12-20",
-      "endDate": "2026-12-20",
-      "lat": 25.0368,
-      "lng": 121.563,
-      "description": "臺北馬拉松創始於1986年，為國內規模最大、跑者平均完跑成績最快的城市馬拉松賽，賽道自臺北市政府前廣場起跑，行經臺北市24個特色地標，終點至臺北田徑場。本賽事為全球第一個獲得英國標準協會(BSI)碳足跡認證的馬拉松賽事，並於2024年首次晉升世界田徑總會(WA)金標籤認證，成為臺北市在城市行銷及觀光宣傳的代表性活動，更是邁向國際的運動名片。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66404"
     },
     {
       "id": "tdx-C2_A15010600H_000009",
