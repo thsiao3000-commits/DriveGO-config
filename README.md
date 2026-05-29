@@ -248,6 +248,16 @@ timestamp stops advancing day to day, open the latest Actions run log and
 look for a `⚠️  TDX fetch FAILED` line, then renew the credentials in
 Settings → Secrets and variables → Actions.
 
+### 3. TDX V1.0 → V2.1 migration trial
+
+TDX 觀光資料 V1.0 sunsets **2026-12-31**. The V2.1 `Event` endpoint
+(hosted on the 觀光署 media server, no OAuth) is already wired into
+`fetch_activities.py` behind `DRIVEGO_TDX_VERSION` (`v1` default / `v21`
+/ `compare`). The cron does not set the env var, so it stays on V1
+during the trial. To cut over, set `DRIVEGO_TDX_VERSION=v21` in the
+workflow `env:` block, or change the in-code default. Target cutover:
+by 2026-09-30.
+
 ## Notes
 
 This repo contains derived public data only. It does not contain
@@ -451,6 +461,14 @@ ETL 的 TDX 抓取使用存在 GitHub Actions Secrets 裡的 OAuth 憑證
 **沒有前進的 `sourcesFreshness.tdx` 時間戳**。如果那個時間戳一天天不再更新，
 就打開最新一次的 Actions run log，找 `⚠️  TDX fetch FAILED` 那一行，然後到
 Settings → Secrets and variables → Actions 更新憑證。
+
+### 3. TDX V1.0 → V2.1 改接試行
+
+TDX 觀光資料 V1.0 將於 **2026-12-31** 下架。V2.1 `Event` 端點（掛在觀光署
+media server，無需 OAuth）已用 `DRIVEGO_TDX_VERSION` 環境變數接進
+`fetch_activities.py`（`v1` 預設 / `v21` / `compare`）。cron 沒設這個 env
+var，所以試行期間仍走 V1。要切換的話，在 workflow `env:` 區塊設
+`DRIVEGO_TDX_VERSION=v21`、或直接改程式內的 default。建議切換期限：2026-09-30 前。
 
 ## 備註
 

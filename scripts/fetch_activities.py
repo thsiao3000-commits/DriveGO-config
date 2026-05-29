@@ -36,6 +36,12 @@ Usage
 Env required (loaded from .env in same dir, or runtime env in CI):
     TDX_CLIENT_ID
     TDX_CLIENT_SECRET
+
+Optional env (V1.0 → V2.1 trial, V1.0 sunsets 2026-12-31):
+    DRIVEGO_TDX_VERSION
+        v1       — default; current Activity endpoint
+        v21      — V2.1 Event endpoint (media.taiwan.net.tw, no auth)
+        compare  — fetch both, log a diff; output still uses V1
 """
 
 import html
@@ -61,10 +67,17 @@ except ImportError:
 SCRIPT_DIR = Path(__file__).resolve().parent
 OUT_PATH = SCRIPT_DIR.parent / "data" / "activities.json"
 
-# ---- TDX -------------------------------------------------------------
+# ---- TDX V1.0 (legacy; 觀光資訊 V1.0, sunsets 2026-12-31) -------------
 TDX_TOKEN_URL = "https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token"
 TDX_API_URL   = "https://tdx.transportdata.tw/api/basic/v2/Tourism/Activity"
 TDX_PAGE_SIZE = 500
+
+# ---- TDX V2.1 (觀光資料標準 V2.1; replaces V1.0) ----------------------
+# Despite the PDF naming the platform "TDX", the V2.1 Event service is
+# actually hosted on 觀光署's media server and needs no OAuth. JSON
+# format works (PDF saying "XML only" was wrong about the API output).
+# Page-size cap is also 500.
+TDX_V21_API_URL = "https://media.taiwan.net.tw/service/odata/V2/Tourism/Event"
 
 # ---- travel.taipei ---------------------------------------------------
 TT_ACTIVITY_URL = "https://www.travel.taipei/open-api/zh-tw/Events/Activity"
@@ -153,6 +166,102 @@ def tdx_normalize(raw: dict):
         "category":    (raw.get("Class1") or "").strip() or None,
         "detailUrl":   None,
     }
+
+
+# ======================================================================
+# TDX V2.1 (Event) fetch + normalize
+# ======================================================================
+
+def tdx_v21_fetch_all() -> list[dict]:
+    """OData paging against the V2.1 Event endpoint. No auth.
+    Same $top/$skip pattern as V1; server returns {"value": [...]}.
+    Empty value array signals end."""
+    out, skip = [], 0
+    while True:
+        resp = requests.get(
+            TDX_V21_API_URL,
+            params={"$top": TDX_PAGE_SIZE, "$skip": skip, "$format": "JSON"},
+            timeout=60,
+        )
+        resp.raise_for_status()
+        batch = resp.json().get("value") or []
+        if not batch:
+            break
+        out.extend(batch)
+        if len(batch) < TDX_PAGE_SIZE:
+            break
+        skip += TDX_PAGE_SIZE
+    return out
+
+
+def tdx_v21_normalize(raw: dict):
+    """V2.1 Event → unified Activity row. Output schema matches
+    tdx_normalize() so iOS doesn't need to change.
+
+    Notable differences vs V1.0:
+      - EventID has a new format (Event_<orgCode>_<seq>), so the
+        `tdx-<id>` key space is different from V1. iOS favorites keyed
+        by old IDs won't carry over at cutover.
+      - Address fields are nested under PostalAddress.
+      - Phone is now an array of {Tel, Ext}; we take the first Tel.
+      - Organizer was a string; V2.1 has an Organizations array of
+        objects with a Name field. Only ~18% of records populate it.
+      - Class1 was a string (e.g. "節慶活動"). EventClasses is now an
+        array of integer codes (1..N). Stored as str(code) here —
+        callers can map to display names when an EventClassEnum table
+        is wired in."""
+    if not raw.get("EventID") or not raw.get("EventName"):
+        return None
+    s = raw.get("StartDateTime") or ""
+    e = raw.get("EndDateTime") or ""
+    if len(s) < 10 or len(e) < 10:
+        return None
+    lat = raw.get("PositionLat")
+    lng = raw.get("PositionLon")
+    if lat is None or lng is None:
+        return None
+    addr    = raw.get("PostalAddress") or {}
+    phones  = raw.get("Telephones")    or []
+    orgs    = raw.get("Organizations") or []
+    classes = raw.get("EventClasses")  or []
+    first_tel = (phones[0].get("Tel") if phones else "") or ""
+    first_org = (orgs[0].get("Name") if orgs else "") or ""
+    return {
+        "id":          f"tdx-{raw['EventID']}",
+        "source":      "tdx",
+        "name":        raw["EventName"].strip(),
+        "city":        (addr.get("City") or "").strip() or None,
+        "startDate":   s[:10],
+        "endDate":     e[:10],
+        "lat":         float(lat),
+        "lng":         float(lng),
+        "description": clean_description(raw.get("Description")),
+        "organizer":   first_org.strip() or None,
+        "phone":       first_tel.strip() or None,
+        "category":    str(classes[0]) if classes else None,
+        "detailUrl":   (raw.get("WebsiteUrl") or "").strip() or None,
+    }
+
+
+def _diff_summary(v1: list[dict], v21: list[dict]) -> None:
+    """Side-by-side counts + per-city breakdown. Used by the
+    DRIVEGO_TDX_VERSION=compare path to eyeball the migration."""
+    from collections import Counter
+    print("--- V1.0 vs V2.1 diff ---")
+    print(f"  total:    V1={len(v1):4d}  V2.1={len(v21):4d}  Δ={len(v21)-len(v1):+d}")
+
+    def _stat(items, key):
+        return sum(1 for a in items if a.get(key))
+    for k in ("description", "organizer", "phone", "category", "detailUrl"):
+        a, b = _stat(v1, k), _stat(v21, k)
+        print(f"  with {k:<11s} V1={a:4d}  V2.1={b:4d}  Δ={b-a:+d}")
+
+    c1  = Counter((a.get("city") or "?") for a in v1)
+    c21 = Counter((a.get("city") or "?") for a in v21)
+    print(f"  by city:")
+    print(f"    {'city':<8s} {'V1':>5s} {'V2.1':>5s} {'Δ':>6s}")
+    for c in sorted(set(c1) | set(c21)):
+        print(f"    {c:<8s} {c1[c]:>5d} {c21[c]:>5d} {c21[c]-c1[c]:>+6d}")
 
 
 # ======================================================================
@@ -416,6 +525,18 @@ def main():
     load_dotenv(SCRIPT_DIR / ".env")
     print("=== DriveGO Activities ETL ===\n")
 
+    # Trial flag for the V1.0 → V2.1 migration (V1.0 sunsets 2026-12-31).
+    #   v1 (default) — current behavior; OAuth + /v2/Tourism/Activity
+    #   v21          — V2.1 Event endpoint on media.taiwan.net.tw (no auth)
+    #   compare      — fetch BOTH and print a diff; output still uses V1
+    #                  (read-only, safe to leave running in cron)
+    tdx_version = os.environ.get("DRIVEGO_TDX_VERSION", "v1").lower()
+    if tdx_version not in ("v1", "v21", "compare"):
+        print(f"  WARN: unknown DRIVEGO_TDX_VERSION={tdx_version!r}, defaulting to v1\n")
+        tdx_version = "v1"
+    if tdx_version != "v1":
+        print(f"  DRIVEGO_TDX_VERSION={tdx_version}\n")
+
     now_iso = datetime.now(timezone.utc).isoformat(timespec="seconds")
     prev_freshness = _previous_freshness()
     freshness: dict[str, str] = {}
@@ -428,25 +549,58 @@ def main():
     # nationwide activities or e-mailing a red run every day. The stale
     # `sourcesFreshness.tdx` timestamp is the durable signal that a fix
     # is needed — see the README "Operations" section.
-    print("[1/6] Fetch TDX (token + paginated)...")
-    try:
-        token = tdx_get_token()
-        tdx_raw = tdx_fetch_all(token)
-        print(f"      retrieved: {len(tdx_raw)}\n")
-    except Exception as e:
-        print(f"      ⚠️  TDX fetch FAILED: {e}", file=sys.stderr)
-        print( "      → preserving previous TDX records; run stays green\n")
-        tdx_raw = []
+    v1_norm: list[dict] = []
+    v21_norm: list[dict] = []
+
+    if tdx_version in ("v1", "compare"):
+        print("[1/6] Fetch TDX V1.0 (Activity, OAuth, paginated)...")
+        try:
+            token = tdx_get_token()
+            tdx_raw = tdx_fetch_all(token)
+            print(f"      retrieved: {len(tdx_raw)}\n")
+        except Exception as e:
+            print(f"      ⚠️  TDX V1.0 fetch FAILED: {e}", file=sys.stderr)
+            print( "      → preserving previous TDX records; run stays green\n")
+            tdx_raw = []
+        if tdx_raw:
+            v1_norm = [n for n in (tdx_normalize(a) for a in tdx_raw) if n is not None]
+
+    if tdx_version in ("v21", "compare"):
+        print("[1b/6] Fetch TDX V2.1 (Event, media.taiwan.net.tw, no auth)...")
+        try:
+            v21_raw = tdx_v21_fetch_all()
+            print(f"       retrieved: {len(v21_raw)}\n")
+        except Exception as e:
+            print(f"       ⚠️  V2.1 fetch FAILED: {e}", file=sys.stderr)
+            v21_raw = []
+        v21_norm = [n for n in (tdx_v21_normalize(a) for a in v21_raw) if n is not None]
 
     print("[2/6] Normalize TDX...")
-    if tdx_raw:
-        tdx_norm = [n for n in (tdx_normalize(a) for a in tdx_raw) if n is not None]
-        freshness["tdx"] = now_iso
-        print(f"      kept: {len(tdx_norm)} (dropped {len(tdx_raw) - len(tdx_norm)})\n")
+    # Pick which version feeds the output. `compare` is read-only: it
+    # still ships V1 so the cron run is safe to leave on, but logs a
+    # diff for eyeball verification.
+    if tdx_version == "v21":
+        tdx_norm = v21_norm
+        if v21_norm:
+            freshness["tdx"] = now_iso
+            print(f"      V2.1 kept: {len(v21_norm)}\n")
+        else:
+            tdx_norm = _preserved_from_previous("tdx")
+            freshness["tdx"] = prev_freshness.get("tdx", "unknown")
+            print(f"      (preserved {len(tdx_norm)} from previous run)\n")
     else:
-        tdx_norm = _preserved_from_previous("tdx")
-        freshness["tdx"] = prev_freshness.get("tdx", "unknown")
-        print(f"      (preserved {len(tdx_norm)} from previous run)\n")
+        tdx_norm = v1_norm
+        if v1_norm:
+            freshness["tdx"] = now_iso
+            print(f"      V1.0 kept: {len(v1_norm)}\n")
+        else:
+            tdx_norm = _preserved_from_previous("tdx")
+            freshness["tdx"] = prev_freshness.get("tdx", "unknown")
+            print(f"      (preserved {len(tdx_norm)} from previous run)\n")
+
+    if tdx_version == "compare":
+        _diff_summary(v1_norm, v21_norm)
+        print()
 
     # --- travel.taipei /open-api/.../Events/Activity (展演) -----------
     print("[3/6] Fetch travel.taipei Events/Activity (curl_cffi)...")
