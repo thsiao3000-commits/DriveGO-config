@@ -258,6 +258,19 @@ during the trial. To cut over, set `DRIVEGO_TDX_VERSION=v21` in the
 workflow `env:` block, or change the in-code default. Target cutover:
 by 2026-09-30.
 
+The **local diff workflow** (compare mode walkthrough, sample output,
+quiet-filter sed, V2.1 preview, reset) lives in the
+[DriveGO main repo README](https://github.com/thsiao3000-commits/DriveGO#tdx-v10--v21-migration-trial)
+— compare is read-only and runs from the app repo's Python script, not
+from this cron home.
+
+Reminders:
+
+- A **2026-09-15 cutover decision routine** is scheduled — email lands
+  at `thsiao3000@gmail.com` titled「【DriveGO】TDX V2.1 切換決策日 — 行動清單」.
+- On the day, tell Claude **"跑 TDX 切換"** and it'll pick up from the
+  project memory file `tdx-v21-migration.md`.
+
 ## Notes
 
 This repo contains derived public data only. It does not contain
@@ -469,6 +482,18 @@ media server，無需 OAuth）已用 `DRIVEGO_TDX_VERSION` 環境變數接進
 `fetch_activities.py`（`v1` 預設 / `v21` / `compare`）。cron 沒設這個 env
 var，所以試行期間仍走 V1。要切換的話，在 workflow `env:` 區塊設
 `DRIVEGO_TDX_VERSION=v21`、或直接改程式內的 default。建議切換期限：2026-09-30 前。
+
+**本機 diff 流程**（compare 模式步驟、樣本輸出、只看 diff 的 sed 過濾、V2.1 預覽、
+還原）放在
+[DriveGO 主 repo README](https://github.com/thsiao3000-commits/DriveGO#tdx-v10--v21-改接試行)
+—— compare 是讀取驗證用、跑在 app repo 的 Python script，不在 cron 這邊。
+
+提醒：
+
+- 已排定 **2026-09-15 切換決策日 routine**，到時 `thsiao3000@gmail.com` 會收到
+  「【DriveGO】TDX V2.1 切換決策日 — 行動清單」這封信。
+- 真要切換那天，跟 Claude 說 **「跑 TDX 切換」**，它會從專案記憶檔
+  `tdx-v21-migration.md` 接手。
 
 ## 備註
 
