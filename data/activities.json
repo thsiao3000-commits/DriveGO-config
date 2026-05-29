@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-05-29T02:45:50+00:00",
+  "generatedAt": "2026-05-29T02:51:12+00:00",
   "windowDays": 240,
   "count": 347,
   "source": "TDX + travel.taipei",
@@ -10,9 +10,9 @@
     "travel.taipei Open API (Events/Calendar)"
   ],
   "sourcesFreshness": {
-    "tdx": "2026-05-29T02:45:50+00:00",
-    "travel.taipei": "2026-05-29T02:45:50+00:00",
-    "travel.taipei.event": "2026-05-29T02:45:50+00:00"
+    "tdx": "2026-05-29T02:51:12+00:00",
+    "travel.taipei": "2026-05-29T02:51:12+00:00",
+    "travel.taipei.event": "2026-05-29T02:51:12+00:00"
   },
   "activities": [
     {
