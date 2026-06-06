@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-06-05T20:47:20+00:00",
+  "generatedAt": "2026-06-06T20:07:46+00:00",
   "windowDays": 240,
-  "count": 330,
+  "count": 328,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -10,7 +10,7 @@
     "travel.taipei Open API (Events/Calendar)"
   ],
   "sourcesFreshness": {
-    "tdx": "2026-06-05T20:47:20+00:00",
+    "tdx": "2026-06-06T20:07:46+00:00",
     "travel.taipei": "2026-06-05T20:47:20+00:00",
     "travel.taipei.event": "2026-06-03T21:47:27+00:00"
   },
@@ -689,21 +689,6 @@
       "phone": "886-4-22289111",
       "category": "年度活動",
       "detailUrl": null
-    },
-    {
-      "id": "tt-67132",
-      "source": "travel.taipei",
-      "name": "「彼得．辛默曼：繪畫規則」",
-      "city": "臺北市",
-      "startDate": "2026-04-11",
-      "endDate": "2026-06-06",
-      "lat": 25.0378,
-      "lng": 121.529,
-      "description": "路由藝術很榮幸與菲律賓馬尼拉大都會美術館（Metropolitan Museum of Manila｜The M）共同籌劃德國藝術家彼得・辛默曼（Peter Zimmermann，生於1956）個展「繪畫規則」（Painting Rules），此為辛默曼於菲律賓的首次個展，展覽將於2026年2月4日於馬尼拉大都會美術館開幕，並於4月11日由路由藝術 台北延續展出。\n\r\n\n\r\n「繪畫規則」以藝術家全新發展的貼紙裝置藝術為核心，結合環氧樹脂繪畫的新作，呈現其近年創作中一次關鍵性的轉向與實驗，引導觀眾重新思考在數位影像與人工智慧快速發展的當代語境。\n\r\n\n\r\n有別於過往以畫布為主要載體的展覽，「繪畫規則」將呈現辛默曼以貼紙為媒材所發展的裝置創作，藝術家透過貼紙作為可重複、可拆解、可重新組構的視覺單元，直接於空間中生成影像，此創作擴展藝術家長期關注的圖像轉譯手法，在某種意義上也回應了其早期的創作，因此在目前的油畫與環氧樹脂創作之間，搭建起一座連結過去與當下的橋樑，使藝術品從畫布中被釋放，進入空間與群體協作的層次，它們象徵著演算法如何滲透我們的日常生活，並持續影響我們的行為模式。",
-      "organizer": "NUNU FINE ART 路由藝術",
-      "phone": null,
-      "category": null,
-      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67132"
     },
     {
       "id": "tt-67096",
@@ -1694,21 +1679,6 @@
       "phone": "886-3-3322101",
       "category": "年度活動",
       "detailUrl": null
-    },
-    {
-      "id": "tt-67231",
-      "source": "travel.taipei",
-      "name": "【七海講堂】台灣味道",
-      "city": "臺北市",
-      "startDate": "2026-06-06",
-      "endDate": "2026-06-06",
-      "lat": 25.0787,
-      "lng": 121.537,
-      "description": "講題：台灣味道\n\r\n講者：焦桐教授\n\r\n\n\r\n台灣「飲食文學教父」焦桐教授，擅長以文字將味道化為動人故事，讓人一讀就餓、一聽就懂。即將登場的《台灣味道》，將帶您穿梭夜市與餐桌之間，從庶民小吃到精緻飲食，重新品味熟悉又迷人的台灣滋味，喚醒味蕾與記憶的共鳴。誠摯邀請大家踴躍報名，六月六日一起跟著焦桐教授，展開一場精彩的味覺探索之旅！",
-      "organizer": null,
-      "phone": "02-25326077轉分機121",
-      "category": null,
-      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67231"
     },
     {
       "id": "tdx-C2_376540000A_006264",
