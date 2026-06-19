@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-06-18T21:22:00+00:00",
+  "generatedAt": "2026-06-19T20:25:25+00:00",
   "windowDays": 240,
-  "count": 340,
+  "count": 334,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -10,7 +10,7 @@
     "travel.taipei Open API (Events/Calendar)"
   ],
   "sourcesFreshness": {
-    "tdx": "2026-06-18T21:22:00+00:00",
+    "tdx": "2026-06-19T20:25:25+00:00",
     "travel.taipei": "2026-06-12T21:02:01+00:00",
     "travel.taipei.event": "2026-06-09T20:55:36+00:00"
   },
@@ -1711,36 +1711,6 @@
       "detailUrl": null
     },
     {
-      "id": "tdx-C2_382000000A_003869",
-      "source": "tdx",
-      "name": "115年端午節活動「無形文化資產─淡水清水巖遶境文化深度體驗」",
-      "city": "新北市",
-      "startDate": "2026-06-19",
-      "endDate": "2026-06-19",
-      "lat": 25.178529739379883,
-      "lng": 121.43145751953125,
-      "description": null,
-      "organizer": "新北市立淡水古蹟博物館",
-      "phone": "886-2-29603456",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_382000000A_003867",
-      "source": "tdx",
-      "name": "115年蘆洲區端午親子FUN粽樂",
-      "city": "新北市",
-      "startDate": "2026-06-19",
-      "endDate": "2026-06-19",
-      "lat": 25.085359573364258,
-      "lng": 121.46666717529297,
-      "description": null,
-      "organizer": "新北市蘆洲區公所",
-      "phone": "886-2-29603456",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
       "id": "tdx-C2_382000000A_003886",
       "source": "tdx",
       "name": "金馬慶端陽",
@@ -1786,36 +1756,6 @@
       "detailUrl": null
     },
     {
-      "id": "tdx-C2_387000000A_010249",
-      "source": "tdx",
-      "name": "2026南屯穿木屐躦鯪鯉暨逍遙音樂町",
-      "city": "臺中市",
-      "startDate": "2026-06-19",
-      "endDate": "2026-06-19",
-      "lat": 24.21494483947754,
-      "lng": 120.66278076171875,
-      "description": null,
-      "organizer": "臺中市政府",
-      "phone": "886-4-22289111",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_387000000A_010242",
-      "source": "tdx",
-      "name": "2026大甲鐵砧山劍井取午時水活動",
-      "city": "臺中市",
-      "startDate": "2026-06-19",
-      "endDate": "2026-06-19",
-      "lat": 24.359670639038086,
-      "lng": 120.65000915527344,
-      "description": null,
-      "organizer": "臺中市政府",
-      "phone": "886-4-22289111",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
       "id": "tt-event-66373",
       "source": "travel.taipei.event",
       "name": "2026臺北國際龍舟錦標賽",
@@ -1829,21 +1769,6 @@
       "phone": null,
       "category": "節慶活動",
       "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66373"
-    },
-    {
-      "id": "tdx-C2_371020000A_004230",
-      "source": "tdx",
-      "name": "2026金門縣第十八屆端午節龍舟競賽",
-      "city": "金門縣",
-      "startDate": "2026-06-19",
-      "endDate": "2026-06-19",
-      "lat": 24.477519989013672,
-      "lng": 118.310302734375,
-      "description": "2026金門縣第18屆端午節龍舟競賽將於6月19日(五)端午節當天在金寧鄉古寧村雙鯉湖熱鬧登場。活動結合龍舟競賽、關聖帝君祭禮、龍舟開光點睛、民俗才藝表演、美食園遊會及學生寫生比賽，是金門年度重要的端午節慶盛事。每年活動皆吸引眾多隊伍參賽及大批民眾、遊客到場共襄盛舉。現場除了可欣賞精彩刺激的龍舟賽事，也能品嚐各式在地美食、感受傳統節慶氛圍，並結合親子與藝文元素，適合闔家同遊。龍舟競賽即日起開放報名至5月22日 17:30止，一律採網路報名；學生寫生比賽報名至6月12日 17:00止。歡迎大家端午連假走訪雙鯉湖，一同感受金門獨特的文化魅力與節慶活力。活動時間：8:00-17:00主辦單位：金門縣立體育場活動地點：古寧頭雙鯉湖連絡電話：鄭小姐 082-372361#31各活動時間及地點以主辦單位最新公告為主",
-      "organizer": "金門縣政府",
-      "phone": "886-8-2318823",
-      "category": "年度活動",
-      "detailUrl": null
     },
     {
       "id": "tdx-C2_397000000A_007704",
@@ -1901,21 +1826,6 @@
       "lng": 120.35948944091797,
       "description": null,
       "organizer": "高雄市政府",
-      "phone": "886-7-7995678",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_397000000A_007731",
-      "source": "tdx",
-      "name": "紙風車劇團【蕃薯森林奇遇記】",
-      "city": "高雄市",
-      "startDate": "2026-06-19",
-      "endDate": "2026-06-19",
-      "lat": 22.625619888305664,
-      "lng": 120.28746795654297,
-      "description": null,
-      "organizer": "高雄市政府運動發展局",
       "phone": "886-7-7995678",
       "category": "年度活動",
       "detailUrl": null
