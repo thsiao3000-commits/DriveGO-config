@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-07-13T20:12:59+00:00",
+  "generatedAt": "2026-07-14T20:08:31+00:00",
   "windowDays": 240,
-  "count": 286,
+  "count": 288,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -12,7 +12,7 @@
   "sourcesFreshness": {
     "tdx": "2026-06-29T20:48:20+00:00",
     "travel.taipei": "2026-07-08T20:18:39+00:00",
-    "travel.taipei.event": "2026-07-05T20:11:51+00:00"
+    "travel.taipei.event": "2026-07-14T20:08:31+00:00"
   },
   "activities": [
     {
@@ -801,10 +801,10 @@
       "name": "2026臺北夜市打牙祭",
       "city": "臺北市",
       "startDate": "2026-05-14",
-      "endDate": "2026-08-31",
+      "endDate": "2026-10-31",
       "lat": 25.0886,
       "lng": 121.524,
-      "description": "2026臺北夜市打牙祭，除了延續傳統「夜市神美食」及「明日之星獎」票選活動、辦理特定領域職人夜市吃美食小旅行、推出美食優惠券、夜市現場互動遊戲導客行銷、配合悠遊付及外送平台送超級好康優惠、FB留言打卡贈送精美禮品外、2026年將結合市府機關及各區區公所活動及資源進行夜市整合行銷，以推廣及提升臺北夜市經濟。",
+      "description": "2026臺北夜市打牙祭的主題為「今夜發牌 味蕾全開」，預計將今年得獎之52道「神美食」獎美食融入撲克牌中，每一張牌都是一張「美食名片」。\n\r\n\n\r\n今年也特別舉辦了代表各大夜市悠遊卡的圖面設計競賽，得獎作品將實體化成獨一無二的悠遊卡。\n\r\n「維力炸醬麵」也特別為本次活動進行聯名，民眾及觀光客還能帶著炸醬麵，請指定的夜市攤販料理成「隱藏版美食」。",
       "organizer": null,
       "phone": null,
       "category": "節慶活動",
@@ -1359,7 +1359,7 @@
       "endDate": "2026-08-06",
       "lat": 25.0851,
       "lng": 121.524,
-      "description": "臺北兒童藝術節是為兒童及青少年規劃的藝術節慶，致力於提供與成人劇場同樣精緻、藝術價值成熟的親子藝術創作，除引進優質國際兒童表演藝術節目，透過前進社區、校園演出與戶外演出等免費活動，將表演藝術帶進各個行政區的鄰里巷弄，讓孩子和表演藝術更接近。臺北兒童藝術節每年設定一個主題，讓參與觀眾當做探險的出發點，從當年的節目中，領會最富創造力的生命哲學。",
+      "description": "臺北兒童藝術節是為兒童及青少年規劃的藝術節慶，致力於提供與成人劇場同樣精緻、藝術價值成熟的親子藝術創作，除引進優質國際兒童表演藝術節目，透過前進社區、校園演出與戶外演出等免費活動，將表演藝術帶進各個行政區的鄰里巷弄，讓孩子和表演藝術更接近。臺北兒童藝術節每年設計的主題，讓參與觀眾當做探險的出發點，從當年的節目中，領會最富創造力的生命哲學。\r\n\n\r\n\n\r\n(官方網站：https://tpac.org.taipei/festival-tcaf)",
       "organizer": null,
       "phone": null,
       "category": "節慶活動",
@@ -2208,7 +2208,7 @@
     {
       "id": "tt-event-66377",
       "source": "travel.taipei.event",
-      "name": "2026光華數位新天地18週年慶活動 （日期暫定）",
+      "name": "光華數位新天地18週年慶活動",
       "city": "臺北市",
       "startDate": "2026-07-18",
       "endDate": "2026-08-16",
@@ -2394,7 +2394,7 @@
       "endDate": "2026-07-26",
       "lat": 25.0372,
       "lng": 121.567,
-      "description": "「2026臺北青年理想生活節」，以「生活即展演，行動即實驗」為核心，透過青創市集、音樂展演、青年表演舞臺、跨域策展等活動形式，帶你體驗臺北青年的多元樣貌與生活態度，並形塑獨特的城市風格。",
+      "description": "「2026臺北青年理想生活節」以「青年就是主角」為核心理念，規劃青創市集、主題特展、青年多元舞臺展演、國際文化體驗及知名藝人與樂團演出等豐富內容，邀請市民朋友共同感受臺北青年多元且充滿活力的生活樣貌與價值態度，打造青年展現自我、交流互動及實踐理想的舞臺，展現臺北獨具魅力的城市風格與青年能量。",
       "organizer": null,
       "phone": null,
       "category": "節慶活動",
@@ -2478,13 +2478,13 @@
     {
       "id": "tt-event-66387",
       "source": "travel.taipei.event",
-      "name": "2026 TALOMA' Taipei原住民族音樂季",
+      "name": "2026 TALOMA' Taipei原住民族音樂季暨八一原住民族週",
       "city": "臺北市",
       "startDate": "2026-07-28",
-      "endDate": "2026-08-01",
+      "endDate": "2026-08-02",
       "lat": 25.0441,
       "lng": 121.529,
-      "description": "2026 TALOMA’ Taipei 原住民族音樂季以「回家的聲音」為主題，持續打造屬於城市與部落之間的文化橋梁。活動透過舞台展演、市集互動、培訓成果發表與多族群合作演出，展現原住民族音樂的創新能量與文化深度。除延續林班歌大賽及音樂人才培育計畫外，更加入跨界創作舞台與青年策展行動，讓更多原民聲音在台北被聽見，成為城市中最有溫度的樂章。",
+      "description": "規劃帶狀活動帶動城市原民熱潮，八一原住民族週活動7月28日至31日於信義香堤大道率先開跑，包含舞台表演活動、原住民族創新族服走秀、傳統服飾體驗、原住民族文化展區及豐收市集。原住民族音樂季活動8月1日至2日於花博公園盛大登場，特邀請國際團隊帶來精彩樂舞交流，還有指標性原住民「林班歌大賽」，超強卡司輪番演唱，本活動培訓之音樂創作人才也將登台演出，展現臺北多元文化共榮魅力。",
       "organizer": null,
       "phone": null,
       "category": "節慶活動",
@@ -2534,21 +2534,6 @@
       "phone": "886-3-3322101",
       "category": "年度活動",
       "detailUrl": null
-    },
-    {
-      "id": "tt-event-66381",
-      "source": "travel.taipei.event",
-      "name": "2026台北國際美食節-漢堡嘉年華（日期暫定）",
-      "city": "臺北市",
-      "startDate": "2026-08-01",
-      "endDate": "2026-08-31",
-      "lat": 25.0717,
-      "lng": 121.522,
-      "description": "為推廣本市多元豐富的餐飲美食底蘊與美味，持續以「美食在台北 Tasting Taipei」品牌推廣本市美食產業，以「台北國際美食節」為主題推出系列活動，115年預計於8月辦理「漢堡嘉年華」活動，彙集50家以上知名品牌餐飲業者，透過市集方式吸引民眾前往遊逛消費，藉由一系列行銷，推廣本市多元美食。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66381"
     },
     {
       "id": "tdx-C2_376540000A_006241",
@@ -2761,6 +2746,21 @@
       "detailUrl": null
     },
     {
+      "id": "tt-event-66380",
+      "source": "travel.taipei.event",
+      "name": "2026臺北藝穗節",
+      "city": "臺北市",
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-30",
+      "lat": 25.0409,
+      "lng": 121.572,
+      "description": "「臺北藝穗節」主張開放自由的精神，提供藝術家一個多元、不設限、具實驗性，且能盡情迸發想像力的展演平臺。\n\r\n臺北藝穗節前進臺北各大街區，穿越市場、繞過小巷、爬個小山、走到河邊，尋找各類展演空間夥伴，並串連民間劇場的力量，藉此將藝術能量擴散至市民生活，也讓藝術家在創作之餘，有機會進行在地人文的探索。進一步也希望發揮群聚效應，激發更多文化空間的投入，豐富街區藝文氛圍，開拓未來觀眾。",
+      "organizer": null,
+      "phone": null,
+      "category": "節慶活動",
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66380"
+    },
+    {
       "id": "tdx-C2_376540000A_006247",
       "source": "tdx",
       "name": "115年度瑪洛阿瀧聯合豐年祭",
@@ -2851,30 +2851,15 @@
       "detailUrl": null
     },
     {
-      "id": "tt-event-66380",
-      "source": "travel.taipei.event",
-      "name": "2026臺北藝穗節",
-      "city": "臺北市",
-      "startDate": "2026-08-23",
-      "endDate": "2026-09-07",
-      "lat": 25.0409,
-      "lng": 121.572,
-      "description": "「臺北藝穗節」主張開放自由的精神，提供藝術家一個多元、不設限、具實驗性，且能盡情迸發想像力的展演平臺。\n\r\n臺北藝穗節前進臺北各大街區，穿越市場、繞過小巷、爬個小山、走到河邊，尋找各類展演空間夥伴，並串連民間劇場的力量，藉此將藝術能量擴散至市民生活，也讓藝術家在創作之餘，有機會進行在地人文的探索。進一步也希望發揮群聚效應，激發更多文化空間的投入，豐富街區藝文氛圍，開拓未來觀眾。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66380"
-    },
-    {
       "id": "tt-event-66385",
       "source": "travel.taipei.event",
       "name": "2026潮臺北TRENDY TAIPEI",
       "city": "臺北市",
-      "startDate": "2026-08-24",
+      "startDate": "2026-08-22",
       "endDate": "2026-09-06",
       "lat": 25.0527,
       "lng": 121.599,
-      "description": "「潮臺北 TRENDY TAIPEI」，串聯音樂、時尚、科技、視聽、遊戲、藝術，以城市行銷及產業脈動為核心，整合「產業趨勢」、「演唱會經濟」及「城市行動」三大領域，匯集大型演唱會、音樂表演、國際論壇、展覽、市集，整座城市化為創意實驗場，展現未來潮流趨勢影響力。",
+      "description": "本屆活動以「TAIPEI IN VIBES」為號召，提出一種以音樂驅動城市的想像，邀請人們登入這座城市主機，展開屬於自己的文化探索。\n\r\n從大型場館到街區巷弄，從舞台演出到日常生活，各種節奏與創作形式皆在這座城市主機中持續運行，讓多元能量於流動中交會，形塑出屬於臺北的文化樣貌。今年活動以城市行銷為核心，融合、延續並升級既有架構，以「演唱會經濟」、「產業趨勢」、「城市行動」串聯14項系列活動，建構跨場域、跨時段的城市參與網絡。音樂不再只是舞台上的展演，而是作為城市節奏，流動於街區與日常生活之中，使參與者在不同場景間穿梭，持續感受並創造多重VIBES。",
       "organizer": null,
       "phone": null,
       "category": "節慶活動",
@@ -2911,6 +2896,21 @@
       "detailUrl": null
     },
     {
+      "id": "tt-event-66381",
+      "source": "travel.taipei.event",
+      "name": "2026台北國際美食節-漢堡嘉年華",
+      "city": "臺北市",
+      "startDate": "2026-08-29",
+      "endDate": "2026-08-30",
+      "lat": 25.0717,
+      "lng": 121.522,
+      "description": "為推廣本市多元豐富的餐飲美食底蘊與美味，持續以「美食在台北 Tasting Taipei」品牌推廣本市美食產業，以「台北國際美食節」為主題推出系列活動，規劃於8月29日至30日辦理「漢堡嘉年華」活動，彙集50家以上知名品牌餐飲業者，透過市集方式吸引民眾前往遊逛消費，藉由一系列行銷，推廣本市多元美食。",
+      "organizer": null,
+      "phone": null,
+      "category": "節慶活動",
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66381"
+    },
+    {
       "id": "tdx-C2_376540000A_006282",
       "source": "tdx",
       "name": "2026東岸舖食節",
@@ -2924,21 +2924,6 @@
       "phone": "886-8-9326141",
       "category": "年度活動",
       "detailUrl": null
-    },
-    {
-      "id": "tt-event-66390",
-      "source": "travel.taipei.event",
-      "name": "2026臺北爵士音樂節（日期暫定）",
-      "city": "臺北市",
-      "startDate": "2026-09-01",
-      "endDate": "2026-10-31",
-      "lat": 25.0527,
-      "lng": 121.599,
-      "description": "以臺北都會的獨特氛圍，結合爵士樂國際化、即興、愜意的特性，辦理系列爵士音樂會，讓市民能欣賞各地爵士樂曲，體驗音樂走進生活的自在氛圍。\r\n\n\r\n\n\r\nFB粉絲專頁：https://www.facebook.com/2024Taipeijazzfestival\r\n\n\r\nIG粉絲專頁：https://www.instagram.com/taipei_jazz_festival/",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66390"
     },
     {
       "id": "tdx-C2_376540000A_006283",
@@ -3016,6 +3001,36 @@
       "detailUrl": null
     },
     {
+      "id": "tt-event-66390",
+      "source": "travel.taipei.event",
+      "name": "2026臺北爵士音樂節",
+      "city": "臺北市",
+      "startDate": "2026-09-04",
+      "endDate": "2026-10-11",
+      "lat": 25.0527,
+      "lng": 121.599,
+      "description": "2026臺北爵士音樂節預計於9月中旬至10月中旬盛大舉行，活動單元包括「感爵夜現場」在臺北12處知名爵士場域舉辦19場室內展演，「爵對爵士派對」特別挑選5處知名景點與藝文場所輪番推出12組演出；「臺北流行音樂中心Jazz Right主舞台」則安排三天11組國內外爵士樂手分庭抗禮。2026臺北爵士音樂節邀集國內外頂尖好手齊聚一堂，與臺北市民共同歡慶北爵20週年的特別時刻。\n\r\n\n\r\nFB粉絲專頁：https://www.facebook.com/share/1J5eiqxK1E/\n\r\nIG粉絲專頁：https://www.instagram.com/taipei_jazz_festival/",
+      "organizer": null,
+      "phone": null,
+      "category": "節慶活動",
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66390"
+    },
+    {
+      "id": "tt-event-66386",
+      "source": "travel.taipei.event",
+      "name": "2026臺北藝術節",
+      "city": "臺北市",
+      "startDate": "2026-09-04",
+      "endDate": "2026-10-25",
+      "lat": 25.0851,
+      "lng": 121.524,
+      "description": "臺北藝術節是臺北市政府自1998年起推行的重要文化政策，鼓勵年輕人創作，提供優秀藝術人才發揮創意，並整合相關藝文資源，展現藝術跨界合作豐富多元的重要平臺。每年夏天藉聚焦且密集的演出，推廣藝術教育的普及活動，給予市民質精深刻的美感體驗，為廣大民眾創造了這一代共同的美好記憶。同時，透過相關活動的舉辦，打開跨界合作的可能，活絡藝文產業，促進臺北國際觀光發展，將臺北文化城市的形象推向國際社會。\r\n\n\r\n\n\r\n(官方網站：https://tpac.org.taipei/festival-taipei)",
+      "organizer": null,
+      "phone": null,
+      "category": "節慶活動",
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66386"
+    },
+    {
       "id": "tdx-C2_371020000A_004318",
       "source": "tdx",
       "name": "金門縣書法學會―「福澤萬家話吉祥」文化會集書藝創作聯展",
@@ -3046,19 +3061,19 @@
       "detailUrl": null
     },
     {
-      "id": "tt-event-66386",
+      "id": "tt-event-66391",
       "source": "travel.taipei.event",
-      "name": "2026臺北藝術節",
+      "name": "2026臺北時裝週",
       "city": "臺北市",
       "startDate": "2026-09-11",
-      "endDate": "2026-09-28",
-      "lat": 25.0851,
-      "lng": 121.524,
-      "description": "臺北藝術節是臺北市政府自1998年起推行的重要文化政策，鼓勵年輕人創作，提供優秀藝術人才發揮創意，並整合相關藝文資源，展現藝術跨界合作豐富多元的重要平臺。每年夏天藉聚焦且密集的演出，推廣藝術教育的普及活動，給予市民質精深刻的美感體驗，為廣大民眾創造了這一代共同的美好記憶。同時，透過相關活動的舉辦，打開跨界合作的可能，活絡藝文產業，促進臺北國際觀光發展，將臺北文化城市的形象推向國際社會。",
+      "endDate": "2026-10-04",
+      "lat": 25.0527,
+      "lng": 121.599,
+      "description": "「2026臺北時裝週」於9、10月辦理，活動內容包含跨界時尚大秀、市民參與推廣活動及商圈風格店家串聯活動。今年時裝週以「Fashion is  」為主題，於10月3日在臺北流行音樂中心表演廳辦理，由獲選的6家臺灣設計師品牌Claudia Wang｜王子欣、PCES｜李玉琪&暢芷荺&Bruno Chung、JENN LEE｜李維錚、JUST IN XX ｜周裕穎、Story Wear｜陳冠百、BOB Jian｜簡國彥，展現2027春夏最新時裝，並與義大利經濟貿易文化推廣辦事處交流合作，於信義香堤大道擺設義大利傳統皮革工藝快閃店，及邀請義大利新銳時裝品牌參與跨界時尚大秀，本局將持續扶植臺北時裝設計、推動臺灣時裝設計師品牌，並與國際城市互相分享專業技術與經驗，與國際時尚產業接軌。",
       "organizer": null,
       "phone": null,
       "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66386"
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66391"
     },
     {
       "id": "tdx-C2_A15010600H_000007",
@@ -3123,13 +3138,13 @@
     {
       "id": "tt-event-66388",
       "source": "travel.taipei.event",
-      "name": "2026永樂布業商場42週年慶活動",
+      "name": "永樂布業商場42週年慶活動",
       "city": "臺北市",
       "startDate": "2026-09-18",
       "endDate": "2026-09-19",
       "lat": 25.0548,
       "lng": 121.51,
-      "description": "預計115年中秋後舉辦，在永樂廣場以記者會等活動方式把人潮帶往2、3樓，並在3樓八角樓展示布業相關展覽，及定期舉辦布業手作等方式維持聲量，後續依據攤商實際營運狀況及銷售專業規劃辦理主題活動，貼近市場脈動，提升營運績效，形塑布業特色商場。",
+      "description": "辦理永樂布業42週年慶活動，於永樂廣場舉辦開幕記者會及主場活動，串聯2、3樓布業商場，並於3樓八角樓規劃布業主題展覽及布藝手作體驗活動。後續將依攤商營運情形及市場需求，持續規劃相關主題活動，以提升商場營運績效，形塑永樂布業特色商場品牌形象。",
       "organizer": null,
       "phone": null,
       "category": "節慶活動",
@@ -3258,7 +3273,7 @@
     {
       "id": "tt-event-66389",
       "source": "travel.taipei.event",
-      "name": "2026商圈嘉年華-台北生活祭",
+      "name": "商圈嘉年華-台北生活祭",
       "city": "臺北市",
       "startDate": "2026-09-26",
       "endDate": "2026-09-28",
@@ -3269,21 +3284,6 @@
       "phone": null,
       "category": "節慶活動",
       "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66389"
-    },
-    {
-      "id": "tt-event-66391",
-      "source": "travel.taipei.event",
-      "name": "2026臺北時裝週（日期暫定）",
-      "city": "臺北市",
-      "startDate": "2026-10-01",
-      "endDate": "2026-10-31",
-      "lat": 25.0527,
-      "lng": 121.599,
-      "description": "於每年10月份以特定的主題，將獲選的臺灣時裝設計師品牌，結合創新數位、藝術表演及流行音樂元素，共同打造展演平臺，並邀請時尚名家，透過交流活動分享不同領域專業技術與經驗，擴散知識效益，為臺北時裝設計提供交流學習機會，擴大社群聲量，形塑城市時尚形象。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66391"
     },
     {
       "id": "tdx-C2_A15011100H_002490",
@@ -3468,13 +3468,13 @@
     {
       "id": "tt-event-66395",
       "source": "travel.taipei.event",
-      "name": "2026臺北國際牛肉麵節 (日期暫定）",
+      "name": "2026臺北國際牛肉麵節",
       "city": "臺北市",
       "startDate": "2026-10-09",
       "endDate": "2026-10-11",
       "lat": 25.0704,
       "lng": 121.521,
-      "description": "為推廣牛肉麵特色產業，規劃於10月假台北圓山花博長廊廣場辦理「2026臺北國際牛肉麵節」競賽活動，選出各組年度最佳牛肉麵，同時以牛肉麵市集活動，吸引民眾前來品嚐美味牛肉麵及觀賞競賽，藉以帶動本市牛肉麵產業商機。",
+      "description": "為推廣牛肉麵特色產業，規劃於10月9日至11日假台北圓山花博長廊廣場辦理「2026臺北國際牛肉麵節」競賽活動，選出各組年度最佳牛肉麵，同時以牛肉麵市集活動，吸引民眾前來品嚐美味牛肉麵及觀賞競賽，藉以帶動本市牛肉麵產業商機。",
       "organizer": null,
       "phone": null,
       "category": "節慶活動",
@@ -3519,7 +3519,7 @@
       "endDate": "2026-10-11",
       "lat": 25.0209,
       "lng": 121.52,
-      "description": "月圓人團圓！禾火OUT音樂節於中秋佳節前後舉辦，集結獨立樂團、饒舌、R&B、DJ 等多種類型演出，多元舞台華麗陣容，打造全台北最好聽、最好躺、最Chill的音樂節！",
+      "description": "月圓人團圓！秋OUT音樂節於中秋佳節前後舉辦，集結獨立樂團、饒舌、R&B、DJ 等多種類型演出，多元舞台華麗陣容，打造全台北最好聽、最好躺、最Chill的音樂節！",
       "organizer": null,
       "phone": null,
       "category": "節慶活動",
@@ -3571,6 +3571,21 @@
       "detailUrl": null
     },
     {
+      "id": "tt-event-66405",
+      "source": "travel.taipei.event",
+      "name": "2026出口音樂節",
+      "city": "臺北市",
+      "startDate": "2026-10-17",
+      "endDate": "2026-10-17",
+      "lat": 25.0851,
+      "lng": 121.524,
+      "description": "於捷運周邊廣場或場館舉辦之大型音樂活動，邀請年輕人最喜愛的流行樂團與歌手接力演出，為樂迷帶來難忘的音樂之夜，同時搭配捷運會員活動規劃，期活絡捷運週邊場域並帶動商圈發展。",
+      "organizer": null,
+      "phone": null,
+      "category": "節慶活動",
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66405"
+    },
+    {
       "id": "tdx-C2_371020000A_004239",
       "source": "tdx",
       "name": "金門坑道音樂節",
@@ -3599,6 +3614,21 @@
       "phone": "886-3-8875306",
       "category": "年度活動",
       "detailUrl": null
+    },
+    {
+      "id": "tt-event-66393",
+      "source": "travel.taipei.event",
+      "name": "2026臺北溫泉季",
+      "city": "臺北市",
+      "startDate": "2026-10-22",
+      "endDate": "2026-10-26",
+      "lat": 25.1369,
+      "lng": 121.502,
+      "description": "每年10月底秋涼時節，於新北投盛大展開，結合表演、展攤、公益、文化，推出一系列豐富精采的活動及遊程，吸引海內外遊客參與，活動並邀請國際城市帶來特色演出，讓民眾不用出國也能體驗到海外異國風情。",
+      "organizer": null,
+      "phone": null,
+      "category": "節慶活動",
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66393"
     },
     {
       "id": "tdx-C2_371020000A_004325",
@@ -3676,19 +3706,19 @@
       "detailUrl": null
     },
     {
-      "id": "tt-event-66393",
+      "id": "tt-event-66397",
       "source": "travel.taipei.event",
-      "name": "2026臺北溫泉季(日期暫定）",
+      "name": "2026臺北白晝之夜",
       "city": "臺北市",
-      "startDate": "2026-10-30",
-      "endDate": "2026-11-03",
-      "lat": 25.1369,
-      "lng": 121.502,
-      "description": "每年10月底11月初秋涼時節，於新北投盛大展開，結合表演、展攤、公益、文化，推出一系列豐富精采的活動及遊程，吸引海內外遊客參與，活動並邀請國際城市帶來特色演出，讓民眾不用出國也能體驗到海外異國風情。",
+      "startDate": "2026-10-31",
+      "endDate": "2026-11-01",
+      "lat": 25.0717,
+      "lng": 121.522,
+      "description": "臺北白晝之夜以「跨夜舉辦」、「公民參與」、「免費參加」精神，透過視覺藝術、表演藝術等作品，使城市化身為一夜限定的大型美術館。2026年以「Night ka shi夜卡西」為策展主題，從深植於常民生活的那卡西作為文化切入點，探討城市文化在日常中的轉譯與延續。透過當代藝術作品、表演藝術及藝術體驗等活動，拓展夜間公共藝術節慶的想像與可能，呈現城市在夜晚中持續流動的文化能量。",
       "organizer": null,
       "phone": null,
       "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66393"
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66397"
     },
     {
       "id": "tdx-C2_376540000A_006251",
@@ -4104,7 +4134,7 @@
       "endDate": "2026-12-31",
       "lat": 25.0297,
       "lng": 121.536,
-      "description": "為營造臺北濃厚耶誕節慶氛圍，透過辦理「2026臺北耶誕愛無限」活動，結合臺北特有「天堂路」之觀光文化特色，規劃新生南路周邊設置耶誕燈飾，並辦理耶誕音樂會，邀請歌手、團體帶來精彩表演，以提升本市冬季觀光熱度，吸引遊客前來旅遊。",
+      "description": "為營造臺北濃厚耶誕節慶氛圍，透過辦理「2026臺北耶誕愛無限」活動，結合臺北特有「天堂路」之觀光文化特色，規劃設置耶誕燈飾，並辦理耶誕音樂會，邀請歌手、團體帶來精彩表演，以提升本市冬季觀光熱度，吸引遊客前來旅遊。",
       "organizer": null,
       "phone": null,
       "category": "節慶活動",
