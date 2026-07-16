@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-07-15T20:06:38+00:00",
+  "generatedAt": "2026-07-16T20:01:17+00:00",
   "windowDays": 240,
-  "count": 288,
+  "count": 287,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -2127,21 +2127,6 @@
       "description": null,
       "organizer": "桃園市政府",
       "phone": "886-3-3322101",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_376540000A_006352",
-      "source": "tdx",
-      "name": "2026臺灣國際熱氣球嘉年華-熱氣球光雕音樂會｜鹿野高台",
-      "city": "臺東縣",
-      "startDate": "2026-07-16",
-      "endDate": "2026-07-16",
-      "lat": 22.91645050048828,
-      "lng": 121.12158966064453,
-      "description": "7/16 (四) 【熱氣球光雕FEAT無人機+煙火】活動地點｜鹿野鄉 鹿野高台活動時間｜19:00出演卡司｜韓國啦啦隊女神 南珉貞&李皓禎、Bii畢書盡▸ 主辦單位保有最終修改、解釋及取消本活動之權利",
-      "organizer": "臺東縣政府",
-      "phone": "886-8-9326141",
       "category": "年度活動",
       "detailUrl": null
     },
