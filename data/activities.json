@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-07-16T20:01:17+00:00",
+  "generatedAt": "2026-07-17T20:03:55+00:00",
   "windowDays": 240,
-  "count": 287,
+  "count": 286,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -2054,21 +2054,6 @@
       "phone": "02-25775601",
       "category": null,
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67538"
-    },
-    {
-      "id": "tdx-C2_376540000A_006248",
-      "source": "tdx",
-      "name": "115年度大武鄉「石中有話-大武石藝展」",
-      "city": "臺東縣",
-      "startDate": "2026-07-11",
-      "endDate": "2026-07-17",
-      "lat": 22.36469078063965,
-      "lng": 120.90763092041016,
-      "description": "一、 邀請石藝相關協會團體佈展。二、 開幕活動與當日多元表演。三、 周邊產業、手作及藝文市集。四、 活動紀念小物製作。展覽日期｜115年7月11日-7月17日活動地點｜大武鄉大武國中(965臺東縣大武鄉大武村復興路1號)-------活動時間及地點暫訂，詳細內容待公布-------",
-      "organizer": "臺東縣大武鄉公所",
-      "phone": "886-8-9791340",
-      "category": "年度活動",
-      "detailUrl": null
     },
     {
       "id": "tdx-C2_A15010300H_007049",
