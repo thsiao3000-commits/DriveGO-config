@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-07-19T20:05:43+00:00",
+  "generatedAt": "2026-07-20T20:18:54+00:00",
   "windowDays": 240,
-  "count": 280,
+  "count": 278,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -916,21 +916,6 @@
       "detailUrl": null
     },
     {
-      "id": "tdx-C2_371020000A_004425",
-      "source": "tdx",
-      "name": "烈嶼學區中小學美術聯展",
-      "city": "金門縣",
-      "startDate": "2026-06-05",
-      "endDate": "2026-07-20",
-      "lat": 24.43585968017578,
-      "lng": 118.31704711914062,
-      "description": "烈嶼學區中小學美術聯展06/05-07/20 08:00-17:30烈嶼鄉文化館二樓",
-      "organizer": "金門縣政府",
-      "phone": "886-8-2318823",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
       "id": "tdx-C2_382000000A_003857",
       "source": "tdx",
       "name": "115新北市巷弄藝起來巡演活動",
@@ -1124,21 +1109,6 @@
       "phone": null,
       "category": null,
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67430"
-    },
-    {
-      "id": "tt-67452",
-      "source": "travel.taipei",
-      "name": "《Invisible Signal 不可見的信號：當代生活的數位共生》 吳立欣Higer藝術個展",
-      "city": "臺北市",
-      "startDate": "2026-06-16",
-      "endDate": "2026-07-20",
-      "lat": 25.0455,
-      "lng": 121.531,
-      "description": "\"我們習慣了連線，卻忘記了如何離線。信號是救贖，也是無形的牢籠\"\n\r\n\n\r\n座落於科技與流行文化交匯核心的三創生活園區，全新當代藝術計畫空間 Neo-Dimension Contemporary（以下簡稱 NDC），NDC 採取國際藝術圈盛行的 「計畫空間（Project Space）」 模式營運，聚焦於數位藝術、科技藝術與跨域創作，致力於扶植具潛力的台灣創作者，為當代藝術注入更具實驗性與前瞻性的能量。\n\r\n▲展覽將透過「小孩、大人、未來」三個生命周期，層層遞進地勾勒出人類與數位信號之間的關聯（圖片來源：NDC Taiwan）\n\r\n\n\r\n本次NDC特別邀請藝術家吳立欣Higer一起創作出《Invisible Signal不可見的信號：當代生活的數位共生》展覽，在 21 世紀WiFi已不再只是傳輸數據的協議，它已演化為現代文明的隱形空氣，我們在其中呼吸、社交、工作與相愛，卻極少感知其存在，直到斷線產生的窒息感席捲而來，展覽將透過「小孩、大人、未來」三個生命周期，層層遞進地勾勒出人類與數位信號之間， 透過視覺語彙將抽象的頻率具象化，揭示我們如何從工具的使用者轉變為數據的共生體，這是一場關於便利、侵蝕與依存的深度對話。\n\r\n\n\r\n即日起在三創生活園區8樓展出，敬邀您一同來欣賞NDC這次所為您帶來，從單純的願望寄託到不可分割的生命綁定之過程。",
-      "organizer": null,
-      "phone": "0937034299",
-      "category": null,
-      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67452"
     },
     {
       "id": "tt-67378",
