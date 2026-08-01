@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-07-31T20:17:56+00:00",
+  "generatedAt": "2026-08-01T20:08:29+00:00",
   "windowDays": 240,
-  "count": 257,
+  "count": 254,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -731,21 +731,6 @@
       "lng": 120.2751693725586,
       "description": null,
       "organizer": "壽山動物園、野森動物學校",
-      "phone": "886-7-7995678",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_397000000A_007604",
-      "source": "tdx",
-      "name": "高雄市管樂團《動畫楽ノ祭》－日本動漫交響音樂會3",
-      "city": "高雄市",
-      "startDate": "2026-05-09",
-      "endDate": "2026-08-01",
-      "lat": 22.62299919128418,
-      "lng": 120.34243774414062,
-      "description": null,
-      "organizer": "高雄市管樂團",
       "phone": "886-7-7995678",
       "category": "年度活動",
       "detailUrl": null
@@ -1636,21 +1621,6 @@
       "detailUrl": null
     },
     {
-      "id": "tdx-C2_397000000A_007712",
-      "source": "tdx",
-      "name": "【漢餅文化館】舊振南 ·夏躍星空",
-      "city": "高雄市",
-      "startDate": "2026-07-04",
-      "endDate": "2026-08-01",
-      "lat": 22.622299194335938,
-      "lng": 120.38939666748047,
-      "description": null,
-      "organizer": "高雄市政府",
-      "phone": "886-7-7995678",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
       "id": "tdx-C2_382000000A_003914",
       "source": "tdx",
       "name": "2026林園尋藝",
@@ -2082,21 +2052,6 @@
       "description": "想親身感受阿美族最原汁原味的文化？來成功鎮 Madawdaw 文化節就對了！傳統歌舞、樂器演奏、手作工藝與部落美食，每個角落都充滿故事感。旅人可近距離體驗、拍照打卡，感受部落熱情與文化力道，留下難忘的原民文化回憶。 -------活動日期暫訂，詳細內容待公布-------",
       "organizer": "成功鎮公所",
       "phone": "886-8-9851004",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_376540000A_006253",
-      "source": "tdx",
-      "name": "2026南迴慢活節暨金針創意料理競賽",
-      "city": "臺東縣",
-      "startDate": "2026-08-01",
-      "endDate": "2026-08-01",
-      "lat": 22.634370803833008,
-      "lng": 120.97225952148438,
-      "description": "一、金針花季暨賞花專車開幕式二、金針創意料理競賽及免費試吃推廣活動三、選拔年度最佳金針料理四、搭配抒情音樂會及微型美食市集-------活動日期及地點暫訂，詳細內容待公布-------",
-      "organizer": "太麻里鄉公所",
-      "phone": "886-8-9781301",
       "category": "年度活動",
       "detailUrl": null
     },
