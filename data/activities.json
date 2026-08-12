@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-08-11T19:59:13+00:00",
+  "generatedAt": "2026-08-12T19:59:14+00:00",
   "windowDays": 240,
-  "count": 240,
+  "count": 237,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -1831,36 +1831,6 @@
       "detailUrl": null
     },
     {
-      "id": "tdx-C2_371020000A_004314",
-      "source": "tdx",
-      "name": "金門縣水墨畫協會-楊誠國水墨畫展",
-      "city": "金門縣",
-      "startDate": "2026-07-25",
-      "endDate": "2026-08-12",
-      "lat": 24.44087028503418,
-      "lng": 118.3235092163086,
-      "description": "金門縣水墨畫協會-楊誠國水墨畫展展出日期｜2026/7/25－2026/8/12展出地點｜金門縣文化局第一場展",
-      "organizer": "金門縣政府",
-      "phone": "886-8-2318823",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_371020000A_004315",
-      "source": "tdx",
-      "name": "金門縣陶藝學會-金門縣陶藝家聯展",
-      "city": "金門縣",
-      "startDate": "2026-07-25",
-      "endDate": "2026-08-12",
-      "lat": 24.44087028503418,
-      "lng": 118.3235092163086,
-      "description": "金門縣陶藝學會-金門縣陶藝家聯展展出日期｜2026/7/25－2026/8/12展出地點｜金門縣文化局第二場展",
-      "organizer": "金門縣政府",
-      "phone": "886-8-2318823",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
       "id": "tt-67664",
       "source": "travel.taipei",
       "name": "魔幻時光：日治時期臺灣電影娛樂文化展",
@@ -1977,21 +1947,6 @@
       "description": "金針山各花區導覽及金針山人文遊賞-------活動日期及地點暫訂，詳細內容待公布-------",
       "organizer": "太麻里鄉公所",
       "phone": "886-8-9781301",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_397000000A_007526",
-      "source": "tdx",
-      "name": "2026星海尋蹤｜英仙座流星雨觀測活動",
-      "city": "高雄市",
-      "startDate": "2026-08-12",
-      "endDate": "2026-08-12",
-      "lat": 22.832569122314453,
-      "lng": 120.53038024902344,
-      "description": null,
-      "organizer": "大角天文小鎮",
-      "phone": "886-7-7995678",
       "category": "年度活動",
       "detailUrl": null
     },
