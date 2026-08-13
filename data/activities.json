@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-08-12T19:59:14+00:00",
+  "generatedAt": "2026-08-13T19:54:34+00:00",
   "windowDays": 240,
-  "count": 237,
+  "count": 236,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -1947,21 +1947,6 @@
       "description": "金針山各花區導覽及金針山人文遊賞-------活動日期及地點暫訂，詳細內容待公布-------",
       "organizer": "太麻里鄉公所",
       "phone": "886-8-9781301",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_376540000A_006356",
-      "source": "tdx",
-      "name": "2026臺灣國際熱氣球嘉年華-熱氣球光雕音樂會｜臺東國際地標",
-      "city": "臺東縣",
-      "startDate": "2026-08-13",
-      "endDate": "2026-08-13",
-      "lat": 22.752849578857422,
-      "lng": 121.16425323486328,
-      "description": "8/13 (四) 【熱氣球光雕FEAT無人機+煙火】活動地點｜臺東市 國際地標活動時間｜19:00出演卡司｜郭靜、范逸臣▸ 主辦單位保有最終修改、解釋及取消本活動之權利",
-      "organizer": "臺東縣政府",
-      "phone": "886-8-9326141",
       "category": "年度活動",
       "detailUrl": null
     },
