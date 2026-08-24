@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-08-23T19:20:05+00:00",
+  "generatedAt": "2026-08-24T19:26:49+00:00",
   "windowDays": 240,
-  "count": 214,
+  "count": 215,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -11,7 +11,7 @@
   ],
   "sourcesFreshness": {
     "tdx": "2026-06-29T20:48:20+00:00",
-    "travel.taipei": "2026-08-23T19:20:05+00:00",
+    "travel.taipei": "2026-08-24T19:26:49+00:00",
     "travel.taipei.event": "2026-08-21T19:23:25+00:00"
   },
   "activities": [
@@ -1739,6 +1739,21 @@
       "phone": "886-8-2318823",
       "category": "年度活動",
       "detailUrl": null
+    },
+    {
+      "id": "tt-67755",
+      "source": "travel.taipei",
+      "name": "存在的輕聲 ─ 對話 吳偉谷陶塑個展",
+      "city": "臺北市",
+      "startDate": "2026-08-19",
+      "endDate": "2026-08-30",
+      "lat": 25.0346,
+      "lng": 121.522,
+      "description": "藝術家吳偉谷以幾何造形、空間配置及陶土材質為創作語彙，呈現陶土厚實的質感與結構關係；透過27件陶塑作品，探索抽象形式、空間與感知之間的微妙關係。\n\r\n\n\r\n展覽特色除作品本身外，更重視整體空間規劃，藉由尺度變化、疏密節奏與留白，引導觀眾在行走、駐足與不同視角中感受作品，形塑身體與空間共同參與的觀看經驗。作品不提供單一詮釋，而是邀請觀眾在觀看過程中，感受存在與感知持續生成的藝術意涵。",
+      "organizer": "吳偉谷",
+      "phone": null,
+      "category": null,
+      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67755"
     },
     {
       "id": "tt-event-66385",
