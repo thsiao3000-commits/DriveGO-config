@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-08-26T21:38:43+00:00",
+  "generatedAt": "2026-08-28T02:24:59+00:00",
   "windowDays": 240,
-  "count": 214,
+  "count": 213,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -12,7 +12,7 @@
   "sourcesFreshness": {
     "tdx": "2026-06-29T20:48:20+00:00",
     "travel.taipei": "2026-08-24T19:26:49+00:00",
-    "travel.taipei.event": "2026-08-21T19:23:25+00:00"
+    "travel.taipei.event": "2026-08-28T02:24:59+00:00"
   },
   "activities": [
     {
@@ -1649,21 +1649,6 @@
       "phone": "0937034299",
       "category": null,
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67708"
-    },
-    {
-      "id": "tdx-C2_376430000A_006888",
-      "source": "tdx",
-      "name": "2026桃園電影節",
-      "city": "桃園市",
-      "startDate": "2026-08-14",
-      "endDate": "2026-08-27",
-      "lat": 24.993410110473633,
-      "lng": 121.29696655273438,
-      "description": "￭相關細節可電洽桃園市文化基金會(03-3315212#461) 2026桃園電影節隆重邁入第十三屆，今年以「眺望 Prospect & Vision」為主題。本屆桃園電影節將於8月14日至8月27日盛大登場。10大主題、逾百場放映，更精心選映多部結合人工智慧、動畫創作、虛擬製作等作品，探索電影在科技浪潮衝擊下所迸發的全新可能。邀請粉絲們一起「眺望」未來，在光影之間看見影像的更多可能！活動內容尚待主辦單位公佈",
-      "organizer": "桃園市政府",
-      "phone": "886-3-3322101",
-      "category": "年度活動",
-      "detailUrl": null
     },
     {
       "id": "tt-event-66380",
