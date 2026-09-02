@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-01T21:35:07+00:00",
+  "generatedAt": "2026-09-02T21:35:10+00:00",
   "windowDays": 240,
-  "count": 185,
+  "count": 183,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -1244,36 +1244,6 @@
       "phone": null,
       "category": null,
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67744"
-    },
-    {
-      "id": "tdx-C2_371020000A_004317",
-      "source": "tdx",
-      "name": "金門縣水墨畫協會―兩岸三地水墨畫交流展",
-      "city": "金門縣",
-      "startDate": "2026-08-15",
-      "endDate": "2026-09-02",
-      "lat": 24.44087028503418,
-      "lng": 118.3235092163086,
-      "description": "金門縣水墨畫協會―兩岸三地水墨畫交流展展出日期｜2026/8/15－2026/9/2展出地點｜金門縣文化局第二場展",
-      "organizer": "金門縣政府",
-      "phone": "886-8-2318823",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_371020000A_004316",
-      "source": "tdx",
-      "name": "金門縣美術學會―呂光浯、黎明姮書畫雙人展",
-      "city": "金門縣",
-      "startDate": "2026-08-15",
-      "endDate": "2026-09-02",
-      "lat": 24.44087028503418,
-      "lng": 118.3235092163086,
-      "description": "金門縣美術學會―呂光浯、黎明姮書畫雙人展展出日期｜2026/8/15－2026/9/2展出地點｜金門縣文化局第一場展",
-      "organizer": "金門縣政府",
-      "phone": "886-8-2318823",
-      "category": "年度活動",
-      "detailUrl": null
     },
     {
       "id": "tt-event-66385",
