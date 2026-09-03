@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-02T21:35:10+00:00",
+  "generatedAt": "2026-09-03T21:33:17+00:00",
   "windowDays": 240,
   "count": 183,
   "source": "TDX + travel.taipei",
@@ -12,7 +12,7 @@
   "sourcesFreshness": {
     "tdx": "2026-06-29T20:48:20+00:00",
     "travel.taipei": "2026-09-01T21:35:07+00:00",
-    "travel.taipei.event": "2026-08-29T01:58:42+00:00"
+    "travel.taipei.event": "2026-09-03T21:33:17+00:00"
   },
   "activities": [
     {
@@ -1471,6 +1471,21 @@
       "detailUrl": null
     },
     {
+      "id": "tt-event-66391",
+      "source": "travel.taipei.event",
+      "name": "2026臺北時裝週",
+      "city": "臺北市",
+      "startDate": "2026-09-11",
+      "endDate": "2026-10-04",
+      "lat": 25.0527,
+      "lng": 121.599,
+      "description": "「2026臺北時裝週」於9、10月辦理，活動內容包含跨界時尚大秀、市民參與推廣活動及商圈風格店家串聯活動。今年時裝週以「Fashion is  」為主題，於10月3日在臺北流行音樂中心表演廳辦理，由獲選的6家臺灣設計師品牌Claudia Wang｜王子欣、PCES｜李玉琪&暢芷荺&Bruno Chung、JENN LEE｜李維錚、JUST IN XX ｜周裕穎、Story Wear｜陳冠百、BOB Jian｜簡國彥，展現2027春夏最新時裝，並與義大利經濟貿易文化推廣辦事處交流合作，於信義香堤大道擺設義大利傳統皮革工藝快閃店，及邀請義大利新銳時裝品牌參與跨界時尚大秀，本局將持續扶植臺北時裝設計、推動臺灣時裝設計師品牌，並與國際城市互相分享專業技術與經驗，與國際時尚產業接軌。",
+      "organizer": null,
+      "phone": null,
+      "category": "節慶活動",
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66391"
+    },
+    {
       "id": "tdx-C2_A15010600H_000007",
       "source": "tdx",
       "name": "2026 日月潭花火音樂嘉年華",
@@ -1964,21 +1979,6 @@
       "phone": "886-7-7995678",
       "category": "年度活動",
       "detailUrl": null
-    },
-    {
-      "id": "tt-event-66391",
-      "source": "travel.taipei.event",
-      "name": "2026臺北時裝週",
-      "city": "臺北市",
-      "startDate": "2026-10-15",
-      "endDate": "2026-10-18",
-      "lat": 25.0527,
-      "lng": 121.599,
-      "description": "「2026臺北時裝週」於9、10月辦理，活動內容包含跨界時尚大秀、市民參與推廣活動及商圈風格店家串聯活動。今年時裝週以「Fashion is  」為主題，於10月3日在臺北流行音樂中心表演廳辦理，由獲選的6家臺灣設計師品牌Claudia Wang｜王子欣、PCES｜李玉琪&暢芷荺&Bruno Chung、JENN LEE｜李維錚、JUST IN XX ｜周裕穎、Story Wear｜陳冠百、BOB Jian｜簡國彥，展現2027春夏最新時裝，並與義大利經濟貿易文化推廣辦事處交流合作，於信義香堤大道擺設義大利傳統皮革工藝快閃店，及邀請義大利新銳時裝品牌參與跨界時尚大秀，本局將持續扶植臺北時裝設計、推動臺灣時裝設計師品牌，並與國際城市互相分享專業技術與經驗，與國際時尚產業接軌。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66391"
     },
     {
       "id": "tdx-C2_376430000A_006709",
