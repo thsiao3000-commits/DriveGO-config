@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-03T21:33:17+00:00",
+  "generatedAt": "2026-09-04T21:13:51+00:00",
   "windowDays": 240,
   "count": 183,
   "source": "TDX + travel.taipei",
@@ -12,7 +12,7 @@
   "sourcesFreshness": {
     "tdx": "2026-06-29T20:48:20+00:00",
     "travel.taipei": "2026-09-01T21:35:07+00:00",
-    "travel.taipei.event": "2026-09-03T21:33:17+00:00"
+    "travel.taipei.event": "2026-09-04T21:13:51+00:00"
   },
   "activities": [
     {
