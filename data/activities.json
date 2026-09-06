@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-05T20:55:30+00:00",
+  "generatedAt": "2026-09-06T21:01:41+00:00",
   "windowDays": 240,
-  "count": 183,
+  "count": 180,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -297,21 +297,6 @@
       "description": null,
       "organizer": "臺中市政府",
       "phone": "886-4-22289111",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_382000000A_003766",
-      "source": "tdx",
-      "name": "托馬斯．薩拉切諾：共織宇宙",
-      "city": "新北市",
-      "startDate": "2026-03-21",
-      "endDate": "2026-09-06",
-      "lat": 24.952619552612305,
-      "lng": 121.35767364501953,
-      "description": null,
-      "organizer": "新北市美術館",
-      "phone": "886-2-29603456",
       "category": "年度活動",
       "detailUrl": null
     },
@@ -717,21 +702,6 @@
       "description": null,
       "organizer": "西拉雅國家風景區管理處",
       "phone": "886-6-6900399",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_382000000A_003882",
-      "source": "tdx",
-      "name": "2026新北市河海音樂季",
-      "city": "新北市",
-      "startDate": "2026-06-12",
-      "endDate": "2026-09-06",
-      "lat": 25.01231575012207,
-      "lng": 121.46562957763672,
-      "description": null,
-      "organizer": "新北市政府",
-      "phone": "886-2-29603456",
       "category": "年度活動",
       "detailUrl": null
     },
@@ -1244,21 +1214,6 @@
       "phone": null,
       "category": null,
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67744"
-    },
-    {
-      "id": "tt-event-66385",
-      "source": "travel.taipei.event",
-      "name": "2026潮臺北TRENDY TAIPEI",
-      "city": "臺北市",
-      "startDate": "2026-08-22",
-      "endDate": "2026-09-06",
-      "lat": 25.0527,
-      "lng": 121.599,
-      "description": "本屆活動以「TAIPEI IN VIBES」為號召，提出一種以音樂驅動城市的想像，邀請人們登入這座城市主機，展開屬於自己的文化探索。\n\r\n從大型場館到街區巷弄，從舞台演出到日常生活，各種節奏與創作形式皆在這座城市主機中持續運行，讓多元能量於流動中交會，形塑出屬於臺北的文化樣貌。今年活動以城市行銷為核心，融合、延續並升級既有架構，以「演唱會經濟」、「產業趨勢」、「城市行動」串聯14項系列活動，建構跨場域、跨時段的城市參與網絡。音樂不再只是舞台上的展演，而是作為城市節奏，流動於街區與日常生活之中，使參與者在不同場景間穿梭，持續感受並創造多重VIBES。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66385"
     },
     {
       "id": "tt-67746",
