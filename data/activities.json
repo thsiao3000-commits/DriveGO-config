@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-09T21:29:21+00:00",
+  "generatedAt": "2026-09-10T21:23:22+00:00",
   "windowDays": 240,
-  "count": 180,
+  "count": 179,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -717,21 +717,6 @@
       "description": null,
       "organizer": "新北市政府",
       "phone": "886-2-29603456",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_A15010100H_005799",
-      "source": "tdx",
-      "name": "2026 蟹蟹您的愛~護蟹俠客行",
-      "city": "臺東縣",
-      "startDate": "2026-06-12",
-      "endDate": "2026-09-10",
-      "lat": 22.64613914489746,
-      "lng": 121.48198699951172,
-      "description": null,
-      "organizer": "東部海岸國家風景區管理處",
-      "phone": "886-8-9841520",
       "category": "年度活動",
       "detailUrl": null
     },
