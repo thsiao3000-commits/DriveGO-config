@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-12T21:12:04+00:00",
+  "generatedAt": "2026-09-13T21:14:13+00:00",
   "windowDays": 240,
-  "count": 175,
+  "count": 172,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -691,21 +691,6 @@
       "detailUrl": null
     },
     {
-      "id": "tdx-C2_382000000A_003892",
-      "source": "tdx",
-      "name": "《她kneril-畚斗仔車旁的身影》特展",
-      "city": "新北市",
-      "startDate": "2026-06-12",
-      "endDate": "2026-09-13",
-      "lat": 24.864089965820312,
-      "lng": 121.551513671875,
-      "description": null,
-      "organizer": "新北市政府",
-      "phone": "886-2-29603456",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
       "id": "tdx-C2_371020000A_004200",
       "source": "tdx",
       "name": "浦揪新創市集",
@@ -1126,21 +1111,6 @@
       "detailUrl": null
     },
     {
-      "id": "tdx-C2_376540000A_006254",
-      "source": "tdx",
-      "name": "2026太麻里金針花—賞花專車",
-      "city": "臺東縣",
-      "startDate": "2026-08-10",
-      "endDate": "2026-09-13",
-      "lat": 22.63582992553711,
-      "lng": 120.97190856933594,
-      "description": "金針山各花區導覽及金針山人文遊賞-------活動日期及地點暫訂，詳細內容待公布-------",
-      "organizer": "太麻里鄉公所",
-      "phone": "886-8-9781301",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
       "id": "tt-67708",
       "source": "travel.taipei",
       "name": "在黑白紅之間，遇見城市裡未曾說出口的情緒 藝術家 BONi 個展《In the City, Unsaid.》",
@@ -1407,21 +1377,6 @@
       "description": "日月潭是我國最負盛名、國內外名聞遐邇之觀光遊憩區，每年造訪日月潭之旅客平均達350萬人次。日月潭花火音樂嘉年華系列活動以音樂藝術、運動休閒、在地產業文化等活動特色與傳統為主軸，延續「大型戶外花火音樂會」活動亮點，吸引更多國內外旅客到訪。 詳細活動日期將於7月中公告，再請留意官網、社群等資訊",
       "organizer": "交通部觀光署日月潭國家風景區管理處",
       "phone": "886-4-92855668",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_387000000A_010238",
-      "source": "tdx",
-      "name": "2026臺中國際踩舞嘉年華",
-      "city": "臺中市",
-      "startDate": "2026-09-12",
-      "endDate": "2026-09-13",
-      "lat": 24.21494483947754,
-      "lng": 120.66278076171875,
-      "description": null,
-      "organizer": "臺中市政府",
-      "phone": "886-4-22289111",
       "category": "年度活動",
       "detailUrl": null
     },
