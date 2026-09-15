@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-14T22:15:08+00:00",
+  "generatedAt": "2026-09-15T21:54:33+00:00",
   "windowDays": 240,
-  "count": 172,
+  "count": 171,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -282,21 +282,6 @@
       "description": "推廣本縣特色農業及休閒農業遊程，結合金門各農村社區及小農、畜牧業者特色，共計規劃單點體驗及半日遊活動，藉由遊程推動提升金門農村旅遊曝光度。活動日期：115年3月-11月(活動時間待定)活動地點：金門地區主辦單位：金門縣農業試驗所連絡電話：吳小姐 082-333381各活動時間及地點以主辦單位最新公告為主",
       "organizer": "金門縣政府",
       "phone": "886-8-2318823",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_387000000A_010128",
-      "source": "tdx",
-      "name": "台中城市郊山探旅活動-我是登山王",
-      "city": "臺中市",
-      "startDate": "2026-03-15",
-      "endDate": "2026-09-15",
-      "lat": 24.18018913269043,
-      "lng": 120.73370361328125,
-      "description": null,
-      "organizer": "臺中市政府",
-      "phone": "886-4-22289111",
       "category": "年度活動",
       "detailUrl": null
     },
