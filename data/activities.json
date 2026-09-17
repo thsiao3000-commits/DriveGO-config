@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-16T21:52:17+00:00",
+  "generatedAt": "2026-09-17T21:54:48+00:00",
   "windowDays": 240,
   "count": 174,
   "source": "TDX + travel.taipei",
@@ -12,7 +12,7 @@
   "sourcesFreshness": {
     "tdx": "2026-06-29T20:48:20+00:00",
     "travel.taipei": "2026-09-16T21:52:17+00:00",
-    "travel.taipei.event": "2026-09-05T20:55:30+00:00"
+    "travel.taipei.event": "2026-09-17T21:54:48+00:00"
   },
   "activities": [
     {
@@ -2386,21 +2386,6 @@
       "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66398"
     },
     {
-      "id": "tt-event-66399",
-      "source": "travel.taipei.event",
-      "name": "2026 公館聖誕季",
-      "city": "臺北市",
-      "startDate": "2026-11-28",
-      "endDate": "2026-12-31",
-      "lat": 25.0133,
-      "lng": 121.53,
-      "description": "公館聖誕季於自來水園區打造夜間聖誕燈飾與日間花卉造景，提供民眾拍照與放鬆的好去處。活動期間還有台師大管樂隊的表演與校園藝文演出，以及街頭藝人的表演，讓民眾在體驗聖誕溫暖氛圍之外，同時感受公館水岸藝文魅力。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66399"
-    },
-    {
       "id": "tt-event-66400",
       "source": "travel.taipei.event",
       "name": "2026艋舺青山宮暗訪暨遶境",
@@ -2489,6 +2474,21 @@
       "phone": "886-3-3322101",
       "category": "年度活動",
       "detailUrl": null
+    },
+    {
+      "id": "tt-event-66399",
+      "source": "travel.taipei.event",
+      "name": "2026 公館聖誕季",
+      "city": "臺北市",
+      "startDate": "2026-12-05",
+      "endDate": "2026-12-31",
+      "lat": 25.0133,
+      "lng": 121.53,
+      "description": "公館聖誕季於自來水園區打造夜間聖誕燈飾與日間花卉造景，提供民眾拍照與放鬆的好去處。活動期間還有台師大管樂隊的表演與校園藝文演出，以及街頭藝人的表演，讓民眾在體驗聖誕溫暖氛圍之外，同時感受公館水岸藝文魅力。",
+      "organizer": null,
+      "phone": null,
+      "category": "節慶活動",
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66399"
     },
     {
       "id": "tdx-C2_376540000A_006223",
