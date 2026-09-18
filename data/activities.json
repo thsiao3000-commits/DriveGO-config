@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-17T21:54:48+00:00",
+  "generatedAt": "2026-09-18T21:24:38+00:00",
   "windowDays": 240,
-  "count": 174,
+  "count": 173,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -627,21 +627,6 @@
       "description": null,
       "organizer": "新北市政府",
       "phone": "886-2-29603456",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_A15010300H_007128",
-      "source": "tdx",
-      "name": "2026縱谷好時節~北回樂一夏[北回餐席]",
-      "city": "花蓮縣",
-      "startDate": "2026-06-06",
-      "endDate": "2026-09-18",
-      "lat": 23.4654598236084,
-      "lng": 121.35794067382812,
-      "description": null,
-      "organizer": "花東縱谷國家風景區管理處",
-      "phone": "886-3-8875306",
       "category": "年度活動",
       "detailUrl": null
     },
