@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-18T21:24:38+00:00",
+  "generatedAt": "2026-09-19T21:17:14+00:00",
   "windowDays": 240,
-  "count": 173,
+  "count": 171,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -1396,21 +1396,6 @@
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67827"
     },
     {
-      "id": "tt-event-66388",
-      "source": "travel.taipei.event",
-      "name": "永樂布業商場42週年慶活動",
-      "city": "臺北市",
-      "startDate": "2026-09-18",
-      "endDate": "2026-09-19",
-      "lat": 25.0548,
-      "lng": 121.51,
-      "description": "辦理永樂布業42週年慶活動，於永樂廣場舉辦開幕記者會及主場活動，串聯2、3樓布業商場，並於3樓八角樓規劃布業主題展覽及布藝手作體驗活動。後續將依攤商營運情形及市場需求，持續規劃相關主題活動，以提升商場營運績效，形塑永樂布業特色商場品牌形象。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66388"
-    },
-    {
       "id": "tdx-C2_397000000A_007684",
       "source": "tdx",
       "name": "2026衛武營爵士週",
@@ -1419,21 +1404,6 @@
       "endDate": "2026-09-20",
       "lat": 22.62299919128418,
       "lng": 120.34243774414062,
-      "description": null,
-      "organizer": "高雄市政府",
-      "phone": "886-7-7995678",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_397000000A_007515",
-      "source": "tdx",
-      "name": "Post Malone Presents The BIG ASS Stadium World Tour",
-      "city": "高雄市",
-      "startDate": "2026-09-19",
-      "endDate": "2026-09-19",
-      "lat": 22.7031192779541,
-      "lng": 120.29447174072266,
       "description": null,
       "organizer": "高雄市政府",
       "phone": "886-7-7995678",
