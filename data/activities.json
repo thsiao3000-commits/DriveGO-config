@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-21T22:25:51+00:00",
+  "generatedAt": "2026-09-22T21:45:35+00:00",
   "windowDays": 240,
-  "count": 163,
+  "count": 161,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -1229,36 +1229,6 @@
       "phone": "02-2550-9767",
       "category": null,
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67789"
-    },
-    {
-      "id": "tdx-C2_371020000A_004318",
-      "source": "tdx",
-      "name": "金門縣書法學會―「福澤萬家話吉祥」文化會集書藝創作聯展",
-      "city": "金門縣",
-      "startDate": "2026-09-05",
-      "endDate": "2026-09-22",
-      "lat": 24.44087028503418,
-      "lng": 118.3235092163086,
-      "description": "金門縣書法學會―「福澤萬家話吉祥」文化會集書藝創作聯展 展出日期｜2026/9/5－2026/9/22展出地點｜金門縣文化局第一、三場展",
-      "organizer": "金門縣政府",
-      "phone": "886-8-2318823",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_371020000A_004319",
-      "source": "tdx",
-      "name": "金門縣陶藝學會―陶一陶  我的生肖朋友",
-      "city": "金門縣",
-      "startDate": "2026-09-05",
-      "endDate": "2026-09-22",
-      "lat": 24.44087028503418,
-      "lng": 118.3235092163086,
-      "description": "金門縣陶藝學會―陶一陶 我的生肖朋友展出日期｜2025/9/5－2025/9/22展出地點｜金門縣文化局第二場展",
-      "organizer": "金門縣政府",
-      "phone": "886-8-2318823",
-      "category": "年度活動",
-      "detailUrl": null
     },
     {
       "id": "tt-event-66391",
