@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-27T21:50:13+00:00",
+  "generatedAt": "2026-09-28T23:41:27+00:00",
   "windowDays": 240,
-  "count": 157,
+  "count": 155,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -1246,21 +1246,6 @@
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67915"
     },
     {
-      "id": "tdx-C2_376540000A_006286",
-      "source": "tdx",
-      "name": "2026波浪屋月亮聚",
-      "city": "臺東縣",
-      "startDate": "2026-09-25",
-      "endDate": "2026-09-28",
-      "lat": 22.75351905822754,
-      "lng": 121.14600372314453,
-      "description": "月光再次照亮臺東的海岸線，夜風輕拂，歌聲隨著潮聲迴盪。青年們相聚於月下，在歌舞中分享彼此的故事，也將文化的火光傳遞下去。今年，「月亮聚」依然以真摯的情感為核心，邀請大家再次回到這片土地，一同編織屬於當代的月光記憶。▸活動日期｜9/25-9/28 (擇2日辦理)▸活動地點｜台東波浪屋 (台東縣台東市新生路105號)-------活動日期及地點暫訂，詳細內容待公布-------",
-      "organizer": "臺東縣政府原住民族行政處",
-      "phone": "886-8-9341211",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
       "id": "tdx-C2_371020000A_004321",
       "source": "tdx",
       "name": "金門縣美術學會―美術學會會員水彩十人聯展",
@@ -1289,21 +1274,6 @@
       "phone": "886-8-2318823",
       "category": "年度活動",
       "detailUrl": null
-    },
-    {
-      "id": "tt-event-66389",
-      "source": "travel.taipei.event",
-      "name": "商圈嘉年華-台北生活祭",
-      "city": "臺北市",
-      "startDate": "2026-09-26",
-      "endDate": "2026-09-28",
-      "lat": 25.0717,
-      "lng": 121.522,
-      "description": "為推廣本市特色商圈，規劃於中秋假期與臺北市各商圈合作，招募本市商圈及各特色店家参與，以會展活動方式提升本市商圈知名度及商機。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66389"
     },
     {
       "id": "tdx-C2_A15011100H_002490",
