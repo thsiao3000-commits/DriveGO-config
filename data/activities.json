@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-10-09T23:01:02+00:00",
+  "generatedAt": "2026-10-10T22:12:21+00:00",
   "windowDays": 240,
-  "count": 131,
+  "count": 132,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -11,7 +11,7 @@
   ],
   "sourcesFreshness": {
     "tdx": "2026-06-29T20:48:20+00:00",
-    "travel.taipei": "2026-10-06T00:34:46+00:00",
+    "travel.taipei": "2026-10-10T22:12:21+00:00",
     "travel.taipei.event": "2026-09-27T21:50:13+00:00"
   },
   "activities": [
@@ -631,21 +631,6 @@
       "detailUrl": null
     },
     {
-      "id": "tdx-C2_382000000A_003874",
-      "source": "tdx",
-      "name": "2026新北市生音藝術節",
-      "city": "新北市",
-      "startDate": "2026-07-07",
-      "endDate": "2026-10-10",
-      "lat": 25.026050567626953,
-      "lng": 121.47225952148438,
-      "description": null,
-      "organizer": "新北市政府",
-      "phone": "886-2-29603456",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
       "id": "tt-67416",
       "source": "travel.taipei",
       "name": "從前從前－繪說童話郵票特展",
@@ -811,21 +796,6 @@
       "detailUrl": null
     },
     {
-      "id": "tt-67744",
-      "source": "travel.taipei",
-      "name": "桑拿大可：一件內褲 一雙襪子",
-      "city": "臺北市",
-      "startDate": "2026-08-15",
-      "endDate": "2026-10-10",
-      "lat": 25.0446,
-      "lng": 121.561,
-      "description": "1992年出生於高雄，2013年畢業於中國科技大學視覺傳達設計系。設計背景培養了他對流行文化的感知以及運用視覺符號的能力。如同藝名「桑拿大可」所揭示，他期待作品如桑拿般，在紛擾的日常中帶來片刻舒緩與放鬆。疫情後返鄉定居高雄，南台灣炙熱而悠緩的生活節奏持續滋養他的創作，也使本次展覽流露自在而鬆弛的氣息。\n\r\n\n\r\n畫中一貫帶有厭世神情的男孩脫下象徵身分與風格的時尚外衣，從CHANEL、Balenciaga到只剩一件內褲、一雙襪子，桑拿大可將過往隱約浮現的情慾線索轉化為更直接的視覺語言。仙子、擬人花與擬人獸等新角色，取代過去經常出現的寶可夢，它們各自承載不同的情感投射與想像。花、獸與人物彼此交織，使畫面形成更自由流動的空間關係。\n\r\n▲桑拿大可_2025_一朵在笑的花_2-1-640x858（圖片來源：誠品畫廊）\n\r\n\n\r\n桑拿大可的創作深受美國藝術家尚・米榭・巴斯奇亞（Jean-Michel Basquiat, 1960–1988）影響。近兩年，他放緩創作步調，讓更多生活感受自然融入畫面，同時持續探索媒材的可能性，保留塗抹、覆蓋、擦拭等創作痕跡，並嘗試更具塗鴉感的表現。色彩運用也更加鮮明或混融，畫面逐漸由精緻走向奔放，以更直覺的方式回應日常經驗。相較於早期以角色造型建立鮮明辨識度，近年的創作重心逐漸轉向繪畫本身，角色依然存在，卻不再是觀看作品的唯一入口，筆觸、色彩、材質與創作過程中的偶然性，共同成為作品的重要語言。\n\r\n\n\r\n本次展出的多件作品皆源自生活中的細微片刻。〈一朵在笑的花〉發想自一則Instagram限時動態，藝術家隨手以內建筆刷替花朵添上表情，進而將手機繪圖的視覺質感轉化至畫布之上。〈幸運的被踩到〉系列聚焦不同膚色的腳與各式襪子的姿態，以凝視映照情慾想像；〈害羞〉描繪男子之間若有似無的曖昧氛圍，透過眼神傳遞空氣中的細微情緒；〈閑晃〉則挪用「犬」於男同志文化中的特殊語境，捉狹地描繪獨特的惡趣味。\n\r\n▲桑拿大可_2025_Fickle-Flower-Stay-With-Me_2-1-640x752（圖片來源：誠品畫廊）\n\r\n\n\r\n除了繪畫創作，本次亦展出多件全新陶藝作品。藝術家透過不同姿態、表情與服飾塑造角色個性，延續一貫慵懶的氣質，並以更樸實的釉色與質感回應整體創作氛圍。每件陶作皆可從不同角度觀看，展現獨立而鮮明的存在感，彷彿凝結於時間中的生活片段。\n\r\n\n\r\n源自對時尚與流行文化的長期關注，桑拿大可持續描繪當代年輕人的樣貌。本次展覽重新整合日常、身體與情慾等創作線索，透過更自由的繪畫語言與更貼近自身經驗的視角，呈現藝術家近年創作發展的重要階段。",
-      "organizer": "誠品畫廊",
-      "phone": null,
-      "category": null,
-      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67744"
-    },
-    {
       "id": "tt-67746",
       "source": "travel.taipei",
       "name": "後再生—新媒體藝術×淨零未來 Post-Regeneration—New Media Art x Net Zero Future",
@@ -944,6 +914,21 @@
       "phone": null,
       "category": "節慶活動",
       "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66386"
+    },
+    {
+      "id": "tt-67987",
+      "source": "travel.taipei",
+      "name": "「魔幻日常」",
+      "city": "臺北市",
+      "startDate": "2026-09-10",
+      "endDate": "2026-10-31",
+      "lat": 25.06,
+      "lng": 121.59,
+      "description": "《魔幻日常》關注的是，在影像快速流通、數位媒介深入生活、社會價值持續變動的當下，我們如何理解眼前的世界。\n\r\n\n\r\n展覽中的「魔幻」並非逃離現實的幻想，而是現實內部悄然發生的偏移。記憶被重新組織，圖像改變了觀看方式，原本明確的身份、關係與價值也逐漸失去固定的位置。熟悉的一切依然存在，卻不再能以相同的方式被理解。\n\r\n▲SYC183641｜時永駿｜迷你莊園｜130 × 130 cm｜2018｜油彩、畫布（圖片來源：YIRI ARTS 伊日藝術計劃）\n\r\n\n\r\n在這樣的情境下，「日常」不再只是穩定的生活背景，而成為個人經驗、集體記憶、媒體影像與社會敘事彼此交會的場域。當我們愈來愈常透過螢幕認識事件、地方與他人，親身經驗與被傳播的圖像相互重疊，真實與虛構、記憶與再現之間的界線也變得難以分辨。圖像不只記錄現實，也持續影響我們如何認識與判斷現實。\n\r\n\n\r\n本展匯集藝術家對歷史、記憶、影像與當代生活的不同觀察。他們從日常場景、個人經驗、歷史片段與既有圖像出發，透過繪畫、雕塑與裝置等媒介加以轉化與重組。作品並不試圖還原單一的真相，而是呈現現實如何在不同立場與觀看方式之間，被反覆建構、敘述與理解。\n\r\n\n\r\n藝術家也藉由對熟悉形式與日常事物的重新詮釋，使原本理所當然的景象產生變化。這些轉化並非只著重於材料或物件本身，而是反映個體對當代社會的感知，也揭示事物的意義如何受到時間、媒介與社會環境的影響。\n\r\n\n\r\n因此，展覽所談的「物性的重構」，不僅關於物質形式的改變，也指向事物如何在不同脈絡中被重新觀看與賦予意義。當原有的認知與價值不再穩固，熟悉與陌生、過去與現在、真實與想像之間，也開始出現新的關係。\n\r\n\n\r\n《魔幻日常：現實的裂隙與物性的重構》並不尋找遠離生活的奇觀，而是將目光帶回現實本身。展覽所呈現的「魔幻」，正存在於那些不易被察覺的變化之中：當我們深信不疑的世界逐漸變得陌生，觀看便再次成為理解現實的方法，也開啟重新想像當代生活的可能。",
+      "organizer": "YIRI ARTS 伊日藝術計劃",
+      "phone": null,
+      "category": null,
+      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67987"
     },
     {
       "id": "tdx-C2_A15010600H_000007",
@@ -1096,6 +1081,21 @@
       "detailUrl": null
     },
     {
+      "id": "tt-67882",
+      "source": "travel.taipei",
+      "name": "張安萱 創作個展【眼花練習】",
+      "city": "臺北市",
+      "startDate": "2026-10-08",
+      "endDate": "2026-11-01",
+      "lat": 25.0523,
+      "lng": 121.528,
+      "description": "✺ 藝術家介紹\n\r\n張安萱（Chang An Xuan）現就讀國立臺北藝術大學美術學系碩士班。她曾參與2019年誠品畫廊「現榨一杯」、2022年拾玖畝藝畫廊「植花」及2023年國立臺北藝術大學「相互作用」等聯展。她的創作主要使用油彩與壓克力顏料進行，關注資訊是如何進入大眾視線，又如何改變大眾面對作品的方式。\n\r\n▲主視覺（圖片來源：金車文藝中心）\n\r\n\n\r\n✺ 展覽介紹\n\r\n如果誤讀是觀看的常態，《眼花練習》便是一次將錯就錯的視覺練習。\n\r\n一件東西要被看見、被渴望，得先透過標記。價錢是一種標記，神話與宗教也是一種標記，讓裸體得以正眼明視。標記總是比作品本身更早抵達眼睛，讓人看不清楚，也不想看清楚，這樣的眩暈，正是眼花。\n\r\n《眼花練習》畫下這個時刻，渴望往同一處湧去，肢體重新拼合，分不出誰是誰，揉合成一團。視線游移、停頓、反覆確認，暈眩與著迷同時發生。\n\r\n畫面看起來閒適，卻讓人分不清這究竟是古典的寓言，還是尋常的午後，在滿場的標記之間，我們是否還分得清楚，自己在看的是作品，還是告訴我們它珍貴的標記？\n\r\n\n\r\n✺ 展覽資訊\n\r\n張安萱 創作個展【眼花練習】\n\r\nChang An-Xuan Solo Exhibition: Dazzle Studies\n\r\n展期：2026.10.8(四) -11.01(日)\n\r\n開幕：2026.10.8(四) 15:00\n\r\n地點：金車文藝中心 臺北南京館（臺北市南京東路二段1號3F）\n\r\n主辦單位：金車文教基金會/金車文藝中心KCCA",
+      "organizer": null,
+      "phone": "0225628629",
+      "category": null,
+      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67882"
+    },
+    {
       "id": "tt-event-66395",
       "source": "travel.taipei.event",
       "name": "2026臺北國際牛肉麵節",
@@ -1156,19 +1156,19 @@
       "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66394"
     },
     {
-      "id": "tdx-C2_376540000A_006231",
-      "source": "tdx",
-      "name": "2026遊龍護圳",
-      "city": "臺東縣",
+      "id": "tt-67973",
+      "source": "travel.taipei",
+      "name": "埋藏與浮現 | 張凱鈞",
+      "city": "臺北市",
       "startDate": "2026-10-10",
-      "endDate": "2026-10-10",
-      "lat": 23.049060821533203,
-      "lng": 121.16281127929688,
-      "description": "為感念關山鎮先民建造大圳，並灌溉孕育出關山最優質的好米，藉由本次活動讓在地居民與遊客參與活動，讓外來遊客了解關山大圳對關山地區的重要性，因此特舉辦夜訪關山提燈籠護水圳體驗活動，讓大家懷著感恩的心情，體會先民開田闢地的辛勞。-------活動日期暫訂，詳細內容待公布-------",
-      "organizer": "臺東縣關山鎮公所",
-      "phone": "886-8-9811179",
-      "category": "年度活動",
-      "detailUrl": null
+      "endDate": "2026-12-30",
+      "lat": 25.0466,
+      "lng": 121.549,
+      "description": "谷公館很高興地宣布張凱鈞於畫廊的首次個展《埋藏與浮現》（L’Enfoui et L’Émergé）。展覽將由「遙遠的光重複著」以及「光景」兩個繪畫系列相映而成。前者發展自2017年，以壓克力顏料在中型以上的尺幅描繪光影飄忽中稍縱即逝的痕跡。後者發展自2024年，以油畫顏料帶著筆觸的肌理描繪光的運動。在散光與聚焦中，畫面彷彿於具象與抽象中幽微的轉換。\n\r\n\n\r\n「遙遠的光重複著」，始於一個看似簡單卻帶著挑戰的想法：有沒有可能通過繪畫純粹地再現「光」？又或是彩虹？九年的時間，大尺寸的羊毛排筆拉扯著稀薄的壓克力顏料，經過上百層的覆蓋，藝術家試著理解菱鏡折射出的彩色光斑，並且在繪畫中捕捉「光」的輕盈又無法觸知的質地和難以名狀的造型。背景的「灰」是無止境的遠方，也是塵埃的意象。隨著系列的推進，灰變得越來越淡，最後幾乎接近白色。如同身處明室，低對比讓畫中的光需要更多時間才能被覺察：流動的、脆弱的、無法擁有的。在每件作品繪製後期，藝術家將經歷長時間的凝視，確定作品已經完成，屏住的那口氣得以釋放。\n\r\n\n\r\n展出的另一系列「光景」（Lightscape），則探索光譜的另一個極端。賈曼（Derek Jarmin）說：光譜中沒有棕色的光。因為棕色是各種顏色的總和，往往被認為是貧窮的、不純粹的。但棕色對張凱鈞而言，它豐富而神秘，與所有顏色共融、共振。從「遙遠的光重複著」的空靈的光，來到「光景」裡厚重如土讓中的「地下之光」。\n\r\n\n\r\n張凱鈞經常將過去閒置或未完成的畫作打磨，之後在這個斑斕光滑的表面上重新再創作，記憶的殘影與當下的意識交織，而光，總是在畫布的「裡面」，藝術家只是將它汲取出來，讓它在畫布中來去、流轉。在打磨與顏料堆砌之間，在失去與創造之間，在埋藏與浮現之間，沉溺著。\n\r\n\n\r\n張凱鈞（Kaï Chun Chang）於 1989 年出生於台灣台北，畢業於巴黎國立高等美術學院（École Nationale Supérieure des Beaux-Arts de Paris），目前居住於巴黎，並在伊西萊穆利諾（Issy-les-Moulineaux）工作。\n\r\n\n\r\n2023 年，張凱鈞入選第 73 屆「年輕創作獎」（Jeune Création），在此之前，他亦曾於 2018 年入圍塞納河畔維特里國際繪畫獎（International Painting Prize of Vitry-sur-Seine）。他的作品獲法國、中國大陸和台灣的公共機構，以及國際間多個重要私人收藏。2026 年，於馬賽當代藝術博物館（mac）展出。繼在巴黎（2024 年）和布魯塞爾（2026 年）舉辦個展後，他最近的一場個展於台北谷公館（Michael Ku Gallery）開幕。",
+      "organizer": "谷公館",
+      "phone": "02 25775601",
+      "category": null,
+      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67973"
     },
     {
       "id": "tdx-C2_397000000A_007697",
@@ -1184,6 +1184,21 @@
       "phone": "886-7-7995678",
       "category": "年度活動",
       "detailUrl": null
+    },
+    {
+      "id": "tt-67996",
+      "source": "travel.taipei",
+      "name": "物．我｜林宇軒個展  The Self in Things：Lin Yu Shuan Solo Exhibition",
+      "city": "臺北市",
+      "startDate": "2026-10-16",
+      "endDate": "2026-11-08",
+      "lat": 25.0539,
+      "lng": 121.508,
+      "description": "物．我｜林宇軒個展 The Self in Things：Lin Yu Shuan Solo Exhibition\n\r\n\n\r\n《物．我｜林宇軒個展》，展現藝術家在當代水墨語境中對日常物件與自我狀態的細緻察覺。林宇軒將關注點放在身邊長久相對的案頭器物、奇石與生活小物，透過寫實而推敲的筆墨，記錄時間在物件上留下的質地、光影與痕跡。他將觀物時的專注凝視轉化為對自身心境的審視，在「物」與「我」的對照之間，體悟主客一體的寧靜和諧。\n\r\n\n\r\n本次展覽的創作，源於藝術家日常生活中與物件相遇的切身感悟。擺設於畫案上的物件，不僅載負著歲月與使用的印記，也在漫長的描繪過程中，逐漸融入創作者個人的情感與記憶。林宇軒同時將傳統書畫特有的「落款」融入畫面，使圖像留住物件可見的形體，文字則記錄無形的心念，兩者相互呼應，完整保存了藝術家與物相遇、由物觀我的心路歷程。\n\r\n\n\r\n《物．我｜林宇軒個展》將於2026年10月16日至11月8日在台北琂樂堂藝文空間展出，開幕訂於2026年10月17日（週六）下午3點。誠摯邀請大家來到現場，在沉靜細緻的墨色與字裡行間，感受器物裡的歲月痕跡，也找尋屬於自己的安靜角落。\n\r\n\n\r\n“The Self in Things : Lin Yu-Shuan Solo Exhibition” reveals the artist’s nuanced observation of everyday objects and his internal state within the context of contemporary ink art. Turning his attention to scholars' rocks, ancient vessels, and ordinary items placed around his workspace, Lin Yu-Shuan employs refined, thoughtful brushwork to record the textures, light, shadows, and subtle traces left by time. He transforms the attentive gaze upon objects into an examination of his own mind, discovering a quiet harmony between the self and the object.\n\r\n\n\r\nThe works in this exhibition stem from the artist’s personal encounters with objects in daily life. Placed on his painting table, these objects carry traces of time and lived experience. Through patient observation and depiction, they gradually absorb the artist's personal thoughts and memories. Lin also incorporates traditional calligraphy inscriptions into his compositions, while the imagery captures the visible form of the object, the written words record intangible thoughts and states of mind. Image and text complete one another, preserving the process of seeing the self through things.\n\r\n\n\r\n“The Self in Things : Lin Yu-Shuan Solo Exhibition” will be on view from October 16 to November 8, 2026, at Joyful Art Gallery in Taipei, with the opening reception held on Saturday, October 17, at 3:00 PM. We cordially invite you to join us and experience the subtle traces of time within each object among the quiet ink and written notes, discovering a moment of personal solace.\n\r\n\n\r\n\n\r\n\n\r\n物．我｜林宇軒個展 \n\r\nThe Self in Things：Lin Yu Shuan Solo Exhibition\n\r\n\n\r\n日期 Date｜\n\r\n2026 . 10 . 16（Fri）~ 11 . 08（Sun） \n\r\n11:00~19:00 （Closed on Monday）\n\r\n\n\r\n開幕 Opening｜\n\r\n2026 . 10 . 17（Sat） 15:00\n\r\n\n\r\n地點 Venue｜\n\r\n台北市大同區環河北路一段111號1樓、3樓 琂樂堂藝文空間  \n\r\nJoyful Art Gallery, 1F & 3F., No. 111, Sec. 1, Huanhe N. Rd., Datong Dist., Taipei City , Taiwan",
+      "organizer": null,
+      "phone": "02-2550-9767",
+      "category": null,
+      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67996"
     },
     {
       "id": "tdx-C2_376430000A_006709",
