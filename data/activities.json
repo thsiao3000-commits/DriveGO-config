@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-10-13T23:10:50+00:00",
+  "generatedAt": "2026-10-14T22:02:26+00:00",
   "windowDays": 240,
   "count": 124,
   "source": "TDX + travel.taipei",
@@ -12,7 +12,7 @@
   "sourcesFreshness": {
     "tdx": "2026-06-29T20:48:20+00:00",
     "travel.taipei": "2026-10-10T22:12:21+00:00",
-    "travel.taipei.event": "2026-09-27T21:50:13+00:00"
+    "travel.taipei.event": "2026-10-14T22:02:26+00:00"
   },
   "activities": [
     {
@@ -1651,36 +1651,6 @@
       "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66400"
     },
     {
-      "id": "tt-event-66401",
-      "source": "travel.taipei.event",
-      "name": "2026臺北耶誕愛無限(日期暫定）",
-      "city": "臺北市",
-      "startDate": "2026-12-01",
-      "endDate": "2026-12-31",
-      "lat": 25.0297,
-      "lng": 121.536,
-      "description": "為營造臺北濃厚耶誕節慶氛圍，透過辦理「2026臺北耶誕愛無限」活動，結合臺北特有「天堂路」之觀光文化特色，規劃設置耶誕燈飾，並辦理耶誕音樂會，邀請歌手、團體帶來精彩表演，以提升本市冬季觀光熱度，吸引遊客前來旅遊。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66401"
-    },
-    {
-      "id": "tt-event-66403",
-      "source": "travel.taipei.event",
-      "name": "臺北最High新年城-2027跨年活動",
-      "city": "臺北市",
-      "startDate": "2026-12-01",
-      "endDate": "2027-01-01",
-      "lat": 25.0375,
-      "lng": 121.564,
-      "description": "「一生必去、亞洲必遊」的臺北跨年活動，每年12月起舉辦前期活動，將臺北塑造為「臺北最High新年城」，讓國內外民眾感受臺北多元之城市風貌。12月31日晚間7時至隔日凌晨1時在市政府前市民廣場舉行跨年晚會，除邀請知名藝人接力演唱，並於主舞台周邊打造多元舞台活動，提供不同族群多種跨年體驗，最後在倒數時刻結合台北101新年大秀，與民眾一同倒數迎接新年到來。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66403"
-    },
-    {
       "id": "tdx-C2_376540000A_006232",
       "source": "tdx",
       "name": "115年收冬大戲",
@@ -1709,6 +1679,21 @@
       "phone": "886-8-9326141",
       "category": "年度活動",
       "detailUrl": null
+    },
+    {
+      "id": "tt-event-66401",
+      "source": "travel.taipei.event",
+      "name": "2026臺北耶誕愛無限",
+      "city": "臺北市",
+      "startDate": "2026-12-03",
+      "endDate": "2027-01-01",
+      "lat": 25.0297,
+      "lng": 121.536,
+      "description": "臺北市政府觀光傳播局精心打造「2026臺北耶誕愛無限」活動，在大安森林公園設置璀璨燈飾，營造浪漫節慶氛圍，邀請大家來此漫步賞燈、拍照打卡；同時舉辦「耶誕音樂會」，將有多位歌手帶來精采演出，以動人旋律點亮冬夜，陪伴大家歡慶耶誕佳節。",
+      "organizer": null,
+      "phone": null,
+      "category": "節慶活動",
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66401"
     },
     {
       "id": "tdx-C2_376430000A_006854",
@@ -1859,6 +1844,21 @@
       "phone": "886-3-3322101",
       "category": "年度活動",
       "detailUrl": null
+    },
+    {
+      "id": "tt-event-66403",
+      "source": "travel.taipei.event",
+      "name": "臺北最High新年城-2027跨年活動",
+      "city": "臺北市",
+      "startDate": "2026-12-31",
+      "endDate": "2027-01-01",
+      "lat": 25.0375,
+      "lng": 121.564,
+      "description": "「一生必去、亞洲必遊」的臺北跨年活動，每年12月起舉辦前期活動，將臺北塑造為「臺北最High新年城」，讓國內外民眾感受臺北多元之城市風貌。12月31日晚間7時至隔日凌晨1時在市政府前市民廣場舉行跨年晚會，除邀請知名藝人接力演唱，並於主舞台周邊打造多元舞台活動，提供不同族群多種跨年體驗，最後在倒數時刻結合台北101新年大秀，與民眾一同倒數迎接新年到來。",
+      "organizer": null,
+      "phone": null,
+      "category": "節慶活動",
+      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66403"
     },
     {
       "id": "tdx-C2_376540000A_006294",
