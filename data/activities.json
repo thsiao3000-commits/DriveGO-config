@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-10-14T22:02:26+00:00",
+  "generatedAt": "2026-10-15T21:55:12+00:00",
   "windowDays": 240,
-  "count": 124,
+  "count": 126,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -11,7 +11,7 @@
   ],
   "sourcesFreshness": {
     "tdx": "2026-06-29T20:48:20+00:00",
-    "travel.taipei": "2026-10-10T22:12:21+00:00",
+    "travel.taipei": "2026-10-15T21:55:12+00:00",
     "travel.taipei.event": "2026-10-14T22:02:26+00:00"
   },
   "activities": [
@@ -901,6 +901,21 @@
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67827"
     },
     {
+      "id": "tt-67991",
+      "source": "travel.taipei",
+      "name": "《把風織成歌：原住民族聲景特展》",
+      "city": "臺北市",
+      "startDate": "2026-09-30",
+      "endDate": "2026-12-31",
+      "lat": 25.1371,
+      "lng": 121.506,
+      "description": "臺北市政府原住民族事務委員會於凱達格蘭文化館推出年度藝文特展《把風織成歌：原住民族聲景特展》，以「風」為觀展線索，邀請觀眾循著聲音的生成、交織、傳遞、失落與重返，從歌謠、語言、器物與生活聲響出發，重新認識原住民族如何以聲音感知自然、連結土地，並傳承一代又一代的文化記憶。\n\r\n\n\r\n本展所談的「聲音」不僅止於歌謠與旋律，也包括呼吸、行動、器物製作與使用，以及人與環境互動時產生的各種聲響，這些聲音共同構成的「聲景」，讓人透過耳朵重新感受山林、風與生命，也察覺日常之中不一定能被眼睛看見，卻始終存在的人與土地、人與人之間的關係。▲主視覺把風織成歌（圖片來源：臺北市政府原住民族事務委員會）\n\r\n\n\r\n《把風織成歌：原住民族聲景特展》帶領觀眾循著五個展區展開一段聆聽旅程：從氣息與震動如何生成聲音，到祭儀吟唱中人與人彼此呼應、交疊出的群體記憶；再從狩獵時的呼喊與代代相傳的歌謠，看見聲音如何跨越距離、連結不同世代；接著聆聽那些一度沉寂的聲音，如何透過記錄、學習與重新傳唱，再一次回到當代生活；最後則回到「聆聽」本身，邀請觀眾停下腳步，回想一路走來曾經聽見的聲音。\n\r\n\n\r\n語言同樣也是聲音最重要的文化載體之一，近年臺北市政府原住民族事務委員會持續推動族語保存與復振，從幼兒階段的族語與文化課程，到族語競賽、認證獎勵、族語學習場域及家庭與社區中的語言使用，讓族語不只存在於教材或課堂，而能逐步回到家庭、日常與城市生活之中，呼應本次《把風織成歌：原住民族聲景特展》從聲音與生活經驗理解文化的策展核心，臺北市政府原住民族事務委員會今年也持續以「讓原住民族文化走進城市日常」為推動方向，創造更多市民接觸原住民族文化的機會，包括「2026 TALOMA' Taipei原住民族音樂季」以音樂展演、青年創作及文化交流，讓不同世代的聲音在城市中被聽見，「八一原住民族週」則透過系列活動與公共參與，擴大市民對原住民族歷史、文化與當代議題的認識，而音樂人才培訓計畫也透過詞曲創作、編曲製作及舞台演出，支持青年以當代創作回應自身的文化記憶與生命經驗，《把風織成歌》延續這樣的方向，進一步從「聽見音樂」走向「理解聲音」，讓觀眾認識原住民族樂音背後的生活、環境與文化脈絡。\n\r\n\n\r\n臺北市政府原住民族事務委員會將持續透過展覽、音樂、族語、文化體驗及教育推廣，拓展市民接觸原住民族文化的不同途徑，希望讓原住民族文化不只在特定節日被看見，而是在城市日常中持續被聽見、被理解，也被不同世代重新創造。\n\r\n\n\r\n展覽開幕活動將於115年10月8日（星期四）上午11時在凱達格蘭文化館1樓大廳舉行。誠摯邀請市民朋友走進凱達格蘭文化館，放慢腳步、打開聽覺，從一口氣息、一段吟唱、一件會發出聲音的器物開始，聽見生活如何留下聲響，也聽見文化如何在城市之中持續傳唱。\n\r\n\n\r\n更多展覽資訊可至凱達格蘭文化館Facebook粉絲專頁查詢，或洽02-28986500。\n\r\n凱達格蘭文化館Facebook粉絲專頁：https://www.facebook.com/ketagalan.culture.center/",
+      "organizer": "臺北市政府原住民族事務委員會",
+      "phone": null,
+      "category": null,
+      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67991"
+    },
+    {
       "id": "tdx-C2_A15011100H_002490",
       "source": "tdx",
       "name": "台灣國際觀鳥馬拉松",
@@ -1066,6 +1081,21 @@
       "detailUrl": null
     },
     {
+      "id": "tt-67981",
+      "source": "travel.taipei",
+      "name": "身心修復式─2026故宮樂齡月",
+      "city": "臺北市",
+      "startDate": "2026-10-15",
+      "endDate": "2026-11-15",
+      "lat": 25.1024,
+      "lng": 121.548,
+      "description": "一年一度的故宮樂齡月來囉！國立故宮博物院推出「身心修復式—2026故宮樂齡月」，自10月15日至11月15日，以「安然自在、修復新生、發掘潛能」為主軸，結合故宮文物、邀請55歲以上的樂齡朋友與親友一同走入故宮，在藝術與文化的陪伴下，感受身心的自在與喜悅，重新發現自己的潛能與生活中的美好。\r\n\r\n今年樂齡月結合故宮文物、藝術美學與跨域專業，規劃「起手式」、「養心式」及「修身式」三大系列免費活動。推出5場專題講座、13場工作坊及線上抽獎活動。從文物欣賞、正念覺察、生命故事、藝術創作到肢體律動，透過多元的參與體驗，讓藝術走進日常，為身心注入新的活力。\n\r\n\n\r\n另外，凡參加活動之學員，可憑學員證於樂齡月期間免費參觀第一展覽館，每張學員證可至售票處兌換門票一張。在樂齡月期間，55歲以上民眾也可憑身分證件享租用個人語音導覽優惠。\n\r\n▲活動月曆\n\r\n\n\r\n更多活動資訊請洽活動網頁：https://www.npm.gov.tw/Activity-Content.aspx?sno=04014632&l=1",
+      "organizer": "國立故宮博物院",
+      "phone": "02-25560986",
+      "category": null,
+      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67981"
+    },
+    {
       "id": "tt-67996",
       "source": "travel.taipei",
       "name": "物．我｜林宇軒個展  The Self in Things：Lin Yu Shuan Solo Exhibition",
@@ -1074,8 +1104,8 @@
       "endDate": "2026-11-08",
       "lat": 25.0539,
       "lng": 121.508,
-      "description": "物．我｜林宇軒個展 The Self in Things：Lin Yu Shuan Solo Exhibition\n\r\n\n\r\n《物．我｜林宇軒個展》，展現藝術家在當代水墨語境中對日常物件與自我狀態的細緻察覺。林宇軒將關注點放在身邊長久相對的案頭器物、奇石與生活小物，透過寫實而推敲的筆墨，記錄時間在物件上留下的質地、光影與痕跡。他將觀物時的專注凝視轉化為對自身心境的審視，在「物」與「我」的對照之間，體悟主客一體的寧靜和諧。\n\r\n\n\r\n本次展覽的創作，源於藝術家日常生活中與物件相遇的切身感悟。擺設於畫案上的物件，不僅載負著歲月與使用的印記，也在漫長的描繪過程中，逐漸融入創作者個人的情感與記憶。林宇軒同時將傳統書畫特有的「落款」融入畫面，使圖像留住物件可見的形體，文字則記錄無形的心念，兩者相互呼應，完整保存了藝術家與物相遇、由物觀我的心路歷程。\n\r\n\n\r\n《物．我｜林宇軒個展》將於2026年10月16日至11月8日在台北琂樂堂藝文空間展出，開幕訂於2026年10月17日（週六）下午3點。誠摯邀請大家來到現場，在沉靜細緻的墨色與字裡行間，感受器物裡的歲月痕跡，也找尋屬於自己的安靜角落。\n\r\n\n\r\n“The Self in Things : Lin Yu-Shuan Solo Exhibition” reveals the artist’s nuanced observation of everyday objects and his internal state within the context of contemporary ink art. Turning his attention to scholars' rocks, ancient vessels, and ordinary items placed around his workspace, Lin Yu-Shuan employs refined, thoughtful brushwork to record the textures, light, shadows, and subtle traces left by time. He transforms the attentive gaze upon objects into an examination of his own mind, discovering a quiet harmony between the self and the object.\n\r\n\n\r\nThe works in this exhibition stem from the artist’s personal encounters with objects in daily life. Placed on his painting table, these objects carry traces of time and lived experience. Through patient observation and depiction, they gradually absorb the artist's personal thoughts and memories. Lin also incorporates traditional calligraphy inscriptions into his compositions, while the imagery captures the visible form of the object, the written words record intangible thoughts and states of mind. Image and text complete one another, preserving the process of seeing the self through things.\n\r\n\n\r\n“The Self in Things : Lin Yu-Shuan Solo Exhibition” will be on view from October 16 to November 8, 2026, at Joyful Art Gallery in Taipei, with the opening reception held on Saturday, October 17, at 3:00 PM. We cordially invite you to join us and experience the subtle traces of time within each object among the quiet ink and written notes, discovering a moment of personal solace.\n\r\n\n\r\n\n\r\n\n\r\n物．我｜林宇軒個展 \n\r\nThe Self in Things：Lin Yu Shuan Solo Exhibition\n\r\n\n\r\n日期 Date｜\n\r\n2026 . 10 . 16（Fri）~ 11 . 08（Sun） \n\r\n11:00~19:00 （Closed on Monday）\n\r\n\n\r\n開幕 Opening｜\n\r\n2026 . 10 . 17（Sat） 15:00\n\r\n\n\r\n地點 Venue｜\n\r\n台北市大同區環河北路一段111號1樓、3樓 琂樂堂藝文空間  \n\r\nJoyful Art Gallery, 1F & 3F., No. 111, Sec. 1, Huanhe N. Rd., Datong Dist., Taipei City , Taiwan",
-      "organizer": null,
+      "description": "《物．我｜林宇軒個展》，展現藝術家在當代水墨語境中對日常物件與自我狀態的細緻察覺。林宇軒將關注點放在身邊長久相對的案頭器物、奇石與生活小物，透過寫實而推敲的筆墨，記錄時間在物件上留下的質地、光影與痕跡。他將觀物時的專注凝視轉化為對自身心境的審視，在「物」與「我」的對照之間，體悟主客一體的寧靜和諧。\n\r\n本次展覽的創作，源於藝術家日常生活中與物件相遇的切身感悟。擺設於畫案上的物件，不僅載負著歲月與使用的印記，也在漫長的描繪過程中，逐漸融入創作者個人的情感與記憶。林宇軒同時將傳統書畫特有的「落款」融入畫面，使圖像留住物件可見的形體，文字則記錄無形的心念，兩者相互呼應，完整保存了藝術家與物相遇、由物觀我的心路歷程。\n\r\n《物．我｜林宇軒個展》將於2026年10月16日至11月8日在台北琂樂堂藝文空間展出，開幕訂於2026年10月17日（週六）下午3點。誠摯邀請大家來到現場，在沉靜細緻的墨色與字裡行間，感受器物裡的歲月痕跡，也找尋屬於自己的安靜角落。\n\r\n\n\r\n物．我｜林宇軒個展\n\r\nThe Self in Things：Lin Yu Shuan Solo Exhibition\n\r\n日期 Date｜\n\r\n2026 . 10 . 16（Fri）~ 11 . 08（Sun）\n\r\n11:00~19:00 （Closed on Monday）\n\r\n開幕 Opening｜\n\r\n2026 . 10 . 17（Sat） 15:00\n\r\n地點 Venue｜\n\r\n台北市大同區環河北路一段111號1樓、3樓 琂樂堂藝文空間 \n\r\nJoyful Art Gallery, 1F & 3F., No. 111, Sec. 1, Huanhe N. Rd., Datong Dist., Taipei City , Taiwan",
+      "organizer": "琂樂堂藝文空間",
       "phone": "02-2550-9767",
       "category": null,
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67996"
