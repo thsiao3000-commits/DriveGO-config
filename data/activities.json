@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-10-16T21:54:23+00:00",
+  "generatedAt": "2026-10-17T21:13:23+00:00",
   "windowDays": 240,
-  "count": 126,
+  "count": 125,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -1124,21 +1124,6 @@
       "phone": "886-3-3322101",
       "category": "年度活動",
       "detailUrl": null
-    },
-    {
-      "id": "tt-event-66405",
-      "source": "travel.taipei.event",
-      "name": "2026出口音樂節",
-      "city": "臺北市",
-      "startDate": "2026-10-17",
-      "endDate": "2026-10-17",
-      "lat": 25.0851,
-      "lng": 121.524,
-      "description": "於捷運周邊廣場或場館舉辦之大型音樂活動，邀請年輕人最喜愛的流行樂團與歌手接力演出，為樂迷帶來難忘的音樂之夜，同時搭配捷運會員活動規劃，期活絡捷運週邊場域並帶動商圈發展。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66405"
     },
     {
       "id": "tdx-C2_371020000A_004239",
