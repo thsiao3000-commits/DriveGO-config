@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "generatedAt": "2026-10-25T21:25:00+00:00",
+  "generatedAt": "2026-10-26T23:00:47+00:00",
   "windowDays": 240,
-  "count": 111,
+  "count": 106,
   "source": "TDX + travel.taipei",
   "sources": [
     "TDX Tourism Activity",
@@ -119,21 +119,6 @@
       "phone": null,
       "category": null,
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/66411"
-    },
-    {
-      "id": "tt-66940",
-      "source": "travel.taipei",
-      "name": "特展 氛圍地—影像建築",
-      "city": "臺北市",
-      "startDate": "2025-12-19",
-      "endDate": "2026-10-26",
-      "lat": 25.0428,
-      "lng": 121.515,
-      "description": "影像作為建築的新語法\n\r\n\n\r\n由於跨領域傳播在理論與實務上的發展，影像或已成為最適合傳達建築、場所與都市空間形構及意涵的記錄和實驗性再現工具。新一代藝術家在世界各地湧現，憑藉數位技術門檻的降低與影像文化的盛行，為線上傳播提供更多可能性。回應此浪潮，法國波爾多建築中心的主藝廊於2023年變身為放映室俱樂部，結合建築電影節和傳統展覽模式，探索影像對於建築案例傳播的潛力，也體現影像媒介空間靈光的多元述說模式。\n\r\n\n\r\n本展與法國波爾多建築中心合作策畫，並根據臺灣的影像文化脈絡與在地學者協力，延續過去幾年在臺灣以建築與都市、電影為主題的展覽論述，篩選出部分原展影片和可與之對話的台灣作品，藉此探究建築與都市空間、影像、博物館個別且相互交錯的媒介性，回應近年建築與影像文化共同面臨的重要議題。本展三大主題將圍繞影像與建築的虛實對話作為核心概念，輔以再現建築光影氛圍與聚焦都市基礎設施等議題。每個主題下將細分為三個單元，並根據展期安排輪換影片，透過季節更替呈現不同的單元內容，讓觀眾在每一階段都能體驗到豐富多元的視覺與思維碰撞。\n\r\n\n\r\n展區含鐵道部園區廳舍二樓特展廳、橢圓廳及八角樓\n\r\n\n\r\n全票：每張100元｜半票：每張50元\n\r\n片單：即將發布，敬請期待",
-      "organizer": "財團法人臺灣博物館文教基金會、國立臺灣博物館、法國波爾多建築中心Arc en Rêve Centre d’Architecture (Bordeaux)、國家電影及視聽文化中心",
-      "phone": null,
-      "category": null,
-      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/66940"
     },
     {
       "id": "tdx-C2_A15010100H_005794",
@@ -436,21 +421,6 @@
       "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66376"
     },
     {
-      "id": "tdx-C2_382000000A_003855",
-      "source": "tdx",
-      "name": "2026福隆國際沙雕藝術季",
-      "city": "新北市",
-      "startDate": "2026-05-29",
-      "endDate": "2026-10-26",
-      "lat": 25.02199935913086,
-      "lng": 121.94316101074219,
-      "description": null,
-      "organizer": "新北市政府",
-      "phone": "886-2-29603456",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
       "id": "tdx-C2_A15011100H_002488",
       "source": "tdx",
       "name": "極點慢旅自行車系列活動",
@@ -462,21 +432,6 @@
       "description": null,
       "organizer": "雲嘉南濱海國家風景區管理處",
       "phone": "886-3-8875306",
-      "category": "年度活動",
-      "detailUrl": null
-    },
-    {
-      "id": "tdx-C2_397000000A_007735",
-      "source": "tdx",
-      "name": "Re：戰鬥之城",
-      "city": "高雄市",
-      "startDate": "2026-06-06",
-      "endDate": "2026-10-26",
-      "lat": 22.65719985961914,
-      "lng": 120.28231048583984,
-      "description": null,
-      "organizer": "台灣電力公司、高雄市政府文化局",
-      "phone": "886-7-7995678",
       "category": "年度活動",
       "detailUrl": null
     },
@@ -976,21 +931,6 @@
       "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/67996"
     },
     {
-      "id": "tt-event-66393",
-      "source": "travel.taipei.event",
-      "name": "2026臺北溫泉季",
-      "city": "臺北市",
-      "startDate": "2026-10-22",
-      "endDate": "2026-10-26",
-      "lat": 25.1369,
-      "lng": 121.502,
-      "description": "每年10月底秋涼時節，於新北投盛大展開，結合表演、展攤、公益、文化，推出一系列豐富精采的活動及遊程，吸引海內外遊客參與，活動並邀請國際城市帶來特色演出，讓民眾不用出國也能體驗到海外異國風情。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66393"
-    },
-    {
       "id": "tdx-C2_371020000A_004325",
       "source": "tdx",
       "name": "金門縣美術學會―張國英個展",
@@ -1004,21 +944,6 @@
       "phone": "886-8-2318823",
       "category": "年度活動",
       "detailUrl": null
-    },
-    {
-      "id": "tt-event-66392",
-      "source": "travel.taipei.event",
-      "name": "2026臺北客家義民嘉年華",
-      "city": "臺北市",
-      "startDate": "2026-10-24",
-      "endDate": "2026-10-26",
-      "lat": 25.0361,
-      "lng": 121.519,
-      "description": "「臺北客家義民嘉年華」為臺北客家具指標性重要慶典，以義民信仰為基底，從嘉年華形式展現客家文化，3日慶典邀請全臺義民廟、忠勇公來臺北為市民祈福遶境，透過「祭典」重現客家傳統祭典，「挑擔奉飯」以遊行形式表現信仰文化意涵，以多元「藝文」表演凸顯客家文化特色。",
-      "organizer": null,
-      "phone": null,
-      "category": "節慶活動",
-      "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66392"
     },
     {
       "id": "tdx-C2_376430000A_006687",
