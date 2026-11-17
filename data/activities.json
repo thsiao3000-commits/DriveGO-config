@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-11-15T23:18:32+00:00",
+  "generatedAt": "2026-11-17T02:17:39+00:00",
   "windowDays": 240,
   "count": 136,
   "source": "TDX + travel.taipei",
@@ -11,7 +11,7 @@
   ],
   "sourcesFreshness": {
     "tdx": "2026-11-04T12:36:09+00:00",
-    "travel.taipei": "2026-11-14T00:08:30+00:00",
+    "travel.taipei": "2026-11-17T02:17:39+00:00",
     "travel.taipei.event": "2026-11-14T22:51:31+00:00"
   },
   "activities": [
@@ -1531,21 +1531,6 @@
       "detailUrl": null
     },
     {
-      "id": "tdx-Event_A15010000H_081691",
-      "source": "tdx",
-      "name": "2026高雄戲獅甲",
-      "city": "高雄市",
-      "startDate": "2026-11-15",
-      "endDate": "2026-11-16",
-      "lat": 22.62882,
-      "lng": 120.335,
-      "description": "自2006年起開始舉辦，將原來屬於「地方的」與「廟會的」舞獅競技、陣頭表演，逐年擴大為融合了具國際性的高樁舞獅競賽、獨特的地方藝陣表演藝術。",
-      "organizer": "交通部觀光署",
-      "phone": "(07)7995678",
-      "category": "1",
-      "detailUrl": "https://www.facebook.com/KaohsiungLionDance/?locale=zh_TW"
-    },
-    {
       "id": "tdx-Event_397000000A_007664",
       "source": "tdx",
       "name": "BTS WORLD TOUR ’ARIRANG’ IN KAOHSIUNG",
@@ -1844,6 +1829,21 @@
       "phone": null,
       "category": "節慶活動",
       "detailUrl": "https://www.travel.taipei/zh-tw/event-calendar/details/66399"
+    },
+    {
+      "id": "tt-68355",
+      "source": "travel.taipei",
+      "name": "金車文藝講堂：黃若潔【食物設計的幻象與真實】",
+      "city": "臺北市",
+      "startDate": "2026-12-05",
+      "endDate": "2026-12-05",
+      "lat": 25.0674,
+      "lng": 121.519,
+      "description": "▌講座介紹\n\r\n「食物設計是什麼？」是近年來的大哉問。每當一個新的名詞出現，我們便在定義與實踐之間不斷徘徊。當食物設計在台灣成為連結地方、文化與永續議題的方法，它也彷彿承載了一種幻象：只要貼上標籤，就能解決各種問題。\n\r\n從事工藝、文化與食物設計多年，黃若潔最初透過研究與書寫《食物設計 Design Beyond Food》一書，回應自己對 Food Design 領域的疑惑。此後，她持續投入多元的跨域實踐與合作，嘗試以風土想像與五感感知，探索食物如何成為文化轉譯的媒介。\n\r\n本次講座將分享其中的挫敗與感動，並從現階段的實踐出發，誠實地提問：「為什麼台灣需要食物設計？」邀請觀眾一同思考文化生產的長尾影響，以及名詞背後的期待。當我們為食物設計祛魅，或許能重新回到食物、設計與體驗的創造本身，思考它們如何真正進入生活，並留下長遠的影響。\n\r\n.ᐟ.ᐟ 立即報名：https://www.kingcarart.org.tw/projects-detail/217\n\r\n▌講師介紹\n\r\n黃若潔，設計師、策展人與作家，專注於工藝、在地文化與飲食的連結探索。以「詩意的在地創造」為核心，將日常觀察轉化為觸動感官的物件與體驗。近年也投入食物設計領域的研究，合著「食物設計 Design Beyond Food」一書。\n\r\n▌講座資訊\n\r\n講師：黃若潔\n\r\n講題：食物設計的幻象與真實\n\r\n時間︰2026.12.05 (六) 14:00-16:00\n\r\n地點：金車文藝中心 臺北承德館\n\r\n地址：臺北市大同區承德路三段131號4樓\n\r\n主辦：財團法人金車文教基金會/金車文藝中心KCCA",
+      "organizer": null,
+      "phone": "02-25959650",
+      "category": null,
+      "detailUrl": "https://www.travel.taipei/zh-tw/activity/details/68355"
     },
     {
       "id": "tdx-Event_A15010100H_005964",
